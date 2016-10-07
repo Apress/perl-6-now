@@ -1,0 +1,30 @@
+# Mixing 'for' and 'when' - compare each element of @arr to other scalars
+# Perl 5 and Perl 6
+
+# use Switch 'Perl6'; # uncomment for Perl 5 source
+
+for(@arr) {
+    when "west"  { $x-- }
+    when "east"  { $x++ }
+    when "north" { $y++ }
+    when "south" { $y-- }
+}
+
+# Mixing 'given' and 'if' - Perl Perl 6
+# 'when' statements may be mixed with the 'if' statements
+
+given($something) {
+    if($_ < 10) { $i++; }  # falls through
+    if($_ < 25) { $i++; }  # falls through
+    if($_ < 35) { $i++; }  # falls through
+}
+
+# Mixing 'given' and 'if'-like conditionals - Perl 5
+
+use Switch 'Perl6';
+
+given($something) {
+    when sub { $_ < 10 } { $i++; }   # falls through
+    when sub { $_ < 25 } { $i++; }   # falls through
+    when sub { $_ < 35 } { $i++; }   # falls through
+}

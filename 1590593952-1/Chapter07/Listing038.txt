@@ -1,0 +1,5 @@
+# Data may be reshaped by swapping dimensions
+
+my $zero_to_ninety_nine = PDL->sequence(5, 5);
+print $zero_to_ninety_nine;
+print $zero_to_ninety_nine->xchg(0, 1);

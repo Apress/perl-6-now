@@ -1,0 +1,2 @@
+my $a;        # yields a scalar
+\my $a;       # yields a reference to a scalar

@@ -1,0 +1,7 @@
+# Perl 5 or Perl 6 - the assignment operator, =, copies values from
+# container to container
+
+my $foo = 10;
+my $bar = $foo;
+$bar++;
+print "foo: $foo bar: $bar\n";

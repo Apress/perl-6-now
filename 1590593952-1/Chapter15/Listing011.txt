@@ -1,0 +1,13 @@
+# Perl 6 - handle different errors differently
+
+{
+    my $f = open <', 'foo.txt' or die;
+    CATCH { 
+        when X::ENOENT  { 
+            print "Call tech support and ask for a new foo.txt\n" 
+        }
+        when X::EACCESS {
+            print "You aren't logged in as an authorized user\n"
+        }
+    }
+};

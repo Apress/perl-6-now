@@ -1,0 +1,1 @@
+my Dog $dog = Dog->new;

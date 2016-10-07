@@ -1,0 +1,10 @@
+# Testing our definitions for Pet, Washable, Dog, and so on - Perl 5
+
+package main;
+
+my Dog $dog = Dog->new;
+
+# These tests will always be true by definition
+
+die unless $dog->isa('Pet');
+die unless $dog->isa('Washable');

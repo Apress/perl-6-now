@@ -1,0 +1,4 @@
+# Perl 5, function call and method call syntax
+
+some_function('some', 'arguments');              # functional call
+$some_object->some_method('some', 'arguments');  # method call

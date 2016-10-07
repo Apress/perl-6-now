@@ -1,0 +1,6 @@
+# Coroutines - collecting all coroutines before exit - Perl 5
+
+use Coro;
+use Coro::Event;
+async { print "hi $_\n" } for 1 .. 10;
+Event::loop; 

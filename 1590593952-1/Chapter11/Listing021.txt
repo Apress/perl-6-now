@@ -1,0 +1,7 @@
+# List and scalar context behaviors - Perl 5
+
+print join ", ", localtime(), "\n";
+# outputs: 36, 6, 0, 3, 8, 114, 3, 245, 0, 
+
+print localtime() . "\n";
+# outputs: Wed Sep  3 00:06:36 2014

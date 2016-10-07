@@ -1,0 +1,9 @@
+# Perl 5 - handle different errors differently
+
+use POSIX ':errno_h';
+
+open my $f, '<', 'foo.txt' or do {
+    print "Call tech support and ask for a new foo.txt\n" if $! == ENOENT;
+    print "You aren't logged in as an authorized user\n"  if $! == EACCESS;
+    # ...
+};

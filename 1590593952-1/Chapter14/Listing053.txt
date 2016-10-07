@@ -1,0 +1,33 @@
+# subclass methods override parent class methods, Perl 6:
+
+package Dog;
+
+use Attribute::Property;
+
+sub tail :Property;
+sub name :Property;
+sub breed :Property;
+
+sub new :New {
+    my $_ = shift;
+    $_->breed = 'generic dog';
+}
+
+sub describe_dog {
+   my $_ = shift;
+   return $_->breed;
+}
+
+package Mix;
+
+use base 'Dog';
+use Attribute::Property;
+
+sub mothers_breed :Property;
+sub fathers_breed :Property;
+
+sub describe_dog {
+    my $_ = shift;
+    return sprintf "A mix between a %s and a %s", 
+        $_->mothers_breed, $_->fathers_breed;
+}

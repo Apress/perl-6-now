@@ -1,0 +1,11 @@
+# Same as above but without hyper operators -  Perl 5 
+
+use Perl6::Variables;
+
+my @running_total;
+for my $i (0 .. @credits) {
+    push @running_total, @credits[$i] - @debits[$i];
+}
+foreach my $balance (@running_total) {
+    # ...
+}

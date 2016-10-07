@@ -1,0 +1,3 @@
+sub do_something (ARRAY @foo, HASH $bar, CODE $baz, REGEXP $qux) {
+    # ...
+}

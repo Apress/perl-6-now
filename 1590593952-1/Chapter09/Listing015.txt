@@ -1,0 +1,7 @@
+# Package names are recognized as such - Perl 5
+
+CGI->param();
+'CGI'->param();
+
+My::Object->my_method();
+'My::Object'->my_method();

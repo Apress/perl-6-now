@@ -1,0 +1,7 @@
+# Peeking at containers and values - Perl 5 
+
+use Devel::Peek 'Dump';
+use Scalar::Util 'dualvar';
+
+my $foo = dualvar 15, "Hi boys and girls!";
+print Dump $foo;

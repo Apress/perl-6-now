@@ -1,0 +1,3 @@
+# Perl 6 - autoboxing associates classes with primitive types:
+
+print [ 1 .. 20 ].elems, "\n";

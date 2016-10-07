@@ -1,0 +1,6 @@
+# when the left value meets expectations the right value isn't
+# even considered, Perl 5 and Perl 6
+
+0 and die;      # never dies
+1 or die;       # never dies
+0 err die;      # never dies

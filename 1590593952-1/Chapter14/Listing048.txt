@@ -1,0 +1,3 @@
+# Perl 6 - concise class definition
+
+class Mutt is Dog has $.tail;

@@ -1,0 +1,8 @@
+# Nothing can equal everything in an all() set - Perl 5
+
+use Quantum::Superpositions;
+
+die "1 == " if 1 == all(1, 2, 3);  # false
+die "1 != " if 1 != all(1, 2, 3);  # false
+die "4 == " if 4 == all(1, 2, 3);  # false
+die "4 != " if 4 != all(1, 2, 3);  # true

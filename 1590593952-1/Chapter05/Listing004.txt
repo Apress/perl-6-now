@@ -1,0 +1,1 @@
+Global symbol "$ddata" requires explicit package name at test1.pl line 100.

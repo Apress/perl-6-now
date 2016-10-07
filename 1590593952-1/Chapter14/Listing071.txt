@@ -1,0 +1,16 @@
+# Perl 6 - lvalue methods may be assigned to
+
+class Dog {
+    has $.laziness;
+    method age will STORE { $.laziness += $_; } {
+        $.laziness++;
+        return $.laziness;
+    }
+}
+
+class main;
+
+my $dog = Dog->new;
+# these two lines are equivalent:
+$dog.age = 12;    # uses the will STORE { } block
+$dog.age(12);     # uses the normal method body block

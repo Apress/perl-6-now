@@ -1,0 +1,6 @@
+# Interpolation is just fancy concatenation:
+
+print "$message\n";      # Perl 5 or Perl 6
+print $message . "\n";   # Perl 5
+print $message ~ "\n";   # Perl 6
+printf "%s\n", $message; # Perl 5 or Perl 6

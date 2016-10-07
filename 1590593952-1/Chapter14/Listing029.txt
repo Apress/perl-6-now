@@ -1,0 +1,4 @@
+package main;
+
+my $tail = Tail->new;
+my $dog = Dog->new(tali => $tail);

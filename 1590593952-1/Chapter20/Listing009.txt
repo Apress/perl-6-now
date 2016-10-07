@@ -1,0 +1,6 @@
+# Connect process_packet() and read_packet() continuations - Perl 5
+
+while(1) {
+    my @packet = read_packet($connection);
+    process_packet(@packet);
+}

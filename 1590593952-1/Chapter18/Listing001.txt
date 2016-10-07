@@ -1,0 +1,8 @@
+# any() in a comparison is something like grep - Perl 5
+
+use Quantum::Superpositions;
+
+# These two lines are equivalent:
+
+die if any(1, 2, 5) == 3;
+die if grep { $_ == 3 } (1, 2, 5);

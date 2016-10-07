@@ -1,0 +1,5 @@
+# Perl 6 - simple loop() example
+
+loop(my $index = 0; $index < 100; $index++) {
+    print $index, "\n";
+}

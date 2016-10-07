@@ -1,0 +1,6 @@
+# this is legal - Perl 5
+
+test_signal_handlers();
+sub test_signal_handlers {
+    kill int rand 10, $$;
+}

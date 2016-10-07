@@ -1,0 +1,7 @@
+# No interpolation in here documents - Perl 5
+
+# "$path" is printed rather than the contents of the $path variable
+
+print <<'SEYMOUR';
+    $path must be set to the location of the data at the top of the script
+SEYMOUR

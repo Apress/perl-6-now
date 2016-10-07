@@ -1,0 +1,8 @@
+# Perl 6 - %CALLER contains an alias for your caller's pad
+
+sub foo {
+  %CALLER.{MY}.{'$bar'};
+}
+
+my $bar;
+foo();

@@ -1,0 +1,2 @@
+sub dosomething (Array of Gronkulator @foo) returns BoatAnchor {
+}

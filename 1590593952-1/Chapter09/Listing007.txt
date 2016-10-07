@@ -1,0 +1,1 @@
+when($regexpref) { }   # same as: if grep { /$regexpref/ } @$arrayref is true

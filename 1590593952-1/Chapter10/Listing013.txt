@@ -1,0 +1,11 @@
+# Perl 6
+
+# BEGIN blocks run only once at startup and can pre-compute expressions
+
+my $filename = 'data.txt';
+my $f = open '>>', $filename or die $!;
+for 1..100 {
+    $f.print rand(), "\n";
+    print "$filename is ", -s $filename, "bytes long right now.\n";
+    print "It was ", BEGIN { -s 'data.txt' }, " bytes when we started.\n";
+}

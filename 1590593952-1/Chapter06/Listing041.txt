@@ -1,0 +1,7 @@
+# Check for files that are executable by us but setuid someone else - Perl 5
+
+use File::Find;
+
+File::Find::find(sub {
+    -u -x $_ and try_to_exploit($_);
+}, '/');

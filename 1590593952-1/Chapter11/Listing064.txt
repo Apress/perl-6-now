@@ -1,0 +1,4 @@
+# Perl 6 - named parameters may be passed by position:
+
+html_tag(name => 'body');   # named parameter
+html_tag('body');           # positional parameter

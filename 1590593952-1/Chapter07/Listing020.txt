@@ -1,0 +1,4 @@
+# range() also extracts a PDL out of the middle of another PDL
+
+my $pdl = PDL->sequence(10, 10);
+print $pdl->range(PDL->pdl(2, 3), PDL->pdl(5, 5));

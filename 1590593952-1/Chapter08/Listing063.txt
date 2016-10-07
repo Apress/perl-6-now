@@ -1,0 +1,4 @@
+# References may be copied but the data is shared - Perl 5 and Perl 6
+
+my $e = CGI->new();
+my $f = $e;

@@ -1,0 +1,5 @@
+# Assuming %foo{'bar'} is empty, these two lines perform the same 
+# initialization - Perl 5 or Perl 6
+
+%foo{'bar'} = ["fred"];
+%foo{'bar'}[0] = "fred";

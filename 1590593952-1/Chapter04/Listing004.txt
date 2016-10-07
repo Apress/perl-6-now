@@ -1,0 +1,7 @@
+# Expressing numbers in various bases - Perl 5 and Perl 6
+
+print 37;        # decimal - prints 37
+print 037;       # octal - prints 31 - Perl 5
+print 0c37;      # octal - prints 31 - Perl 6
+print 0x37;      # hexadecimal - prints 55
+print 0b0100101; # binary - prints 37

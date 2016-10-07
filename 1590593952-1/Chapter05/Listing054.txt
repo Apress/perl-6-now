@@ -1,0 +1,11 @@
+# Perl 6
+# The %MY package is an alias for the current pad 
+# Like Perl 5, symbol tables have :: on the end of their name as part of their 
+# name
+
+my $my_scalar;
+
+# These next two lines reference the same variable:
+
+$my_scalar;
+%MY::{'$my_scalar'};

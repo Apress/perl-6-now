@@ -1,0 +1,5 @@
+# Perl 5 or Perl 6 - loop
+
+for (@children) {
+    process($_);
+}

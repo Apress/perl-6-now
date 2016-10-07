@@ -1,0 +1,4 @@
+# Compiling the CGI module at the shell in two steps:
+
+$ echo 'use ByteLoader;' > CGI.pmc
+$ perl -MO=Bytecode /usr/local/lib/perl5/5.9.2/CGI.pm >> CGI.pmc

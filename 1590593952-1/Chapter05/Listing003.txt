@@ -1,0 +1,3 @@
+# Declaring multiple variables at once - Perl 5 and Perl 6
+
+my ($foo, $bar, $baz);

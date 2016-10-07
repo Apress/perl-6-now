@@ -1,0 +1,26 @@
+# A helpful method makes sure it has the correct types, Perl 5
+
+package Sink;
+
+sub new { bless {}, $_[0] };
+
+sub bathe {
+
+    my $self = shift;
+    my $pet = shift; 
+    my $soap = shift;
+
+    $pet->isa('Washable') or 
+        die "first argument to bathe() must be Washable";
+
+    $soap->isa('Shampoo') or 
+        die "second argument to bathe() must be Shampoo";
+
+    repeat:
+        $pet->apply(Water->new);
+        $pet->apply($soap);
+        $pet->lather;
+        $pet->rinse;
+        goto repeat if $pet->is_dirty;
+
+}

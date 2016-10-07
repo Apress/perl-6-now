@@ -1,0 +1,9 @@
+# Here documents, manually unindented, Perl 5:
+
+do {
+    print map "$_\n", map { (m/ {7}(.*)\n/g); } <<SEYMOUR;
+        Stuff to print here
+        That is indented
+        According to the usual rules for code
+SEYMOUR
+};

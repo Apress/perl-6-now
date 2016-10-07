@@ -1,0 +1,11 @@
+# Illegal - uses $foo as a hash reference and then as an array reference
+# Perl 5
+
+my $foo;
+
+$foo->{'ten'} = 10;   # $foo is a hash reference
+$foo->[10] = 10;   # can't use $foo as an array reference - already a hash ref
+
+# Output:
+
+# Not an ARRAY reference at - line 4

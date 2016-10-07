@@ -1,0 +1,4 @@
+# Demonstrate that 31 bits can hold the sum of 8 million bytes
+
+use Math::BigInt;
+print(0x7fffffff / 256, "\n");

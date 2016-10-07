@@ -1,0 +1,27 @@
+# A helpful method makes sure it has the correct types, Perl 5
+
+package Sink;
+
+use typesafety;
+
+sub new { bless {}, $_[0] };
+
+sub bathe (Washable; Washable, Shampoo) {
+
+    my $self = shift;
+    my $pet = shift; 
+    my $soap = shift;
+
+    repeat:
+        $pet->apply(Water->new);
+        $pet->apply($soap);
+        $pet->lather;
+        $pet->rinse;
+        goto repeat if $pet->is_dirty;
+    } 
+
+    $pet;
+
+}
+
+typesafety::check;

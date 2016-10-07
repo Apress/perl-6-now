@@ -1,0 +1,4 @@
+# Parameter object object types, Perl 6
+
+sub dosomething (Gronkulator $foo, Burgler $bar, BoatAnchor $baz) {
+}

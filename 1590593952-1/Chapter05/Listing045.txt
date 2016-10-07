@@ -1,0 +1,4 @@
+# Store an object in a typed container - Perl 5
+
+use CGI;
+my CGI $cgi = CGI->new();

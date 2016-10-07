@@ -1,0 +1,2 @@
+This Perl hasn't been configured and built properly for the threads
+module to work.  (The 'useithreads' configuration option hasn't been used.)

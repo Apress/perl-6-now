@@ -1,0 +1,6 @@
+tar -xzvf CPANPLUS-0.048.tar.gz
+cd CPANPLUS-0.048
+perl Makefile.PL
+make
+make test
+make install

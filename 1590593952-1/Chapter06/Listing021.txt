@@ -1,0 +1,3 @@
+'-' x 80;   # build a string of dashes, Perl 5 and Perl 6
+(0) x 80;   # build an list of 0's, Perl 5
+(0) xx 80;  # build an list of 0's, Perl 6

@@ -1,0 +1,4 @@
+garbage contains:    [0 9 1 7 8 5 8 2 9 5 3 0 9 9 2 3 8 9 7 4 9]
+garbage above start: [0 1 0 1 1 1 1 0 1 1 0 0 1 1 0 0 1 1 1 1 1]
+garbage below stop:  [0 0 1 0 0 1 0 1 0 1 1 1 0 0 1 1 0 0 0 1 0]
+intersection:        [0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0]

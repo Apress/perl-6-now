@@ -1,0 +1,5 @@
+# Addresses names in other packages - Perl 6:
+
+%OtherPackage::{'$my_scalar'};
+%OtherPackage::{'@my_array'};
+%OtherPackage::{'%my_hash'};

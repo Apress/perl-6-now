@@ -1,0 +1,9 @@
+use autobox;
+use autobox::Core;
+use Perl6::Contexts;
+
+my %hash = (foo => 'bar', baz => 'quux');
+
+%hash->keys->sort->reverse->print;          # Perl 5 - autobox
+
+# prints "foo baz"

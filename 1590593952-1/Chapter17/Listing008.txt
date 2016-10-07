@@ -1,0 +1,17 @@
+# Perl 5 - one code block may be run by multiple threads
+
+use threads;
+
+my $thread1 = threads->create(\&count_and_yield, 'thread1');
+my $thread2 = threads->create(\&count_and_yield, 'thread2');
+
+sub count_and_yield {
+    my $message = shift;
+    for my $counter (1 .. 4) {
+        print "$message: $counter\n";
+        threads->yield;
+    }
+}
+
+$thread1->join;
+$thread2->join;

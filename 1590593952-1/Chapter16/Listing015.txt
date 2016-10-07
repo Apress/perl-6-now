@@ -1,0 +1,10 @@
+# Attempt to bathe a dog, Perl 5
+
+package main;
+
+my Dog  $dog  = Dog->new;
+my Sink $sink = Sink->new;
+
+$sink->bathe($dog);
+
+typesafety::check;

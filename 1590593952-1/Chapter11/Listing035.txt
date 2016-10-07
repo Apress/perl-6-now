@@ -1,0 +1,4 @@
+# Subtle bugs with list versus scalar context - Perl 5
+
+print reverse "Hi there kids";
+print "\n";

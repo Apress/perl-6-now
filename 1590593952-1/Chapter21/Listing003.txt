@@ -1,0 +1,4 @@
+# Coroutine reaping versus thread - Perl 5 
+
+use Coro;                            use threads;
+my $five = async { 2 + 3 }->join;    my $five = async { 2 + 3 }->join;

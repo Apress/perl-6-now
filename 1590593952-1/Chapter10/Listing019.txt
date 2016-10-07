@@ -1,0 +1,9 @@
+# Simple subroutine definition - Perl 5 or Perl 6
+
+sub guess {
+    rand > 0.5 ? "Yes" : "No";
+}
+
+# Simple anonymous subroutine (reference) construction - Perl 5 or Perl 6
+
+sub { rand > 0.5 ? "Yes" : "No"; };

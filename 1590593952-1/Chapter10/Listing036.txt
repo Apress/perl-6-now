@@ -1,0 +1,11 @@
+# blocks that can be used in expressions may evaluate to lists of
+# values, not just one single result value - Perl 5
+
+my @two_uniqe_numbers = do {
+     my $rand1 = int rand 100;
+     my $rand2;
+     try_again:
+     $rand2 = int rand 100;
+     goto try_again if $rand2 == $rand1;
+     $rand1, $rand2;
+};

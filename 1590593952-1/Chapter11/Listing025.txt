@@ -1,0 +1,6 @@
+# These lines all force process_something() into list context - Perl 6
+
+* process_something();
+sort { $^a cmp $^b } <== process_something();
+list process_something();
+@things >>=<< process_something();

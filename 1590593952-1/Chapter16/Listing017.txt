@@ -1,0 +1,9 @@
+# Attempt to bathe a pet, Perl 5  
+
+package main;
+
+my Pet $pet      = Pet->new;
+my Sink $sink    = Sink->new;
+my Shampoo $soap = Shampoo->new;
+
+$sink->bathe($pet, $soap);

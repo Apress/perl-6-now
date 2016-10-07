@@ -1,0 +1,5 @@
+# Average together four parallel tracks into one track and dump it as bytes
+
+$audio               # 4 by 100,000 array two dimensional array
+      ->xchg(0, 1)   # 100,000 by 4 array two dimensional array
+      ->average()    # 100,000 element long single dimensional array

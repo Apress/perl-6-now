@@ -1,0 +1,10 @@
+# anonymous subroutines and lexical scoping - Perl 5 and Perl 6
+
+my $counter = do {
+   my $counter_value = 0;
+   sub { 
+       ++ $counter_value;
+   };
+}; 
+
+print $counter->(), "\n" for 1 .. 10;

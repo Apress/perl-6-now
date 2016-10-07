@@ -1,0 +1,4 @@
+# If they use us as a reference, be a reference, if they use us as a
+# list, return a list - Perl 5
+
+sub get_field_names { return wantarray ? @field_names : \@field_names; }

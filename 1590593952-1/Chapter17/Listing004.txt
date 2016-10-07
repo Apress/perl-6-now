@@ -1,0 +1,6 @@
+# Perl 5 - thread creation syntax
+
+use threads;
+
+threads->create(\&function_name, @arguments);
+async { function_name(@arguments);

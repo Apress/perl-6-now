@@ -1,0 +1,11 @@
+# Switching on a code reference
+
+my $coderef = sub { ($_[0] + $_[1]) % 2 };
+
+given($coderef) {
+    when 3           { }   # if $coderef->($3)
+    when 'fred'      { }   # if $coderef->('fred')
+    when($scalar)    { }   # if $coderef->($scalar)
+    when [2, 4]      { }   # if $coderef->(2, 4)
+    when($arrayref)  { }   # if $coderef->(@$arrayref)
+}

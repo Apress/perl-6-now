@@ -1,0 +1,11 @@
+# If statement - Perl 6 only
+
+if $num {
+    print "$num is a true value\n";
+}
+
+# If statement - Perl 5 and 6
+
+if($num) {
+    print "$num is a true value\n";
+}

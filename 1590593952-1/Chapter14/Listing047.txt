@@ -1,0 +1,8 @@
+# Perl 6 - file scoped class with inheritance:
+
+class Mutt is Dog;
+
+# or:
+
+class Mutt;
+is Dog;

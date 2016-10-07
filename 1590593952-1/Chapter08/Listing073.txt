@@ -1,0 +1,2 @@
+@sorted = sort &infix:<=>, @data_to_sort;  # Perl 6 only - numeric sort order
+@sorted = sort &infix:cmp, @data_to_sort;  # Perl 6 only - alphanumeric sort

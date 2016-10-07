@@ -1,0 +1,11 @@
+# Work-around - Perl 5 do blocks can't use next directly
+# Adapted from "perldoc perlsyn"
+
+my $i;
+
+do {{
+    my $line = readline STDIN;
+    chomp $line;
+    next unless $line;
+    # process $line
+}} until $i++ > $10; 

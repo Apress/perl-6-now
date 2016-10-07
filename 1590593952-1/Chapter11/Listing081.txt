@@ -1,0 +1,7 @@
+# Example anonymous subroutine - Perl 5
+
+sub { print @_, "\n" }->(1..10, rand);
+
+# Example anonymous subroutine - Perl 6
+
+{ print @_, "\n" }.(1..10, rand);

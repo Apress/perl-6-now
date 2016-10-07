@@ -1,0 +1,4 @@
+# Number of non-undef values in a hash:
+
+my $number_of_non_undef_keys = grep defined, values %hash;     # Perl 5
+my $number_of_non_undef_keys = grep { defined }, %hash.values; # Perl 6

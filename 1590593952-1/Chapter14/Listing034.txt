@@ -1,0 +1,12 @@
+# Attributes are readable outside of the class by default and
+# writable by request - Perl 6
+
+class Foo;
+
+has $.foo is rw;
+
+class main;
+
+my $foo = Foo.new(foo => 100);
+$foo.foo = 20;
+print $foo.foo, "\n";

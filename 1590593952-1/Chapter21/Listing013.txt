@@ -1,0 +1,3 @@
+# some forms of open() imply fork() - Perl 5:
+
+open my $mailprogram, '-|', '/usr/sbin/sendmail' or die $!;

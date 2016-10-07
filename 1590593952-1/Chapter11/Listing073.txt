@@ -1,0 +1,7 @@
+# Implicitly declared parameters with placeholders
+
+# use Perl6::Placeholders;      # uncomment for Perl 6
+
+my $add = { $^a + $^b };        # Create a sub that adds its two args
+print $add->(1, 2), "\n";       # Call it - Perl 5
+print $add.(1, 2), "\n";        # Call it - Perl 6

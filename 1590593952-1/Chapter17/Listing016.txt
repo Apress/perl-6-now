@@ -1,0 +1,6 @@
+$ telnet localhost 5000
+Trying 127.0.0.1...
+Connected to Knoppix.
+Escape character is '^]'.
+print "hi\n";
+hi

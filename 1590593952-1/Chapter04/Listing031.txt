@@ -1,0 +1,5 @@
+ # Perl 5 - interpolation without using a module
+
+ print "Head-count will be reduced by a factor of @{[$layoffs/$employees]}.
+        Profits will be increased by a factor of 
+        @{[($employees+$layoffs)/$employees]}\n";

@@ -1,0 +1,4 @@
+# These two are the same - Perl 6
+
+my $foo = %bar{'baz'};
+my $foo = %bar<<baz>>;

@@ -1,0 +1,13 @@
+# Various ways to do the same thing:
+
+print(reverse(sort(keys(%hash))));          # Perl 5 - pathological parenthetic
+print reverse sort keys %hash;              # Perl 5 - no unneeded parenthesis
+
+print(reverse(sort(%hash,keys))));          # Perl 6 - pathological
+print reverse sort %hash.keys;              # Perl 6 - no unneeded parenthesis
+
+%hash.keys ==> sort ==> reverse ==> print;  # Perl 6 - pipeline operator
+
+%hash.keys.sort.reverse.print;              # Perl 6 - autobox
+
+%hash->keys->sort->reverse->print;          # Perl 5 - autobox

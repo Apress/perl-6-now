@@ -1,0 +1,5 @@
+# Find some intersection between sets - Perl 5
+
+use Quantum::Superpositions;
+
+die unless any(1, 2, 5) == any(1, 2, 3, 4, 5);

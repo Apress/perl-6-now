@@ -1,0 +1,9 @@
+# Perl 5 - using a .par file transparently over the network
+
+use PAR;
+use lib 'http://perl6now/various_modules.par';
+
+# Which might give you these modules, ready for immediate use:
+
+use Perl6::Variables;
+use Quantum::Superpositions;

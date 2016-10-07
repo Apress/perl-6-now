@@ -1,0 +1,2 @@
+$arr[0] exists
+$arr[1] does not exist

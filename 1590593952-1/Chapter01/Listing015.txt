@@ -1,0 +1,2 @@
+use 5.10.0;   # Require atleast perl version 5.10
+use 6;        # Require perl 6 to run

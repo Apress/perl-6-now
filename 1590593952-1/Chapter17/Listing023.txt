@@ -1,0 +1,7 @@
+# Perl 6 - sharing data structures
+
+my $x :shared;
+share(@foo);
+share(@bar);
+$x = [\@foo, \@bar];  # okay - @foo and @bar are shared
+share($x->[0]);       # not okay - silently fails

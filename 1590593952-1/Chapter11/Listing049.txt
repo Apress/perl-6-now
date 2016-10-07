@@ -1,0 +1,4 @@
+# Functions prototyped to zero arguments may be used without parenthesis
+# without trigging warnings - Perl 5
+
+sysopen my $fd, $path, O_CREAT, 0644;

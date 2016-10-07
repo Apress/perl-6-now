@@ -1,0 +1,9 @@
+# Modify argument - Perl 6
+
+sub tweak_args (int $num is rw) {
+    $num++;
+}
+
+my $foo = 0;
+tweak_args($foo);
+print $foo, "\n"; 

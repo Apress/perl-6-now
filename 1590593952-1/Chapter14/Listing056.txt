@@ -1,0 +1,21 @@
+package Poodle::Standard;
+use base 'Dog';
+
+use Attribute::Property;
+use Perl6::Variables;
+use NEXT;
+
+sub new :New(passthrough) {
+    my $_ = shift;
+    my %attributes = @_;   # corresponds to *%_ in Perl 6
+    delete %attributes{haircut}; 
+    $_->NEXT::new(%attributes, breed => 'standard poodle');
+    $_;
+}
+
+package main;
+
+my $poodle = Poodle::Standard->new(
+    haircut => 'orbs', 
+    name    => 'Lily',
+);

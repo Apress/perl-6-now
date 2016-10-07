@@ -1,0 +1,12 @@
+# @array_of_arrays will always contain exactly 5 array references after this,
+# assuming @array_of_arrays and @array1 through @array5 have been declared
+
+# Perl 5
+
+my @array_of_arrays = (\@array1, \@array2, \@array3, \@array4);
+push @array_of_arrays, \@array5;
+
+# Perl 6
+
+my @array_of_arrays = (@array1, @array2, @array3, @array4);
+push @array_of_arrays, @array5;

@@ -1,0 +1,5 @@
+# Sort our %addresses hash, factored out dereference, Perl 6
+
+my sub criteria ($address_key) { %addresses{$address_key}[0] };
+
+for sort &criteria, keys %addresses { ...  }

@@ -1,0 +1,4 @@
+# Perl 6 and Perl 5 Quantum::Superpositions superposition operators
+
+all(1, 2, 3) # same as 1 & 2 & 3
+any(1, 2, 3) # same as 1 | 2 | 3

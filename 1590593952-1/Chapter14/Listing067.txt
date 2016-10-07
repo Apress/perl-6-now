@@ -1,0 +1,39 @@
+# Perl 5 - overloading stringification, numification, and booleanification
+# to make object references behave as intelligent variables
+
+package Pet;
+
+use Attribute::Property;
+
+sub species :Property;
+sub age     :Property;
+sub dead    :Property;
+
+use overload '""' => sub { 
+    my $_ = shift;
+    for($_->species) {
+        return 'Fido'       if $_ eq 'dog';
+        return 'Miss Priss' if $_ eq 'cat';
+        return 'Poly'       if $_ eq 'bird';
+        return 'Bill';      # default
+    }
+};
+
+use overload 'bool' => sub {
+    my $_ = shift;
+    return not $_->dead;
+};
+
+use overload '0+' => sub {
+    my $_ = shift;
+    return $_->age;
+};
+
+sub new :New;
+
+package main;
+
+my $pet = Pet->new(species => 'dog', age => 4);
+print $pet, ' ';                # prints Fido
+mourn() unless $pet;            # is it alive?
+print "is in great shape for ", int $pet, " years old!\n";

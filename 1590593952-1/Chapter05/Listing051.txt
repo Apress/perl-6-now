@@ -1,0 +1,18 @@
+# Use simple objects to share value and code between two namespaces 
+# Perl 6
+
+class Foo {
+    has $.bar;
+    has $.quux;
+    method something {
+        # your code here or in other methods
+        # do something with $.bar and $.quux and any parameters the method takes
+    }
+    method set_bar ($bar) { $.bar = $bar }
+}
+
+class Bar {
+    use Foo; # if package Foo and its code is in another file, which it should be
+    my $foo1 = Foo->new( bar => 'baz',    quux => 1000 );
+    my $foo2 = Foo->new( bar => 'blurgh', quux => 300 );
+}

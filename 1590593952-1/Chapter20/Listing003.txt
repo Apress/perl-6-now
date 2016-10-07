@@ -1,0 +1,13 @@
+# Yielding returns a value and then resumes after the yield next call - Perl 5
+
+use Coro::Cont;
+
+sub producer :Cont {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+print producer(), "\n";
+print producer(), "\n";
+print producer(), "\n";

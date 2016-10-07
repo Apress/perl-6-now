@@ -1,0 +1,9 @@
+# Here documents, auto-unindented, Perl 6:
+
+{
+    print <<"SEYMOUR"
+        Stuff to print here
+        That is indented
+        According to the usual rules for code
+        SEYMOUR
+}

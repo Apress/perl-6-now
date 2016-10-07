@@ -1,0 +1,7 @@
+# Elements of one set greater than all elements in a second set
+# alternative implementation using PDL - Perl 5
+
+use PDL;
+my $max = pdl([1, 2, 3, 4])->max;
+my $set1 = pdl([4, 5, 6, 7]);
+print $set1->where($set1 > $max), "\n";

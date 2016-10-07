@@ -1,0 +1,2 @@
+# Make sure headers are sent reguardless of most compile time errors - Perl 5
+use CGI::Carp 'fatalsToBrowser';

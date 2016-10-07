@@ -1,0 +1,8 @@
+# do { } while loops execute their body before ever testing the conditional
+# Perl 5 
+
+open my $fh, '<', 'somefile.txt' or die $!;
+
+do {
+    my $line = <$fh>;
+} until eof $fh;

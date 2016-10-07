@@ -1,0 +1,11 @@
+# Perl 6's default constructor initializes instance data from 
+# named argument pairs
+
+class Some::Class {
+    my $.foo;
+    my $.bar;
+}
+
+class main;
+
+my $some_object = Some::Class.new(foo => 10, bar => 20);

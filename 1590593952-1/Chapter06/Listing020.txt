@@ -1,0 +1,5 @@
+# Perl 6 changes ? : to ?? ::
+
+push @numbers, $ready_for_an_odd_number   ?? 
+               $number +|    0x01         :: 
+               $number +& +~ 0xfffffffe;

@@ -1,0 +1,3 @@
+     This is the "Acme::Code::Police" module. Provide this
+     module to programmers who fail to use "strict" and most of
+     their coding errors will be instantly eliminated.

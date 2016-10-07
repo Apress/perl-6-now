@@ -1,0 +1,13 @@
+# Dog is dependent on the logic calling its constructor to provide a tail, or else the
+# chase_bunnies() method won't have a tail to delegate to - Perl 5:
+
+package Dog;
+
+use Attribute::Property;
+
+sub tail :Property;
+sub new  :New;
+sub chase_bunnies {
+    my $_ = shift;
+    $_->tail->chase_bunnies;
+}

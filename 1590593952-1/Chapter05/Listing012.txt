@@ -1,0 +1,9 @@
+# Array slices subscript multiple array indices at the same time
+
+# use Perl6::Variables;  # uncomment for Perl 5
+
+my @square_roots = map sqrt, 1 .. 100;
+
+my @roots_one_through_six = @square_roots[1, 2, 3, 4, 5, 6];
+
+print "$_\n" for @roots_one_through_six;

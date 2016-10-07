@@ -1,0 +1,3 @@
+# Assigning non-Dog things to $dog and failing, Perl 5
+my Dog $dog = Pet->new;
+typesafety::check;

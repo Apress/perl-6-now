@@ -1,0 +1,5 @@
+# Try and fail to hold a generic Pet object in a variable that requires a 
+# Dog or some subclass of Dog, Perl 5
+
+my Dog $dog = Pet->new;
+typesafety::check;

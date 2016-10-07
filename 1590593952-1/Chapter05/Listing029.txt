@@ -1,0 +1,6 @@
+# provide context explicitly - Perl 6
+
+if(bool $foo) { }   # boolean context
+if(not $foo)  { }   # boolean context
+if(num $foo)  { }   # numeric context
+if(str $foo)  { }   # string context

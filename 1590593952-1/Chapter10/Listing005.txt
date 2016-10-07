@@ -1,0 +1,4 @@
+# Perl 5 and Perl 6 - if and while used as clauses on a do block
+
+do { something(); something_else() } if $cond;
+do { something(); something_else() } while $counter--;

@@ -1,0 +1,17 @@
+[
+ [
+  [0 0 0]
+  [0 0 0]       # This would read [0 0 100] if dimensions were
+  [0 0 0]       # numbered reverse of what they are
+ ]
+ [
+  [0 0 0]
+  [0 0 0]
+  [0 0 0]
+ ]
+ [
+  [  0   0   0]
+  [100   0   0]  # Here's the 0, 1, 2 coordinate
+  [  0   0   0]
+ ]
+]

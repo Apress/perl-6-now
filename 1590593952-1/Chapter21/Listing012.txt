@@ -1,0 +1,47 @@
+# Simple finger daemon to demonstrate coroutines and I/O - Perl 5
+
+use Coro;
+use Coro::Socket;
+use Socket;
+use IO::Handle;
+use Error ':try';
+
+my $listen = Coro::Socket->new(
+    LocalPort => 79,
+    Listen    => SOMAXCONN,
+) or die $!;
+
+$listen->listen();
+
+async {
+    while(my $client = $listen->accept()) {
+        async {
+            try {
+                my $username = <$client>;
+                ($username) = grep m/[^-]/, split /\s/, $username or 
+                    throw Error::Simple("No username");
+                ($username) = $username =~ m/([a-z0-9_]+)/ or 
+                    throw Error::Simple("Bad username '$username'");
+                my ($name, undef, $uid, $gid, $quota, $comment, $gcos, 
+                    $dir, $shell) = getpwnam($username) or 
+                    throw Error::Simple("User '$usernamne' not found");
+                $client->print(
+                    "Login: $name\t\t\tName: $gcos\n",
+                    "Directory: $dir\t\t\tShell: $shell\n",
+                );
+                if(-e "/var/mail/$name") {
+                    $client->print("Mail last read ", 
+                        scalar localtime(-m "/var/mail/$name"), "\n");
+                }
+                if(open my $plan, '<', "/$dir/.plan") {
+                    $plan->read(my $plantext, -s $plan);
+                    $client->print("Plan:\n$plantext\n");
+                }
+            } catch Error::Simple with {
+                $client->print($_[0]->{'-text'}, "\n");
+            }
+        };
+    }
+};
+
+Event::loop;

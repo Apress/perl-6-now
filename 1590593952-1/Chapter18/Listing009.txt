@@ -1,0 +1,11 @@
+# Exclusive-or built out of two difference operations and a union
+# Perl 5
+
+use Quantum::Superpositions;
+
+my @set1 = (1, 2, 3, 4);
+my @set2 = (4, 5, 6, 7);
+
+print join ', ', 
+    eigenstates(any(any(@set1) != all(@set2), any(@set2) != all(@set1)));
+print "\n";

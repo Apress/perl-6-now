@@ -1,0 +1,2 @@
+open my $fh, '<', 'file.txt' or die $!;     # perl 5
+my $fh = open '<', 'file.txt' or die $!;    # perl 6

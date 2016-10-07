@@ -1,0 +1,8 @@
+# Perl 5 - this code contains an error unnoticed without strict
+
+use Fcntl;
+use IO::Handle;
+
+open my $fh, '+<', 'file.txt' or die $!;
+seek $fh, 0, SEEK_END; # failed attempt to seek to end of file
+$fh->print("Data to be appended to end of file\n"); 

@@ -1,0 +1,5 @@
+# Declaring a +++ operator in Perl 6
+
+sub infix:+++ {
+    $^a++ + $^b; 
+}

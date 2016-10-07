@@ -1,0 +1,10 @@
+sub first (&@) {
+    my $coderef = shift;
+    while(@_) {
+        return $_[0] if $coderef->($_[0]);
+        shift;
+    }
+    return undef;
+}
+
+print(first { $_[0] % 3 == 0 } (10 .. 40)), "\n";

@@ -1,0 +1,23 @@
+# Cleanup regardless of whether we left by error, return, or fall-through
+# Perl 5
+
+use Hook::Scope 'POST';
+use IO::Handle;
+
+sub perform_transaction {
+
+     open my $f, '>', 'transaction.log' or die $!;
+
+     while(<STDIN>) {
+         die unless $_;
+         $f->print($_);
+     }
+
+     POST { 
+         $f->print("---------------------------\n");
+         $f->print("end of log ", scalar localtime, "\n");
+         $f->print("---------------------------\n");
+         $f->close;
+     };
+
+}

@@ -1,0 +1,20 @@
+# Instance variables in subclasses mask instance variables of the same name in
+# parent classes, much like lexical variables in nested blocks
+# Perl 5 or Perl 6
+
+my $Dog;
+my $Mutt;
+
+$Dog = sub {
+    my $tail;
+    my $name;
+    my $breed = 'generic dog';
+    $Mutt = sub {
+        my $breed = 'unknown'; # masks $breed variable in enclosing block
+        return $breed;
+    };
+    return $breed;
+};
+
+print $Dog->(), "\n";
+print $Mutt->(), "\n";

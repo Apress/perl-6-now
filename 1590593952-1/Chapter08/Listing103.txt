@@ -1,0 +1,3 @@
+# reading the chess puzzle data structure back in, Perl 5:
+
+my $pieces = XMLin(IO::File('pieces.xml'))->{'opt'};

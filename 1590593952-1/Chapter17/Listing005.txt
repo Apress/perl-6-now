@@ -1,0 +1,23 @@
+# Perl 5 - threads run whenever they can
+
+use threads;
+
+my $thread1 = threads->create(\&count_and_yield_1);
+my $thread2 = threads->create(\&count_and_yield_2);
+
+sub count_and_yield_1 {
+    for my $counter (1 .. 4) {
+        print "thread1: $counter\n";
+        threads->yield;
+    }
+}
+
+sub count_and_yield_2 {
+    for my $counter (1 .. 4) {
+        print "thread2: $counter\n";
+        threads->yield;
+    }
+}
+
+$thread1->join;
+$thread2->join;

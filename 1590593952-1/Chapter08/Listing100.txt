@@ -1,0 +1,10 @@
+# Simple file format - Perl 5
+
+use Perl6::Variables;
+
+open my $f, '<', 'file.txt' or die $!;
+my @records;
+while(<$f>) {
+    chomp;
+    push @records, [ split /\|/, $_ ];
+}

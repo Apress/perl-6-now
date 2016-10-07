@@ -1,0 +1,25 @@
+# Use simple objects to share value and code between two namespaces 
+# Perl 5
+
+package Foo;
+
+sub new {
+    my $package = shift;
+    my %data = @_;
+    bless \%data, $package;
+}
+
+# Your code here:
+
+sub something {
+    my $self = shift;
+    # use $self->{bar} and $self->{quux} - the values passed to new()
+}
+
+sub set_bar { my $self = shift; $self->{bar} = shift; }
+
+package Bar;
+
+use Foo; # if package Foo and its code is in another file, which it should be
+my $foo1 = Foo->new( bar => 'baz',    quux => 1000 );
+my $foo2 = Foo->new( bar => 'blurgh', quux => 300 );

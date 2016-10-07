@@ -1,0 +1,9 @@
+# Perl 6 - some critters using the CrossRoads role:
+
+class Armadillo {
+    does CrossRoads;
+}
+
+class Chicken {
+    does CrossRoads;
+}

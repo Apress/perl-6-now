@@ -1,0 +1,12 @@
+# Bit operations test, Perl 5
+
+my $input1 = 0b00001111;
+my $input2 = 0b01010101;
+
+my $result = $input1 & $input2;
+
+printf "0b%08b\n", $result;
+
+# input1:  0b00001111
+# input2:  0b01010101
+# outputs: 0b00000101

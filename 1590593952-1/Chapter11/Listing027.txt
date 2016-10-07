@@ -1,0 +1,5 @@
+# Array slice to reorder array elements passing each element 
+# as a separate argument
+
+somefunc(@array[5, 3, 4, 1, 2]);      # Perl 5
+somefunc(*@array[5, 3, 4, 1, 2]);     # Perl 6

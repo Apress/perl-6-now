@@ -1,0 +1,11 @@
+# Incrementally specify arguments to customize functions - Perl 6
+
+sub moon ($color, $phase) { 
+    print "The $color moon is $phase.\n";
+}
+
+my &waxing_moon = &moon.assuming(phase => 'waxing crescent');
+&waxing_moon.(color => 'golden'); # "The golden moon is waxing crescent"
+
+my &blue_waxing_moon = &waxing_moon.assuming(color => 'blue');
+&blue_waxing_moon.(); # "The blue moon is waxing crescent"  

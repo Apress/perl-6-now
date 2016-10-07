@@ -1,0 +1,5 @@
+# List assignment to read function parameters, Perl 5
+
+sub foo {
+    my($bar, $baz, $quux) = @_;
+}

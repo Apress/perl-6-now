@@ -1,0 +1,8 @@
+# Many functions (such as sort) take a list of things to be
+# processed as ther last argument
+
+sort { $a <=> $b }    @stuff;    # Perl 5
+sort { $^a <=> $^b }, @stuff;    # Perl 6
+
+sort { $a <=> $b }  grep { $_ % 2 } @stuff;      # Perl 5
+sort { $^a <=> $^b },  grep { $_ % 2 }, @stuff;  # Perl 6

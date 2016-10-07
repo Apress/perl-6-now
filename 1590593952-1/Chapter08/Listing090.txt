@@ -1,0 +1,3 @@
+# Pick a random list element - bad - Perl 5 or Perl 6
+
+my $location = ($i101n, $i101s, $i10, $i202, $us60, $sr50)[int rand 6];

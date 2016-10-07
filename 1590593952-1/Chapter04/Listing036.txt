@@ -1,0 +1,4 @@
+# What ASCII codes constitute a new line on this system? Perl 5
+
+my $cr = "\n";
+print join(", ", unpack "C*", $cr), "\n";

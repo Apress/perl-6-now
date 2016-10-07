@@ -1,0 +1,6 @@
+my $field; BEGIN { $field  = 0; };
+
+sub up    () { BEGIN { $field++ } } 
+sub down  () { BEGIN { $field++ } }
+sub left  () { BEGIN { $field++ } }
+sub right () { BEGIN { $field++ } }

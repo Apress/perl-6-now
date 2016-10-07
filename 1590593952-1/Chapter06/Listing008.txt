@@ -1,0 +1,10 @@
+# Hyper mutating operators - Perl 6
+
+$population++;
+@population_intelligence >>-= (1 / @population_intelligence);
+
+my @temperature_deltas = map { rand 30 }, 1 .. @level_temperature;
+@level_temperature >>-=<< @temperature_deltas;
+print "Frozen over\n" if grep { $_ < 32 }, @level_temperature;
+
+@current_nodes >>.=<< next_node();

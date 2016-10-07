@@ -1,0 +1,6 @@
+# One hash stores all information - Perl 5
+
+use Perl6::Variables;
+
+my $kings_location = %pieces{'K'}{'location'};
+my $kings_image    = %pieces{'K'}{'image'};

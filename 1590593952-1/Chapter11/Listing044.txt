@@ -1,0 +1,4 @@
+# want() in Perl 6 returns the desired type of various return values by 
+# position
+
+my ($primary, $count, * @secondary) = want;

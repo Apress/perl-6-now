@@ -1,0 +1,10 @@
+# Catching an error - Perl 6
+
+loop {
+    my $fh = open '<', 'foo.txt' or die $!;
+    CATCH { 
+        print "Failed to open 'foo.txt': $!\n",
+              "Please fix this problem and then mash the [ENTER] key to try again.\n";
+    };
+    KEEP { last; };
+};

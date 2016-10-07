@@ -1,0 +1,1 @@
+my $word = qr{[A-Za-z][a-z'-]*};

@@ -1,0 +1,5 @@
+# Perl 6 - Instance variables initialized at the point of declaration
+
+has $.tail = Dog::Tail.new;
+has $.location = 'couch';
+has $.fleas = 0;

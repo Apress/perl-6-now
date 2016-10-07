@@ -1,0 +1,25 @@
+# Switching on a scalar - Perl 5
+
+use Switch 'Perl6';
+
+my $val = 1;  # for example
+my $other = 10;
+sub func { };
+my %hash;
+my @array;
+
+given($val) {
+
+    when 1          { }  # numbers are equal
+    when "a"        { }  # strings match exactly
+    when ($other)   { }  # numbers are equal
+    when [1,2,3]    { }  # $val is in this list of numbers
+    when (@array)   { }  # $val is in this list of numbers
+    when /\w+/      { }  # regular expression matches $val
+    when qr/\w+/    { }  # dereferenced regular expression matches $val
+    when (%hash)    { }  # %hash has an entry for the value in $val
+    when (\%hash)   { }  # a hash reference has an entry for the value in $val
+    when (\&func)   { }  # executing a code reference returns a true value
+    print "default\n";   # default case
+
+}

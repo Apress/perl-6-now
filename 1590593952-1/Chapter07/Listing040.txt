@@ -1,0 +1,4 @@
+use PDL;
+my $array = PDL->sequence(20, 20);
+my $random_element = $array->flat->indexND(int rand $array->nelem());
+print $random_element;

@@ -1,0 +1,6 @@
+# Extract a random element from a PDL array using dims() and dim(n)
+
+my $random_element = $array->at(
+    map { int rand $_ } 
+    map { $array->dim($_) } 0 .. $array->dims()
+);

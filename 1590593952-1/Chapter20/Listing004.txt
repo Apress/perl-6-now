@@ -1,0 +1,13 @@
+# Yield from within a loop in a continuation - Perl 5
+
+use Coro::Cont;
+
+sub producer :Cont {
+    for my $i ( 1 .. 3 ) {
+        yield $i;
+    }
+}
+
+print producer(), "\n";
+print producer(), "\n";
+print producer(), "\n";

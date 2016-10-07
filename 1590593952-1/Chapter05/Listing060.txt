@@ -1,0 +1,16 @@
+# Passing in a reference to have it defined -
+# example of the need for the ability to export
+# Perl 5
+
+package Some::Module;
+
+sub import { 
+    $_[0] = sub {
+        return $_[0] + $_[1];
+    };
+}
+
+package main;
+
+Some::Module::import(my $add_logic);
+print $add_logic->(5, 6), "\n";

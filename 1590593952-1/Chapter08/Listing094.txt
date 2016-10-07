@@ -1,0 +1,32 @@
+# Insert code from above to define and initialize both
+# %highways and %ref_to_name here
+
+my $location = $i10;
+my $destination = $i101n;
+
+my %already_did = ($location => 1);
+
+sub solve_maze {
+    
+    my $location = shift;
+    my $destination = shift;
+    
+    for my $exit ($location->flatten) {
+        next if exists %route{$exit};
+        return (@_, $exit) if $exit eq $destination;
+        %route{$exit} = 1;
+        my @ret = solve_maze($exit, $destination, @_, $exit);
+        return @ret if @ret;
+    }
+
+    return ();
+
+};
+
+# And finally, test this:
+
+my @res = solve_maze($location, $destination);
+
+for my $i (@res) {
+   print %ref_to_name{$i}, "\n";
+}

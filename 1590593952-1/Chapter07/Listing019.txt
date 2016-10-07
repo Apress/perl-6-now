@@ -1,0 +1,5 @@
+# Flattened slices allow easy assignment into a "window" into a PDL array
+
+my $pdl = PDL->sequence(10, 10);
+$pdl->slice('1:1,:')->flat() .= PDL->sequence(10);
+print $pdl;

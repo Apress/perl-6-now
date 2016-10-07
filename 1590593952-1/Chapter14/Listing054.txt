@@ -1,0 +1,16 @@
+# Perl 6 - slurping up parameters beyond what's explicitly named
+
+class Foo;
+
+has $.bar;
+
+method foo ($foo, $bar, *%everything_else) {
+    $.bar = $bar;
+    print "baz: %everything_else{baz}\n";
+    # next METHOD;
+}
+
+class main; 
+
+my $foo = Foo->new;
+$foo->foo(foo => 10, bar => 20, baz => 25);

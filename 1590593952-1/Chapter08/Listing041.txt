@@ -1,0 +1,9 @@
+# items stored in a variable may be modified by an iterator
+
+my $thing = "horse";
+my @numbers = (1 .. 20);
+
+for my $i ($thing, @numbers, qw(30 31 32 33 34)) {
+    $i++;
+    print $i, "\n";
+}

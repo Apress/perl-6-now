@@ -1,0 +1,3 @@
+# Dump a nicely formated, human readable rendering of a PDL array
+
+print $array;

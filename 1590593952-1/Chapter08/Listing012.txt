@@ -1,0 +1,7 @@
+# One hash stores piece locations, the other piece images - counter 
+# example - Perl 5
+
+use Perl6::Variables;
+
+my $kings_location = %locations{K};
+my $kings_image =    %images{K};

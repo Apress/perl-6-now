@@ -1,0 +1,7 @@
+# Sorting descending, numerically
+
+sort { $^a } is descending, @data_to_sort;  # Perl 6
+sort { - $^a }, @data_to_sort;              # Perl 6
+sort { $^b <=> $^a }, @data_to_sort;        # Perl 6
+sort { $b <=> $a } @data_to_sort;           # Perl 5  
+reverse sort @data_to_sort;                 # Perl 5 and Perl 6

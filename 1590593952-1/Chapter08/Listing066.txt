@@ -1,0 +1,2 @@
+push @{$array}, $something;        # Perl 5
+push $array, $something;           # Perl 6

@@ -1,0 +1,6 @@
+%foo{'bar'} = ['fred', 'mike', 'alex', 'john'];
+
+%foo{'bar'}[0] = 'fred';
+%foo{'bar'}[1] = 'mike';
+%foo{'bar'}[2] = 'alex';
+%foo{'bar'}[3] = 'john';

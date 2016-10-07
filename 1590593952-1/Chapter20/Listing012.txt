@@ -1,0 +1,28 @@
+# Find Perl installations that scripts depend on
+# Demonstrates continuation generators - Perl 5
+
+use Coro;
+use Coro::Cont;
+
+use File::Find;
+use Perl6::Variables;
+
+sub get_shebang_generator {
+    my $pattern = shift;
+    csub {
+        find(sub {
+            return unless $_ =~ $pattern;
+            open my $pl, '<', $_ or return;
+            (my $shebang) = <$pl> =~ m/^#!(\S+)/ or return;
+            yield $shebang;
+        }, '/');
+        return undef;
+    };
+}
+
+my $get_next_perl = get_shebang_generator(qr/\.pl$/);
+
+while(my $_ = $get_next_perl->()) {
+    last unless defined $_;
+    print $_, "\n";
+}

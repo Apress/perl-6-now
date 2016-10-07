@@ -1,0 +1,10 @@
+# Build a circular doubly-linked list - Perl 5
+
+use Perl6::Variables;
+
+my @row = map {}, 1 .. 10;
+
+for my $i (0 .. $#row) {
+    @row[$i - 1]{'right'} = @row[$i];
+    @row[$i]{'left'} = @row[@i - 1];
+}

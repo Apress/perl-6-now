@@ -1,0 +1,11 @@
+# Hashes represent many data items with just one name - Perl 5 and Perl 6:
+
+# use Perl6::Variables;   # Perl 5 requires this for these examples
+
+my %hash;
+
+%hash{'fred'} = 10;
+%hash{'mike'} = 20;
+%hash{'john'} = 30;
+
+print %hash{'fred'}, "\n";

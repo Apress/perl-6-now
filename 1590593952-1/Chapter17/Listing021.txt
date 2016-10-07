@@ -1,0 +1,24 @@
+# Perl 5 - example deadlock - this program contains an ERROR
+
+use threads;
+use threads::shared;
+
+my $foo :shared = 5;
+my $bar :shared = 10;
+
+my $thread1 = threads->create(sub {
+    lock $foo;
+    threads->yield;
+    lock $bar;
+    print $foo + $bar, "\n";
+});
+
+my $thread2 = threads->create(sub {
+    lock $bar;
+    threads->yield;
+    lock $foo;
+    print $foo * $bar, "\n";
+});
+
+$thread1->join;
+$thread2->join;

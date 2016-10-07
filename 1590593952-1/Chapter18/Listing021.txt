@@ -1,0 +1,6 @@
+# Operations permutate every state of two superpositions - Perl 5
+
+use Quantum::Superpositions;
+
+print join ', ', eigenstates(any(1, 3, 7) * any(2, 4, 6));
+print "\n";

@@ -1,0 +1,4 @@
+# Inheritance, Perl 5
+
+package Mutt;
+use base 'Dog';

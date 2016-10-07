@@ -1,0 +1,16 @@
+# Catching an error and then testing for the occurrence of an error - Perl 5
+
+while(1) {
+    eval {
+        open my $fh, '<', 'foo.txt' or die $!;
+        # ...
+    };
+    if($@) {
+        print "Failed to open 'foo.txt': $@\n",
+              "Please fix this problem and then mash the ",
+              "[ENTER] key to try again.\n";
+        <STDIN>;
+    } else {
+        last;
+    }
+}

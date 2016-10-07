@@ -1,0 +1,7 @@
+# Perl 5 - initializing a list of scalars by aliasing to a hash slice
+
+use Data::Alias;
+use Perl6::Variables;
+
+my %hash = ( foo => 10, bar => 20, baz => 25, quux => 35 );
+my ($foo, $bar) = %hash{'foo', 'bar'};

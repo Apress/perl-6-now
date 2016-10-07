@@ -1,0 +1,5 @@
+# Automatic promotion to floating point from integer - Perl 5 or Perl 6
+
+my $num = 5;
+$num /= 2;
+print $num, "\n";   # prints 2.5, not 2

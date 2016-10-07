@@ -1,0 +1,8 @@
+# Storing arrays and hashes by reference in scalars
+# Perl 6
+
+my $hash_ref;
+my $array_ref;
+
+$hash_ref.{'ten'} = 10;    # $hash_ref is a hash reference
+$array_ref.[10] = 10;      # $array_ref is an array reference

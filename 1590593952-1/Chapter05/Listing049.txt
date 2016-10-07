@@ -1,0 +1,2 @@
+my Lockable @ages;    # an array of Lockable things
+my @ages is Lockable; # @ages itself is Lockable

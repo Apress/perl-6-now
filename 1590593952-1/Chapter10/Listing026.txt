@@ -1,0 +1,7 @@
+# Perl 6 - gathering from a loop that eats several arguments each iteration
+
+my @sore_feet = gather {
+    for zip @pins, @needles -> $pin, $needle {
+        take walk_on($pin, $needle);
+    }
+}

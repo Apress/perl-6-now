@@ -1,0 +1,5 @@
+# Perl 6 - concise class definitions
+
+class Dog has $.tail has $.name has $.breed;
+class Mutt is Dog has $.breed = 'unknown';
+class Mix is Dog has $.mothers_breed has $.fathers_breed;

@@ -1,0 +1,6 @@
+# Previous example
+
+use PDL;
+my $array = PDL->sequence(20, 20);
+my $random_element = $array->at(int rand 20, int rand 20);
+print $random_element;

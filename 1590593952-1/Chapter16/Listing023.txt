@@ -1,0 +1,12 @@
+# Abstract factory example - Perl 5
+
+package WashableFactory;
+
+sub give_me_something_to_wash (Washable; undef) {
+    my $self = shift;
+    my $desired_size = shift;
+    return SmallChild->new if $desired_size < 40;
+    return Dog->new        if $desired_size < 60;
+    return Chimp->new      if $desired_size < 100;
+    return Elephant->new;
+} 

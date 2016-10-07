@@ -1,0 +1,6 @@
+# $_ contains a reference to the current object during method calls
+# Perl 6
+
+class foo {
+    method bar { $_.baz() };
+}

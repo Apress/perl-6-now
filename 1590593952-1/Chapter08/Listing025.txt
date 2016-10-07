@@ -1,0 +1,8 @@
+# Parenthesis with lists clarify what is being done - ambagious:
+
+my $a, my $b = somefunction;
+
+# which of these two did the programmer intend?
+
+(my $a, my $b) = somefunction;    # somefunction() returns two values
+(my $a, (my $b = somefunction));  # somefunction() returns one value

@@ -1,0 +1,6 @@
+# According to Perl's list flattening rules, CPAN should really be CPERLAN
+# Perl 5:
+
+my @PERL = qw(Pathologically Ecclectric Rubbish Lister);
+my @CPAN = ('Comprehensive', @PERL, 'Archive', 'Network');
+print map( { substr($_, 0, 1) } @CPAN), "\n";

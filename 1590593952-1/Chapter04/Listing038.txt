@@ -1,0 +1,4 @@
+# Perl 5 - UNICODE character escapes
+
+use charnames ':full';
+print "\N{REGISTERED SIGN}\n";

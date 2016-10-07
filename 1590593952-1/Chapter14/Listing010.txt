@@ -1,0 +1,9 @@
+ # these two lines are the same - Perl 5:
+
+ $foo->bar()->baz()->qux();
+ $foo->bar->baz->qux;
+
+ # these two lines are the same - Perl 5:
+
+ $foo->bar()->baz()->qux(10);
+ $foo->bar->baz->qux(10);

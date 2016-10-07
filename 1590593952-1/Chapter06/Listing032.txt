@@ -1,0 +1,6 @@
+# Pick out the first defined value - these two examples are equivalent:
+
+$one // $two // $three // $four;              # Perl 5 or Perl 6
+
+use Scalar::Util;
+first { defined } $one, $two, $three, $four;  # Perl 5

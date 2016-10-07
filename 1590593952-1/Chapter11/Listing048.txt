@@ -1,0 +1,3 @@
+Not enough arguments for main::do_more_for_less at - line 3, near "()"
+
+Prototype mismatch: sub main::do_more_for_less ($) vs none at - line 6.

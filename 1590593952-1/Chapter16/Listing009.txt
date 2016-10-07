@@ -1,0 +1,3 @@
+# Subclasses and other derived types work as their base type, Perl 5
+my Pet $pet = Dog->new;
+typesafety::check;

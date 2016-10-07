@@ -1,0 +1,21 @@
+# Declaring variables in a function - Perl 5
+
+sub foo {
+    my $bar;
+    my $baz;
+    # ...
+}
+
+# Declaring variables to hold parameters - the common case - Perl 5
+
+sub add_two_things {
+    my $first_arg = shift;
+    my $second_arg = shift;
+    return $first_arg + $second_arg;
+}
+
+# Declaring function parameters - Perl 6
+
+sub add_two_things (int $first_arg, int $second_arg) {
+    return $first_arg + $second_arg;
+}

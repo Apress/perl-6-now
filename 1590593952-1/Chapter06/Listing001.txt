@@ -1,0 +1,4 @@
+# Spread-sheet like operators in Perl 6 using hyper operators
+
+@income_and_expenditures = @credits >>-<< @debits;
+$balance = $balance +<< @adjustments;

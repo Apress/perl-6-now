@@ -1,0 +1,14 @@
+# Perl 5 - customer data is stored in alternating positions in one array
+
+use Data::Alias;
+use Perl6::Variables;
+
+my @customers = (
+    'Fred', '1234 Robin Lane', '515-4132',
+    'Mike', '314 Pie Court', '515-7382',
+);
+while(my $i < @array) {
+    alias my ($name, $address, $phone) = @customers[$i, $i + 1, $i + 2];
+    # lots of logic here using $name, $address, and $phone
+    $i += 3;
+}

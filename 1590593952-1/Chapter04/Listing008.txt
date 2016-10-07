@@ -1,0 +1,6 @@
+# Numeric constants in arbitrary bases - Perl 6
+
+print 37;          # decimal - prints 37
+print 8#37;        # octal - prints 31
+print 16#37;       # hexadecimal - prints 55
+print 2#0100101;   # binary - prints 37

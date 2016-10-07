@@ -1,0 +1,1 @@
+alias my ($name, $address, $phone) = @customers[$i]{'name', 'address', 'phone'};

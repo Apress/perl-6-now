@@ -1,0 +1,59 @@
+# Perl 5 - contention over resources part two - less contention
+
+use threads;
+use threads::shared;
+
+my $kitchen    :shared;
+my $bathroom   :shared;
+my $livingroom :shared;
+
+my $hatfield= threads->create(sub {
+    my $thread3 = async {
+        print "Hatfield wants the kitchen\n";
+        lock $kitchen;
+        print "Hatfield has the kitchen\n";
+        sleep 10;
+    };
+    my $thread4 = async {
+        print "Hatfield wants the bathroom\n";
+        lock $bathroom;
+        sleep 10;
+        print "Hatfield has the bathroom\n";
+    };
+    my $thread5 = async {
+        print "Hatfield wants the livingroom\n";
+        lock $livingroom;
+        print "Hatfield has the livingroom\n";
+        sleep 10;
+    };
+    $thread3->join;
+    $thread4->join;
+    $thread5->join;
+});
+
+my $mccoy = threads->create(sub {
+    my $thread6 = async { 
+        print "McCoy wants the kitchen\n";
+        lock $kitchen; 
+        print "McCoy has the kitchen\n";
+        sleep 10;
+    };
+    my $thread7 = async {
+        print "McCoy wants the bathroom\n";
+        lock $bathroom;
+        print "McCoy has the bathroom\n";
+        sleep 10;
+    };
+    my $thread8 = async {
+        print "McCoy wants the livingroom\n";
+        lock $livingroom;
+        print "McCoy has the livingroom\n";
+        sleep 10;
+    };
+    $thread6->join;
+    $thread7->join;
+    $thread8->join;
+});
+
+$hatfield->join;
+$hatfield->join;

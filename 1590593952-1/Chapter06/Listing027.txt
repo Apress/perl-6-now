@@ -1,0 +1,6 @@
+0 err 1;        # false
+undef err 0;    # false
+undef err 1;    # true
+1 and die;      # always dies
+0 or die;       # always dies
+undef err die;  # always dies

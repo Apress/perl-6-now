@@ -1,0 +1,5 @@
+# Parameters, Perl 6
+
+sub do_something ($foo, $bar, $baz) {
+    print $foo, $bar.get($baz), "\n";
+}

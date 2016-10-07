@@ -1,0 +1,11 @@
+# if statement with elsif blocks - Perl 5 and 6
+
+if(! defined $num) {
+    print "Not even defined.\n";
+} elsif($num == 0) {
+   print "Zero.\n";
+} elsif($num == 1) {
+    print "One.\n";
+} else {
+    print "I don't know what it is.\n";
+}

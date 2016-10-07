@@ -1,0 +1,2 @@
+last element: -1 number of elements: 0
+last element: 0 number of elements: 1

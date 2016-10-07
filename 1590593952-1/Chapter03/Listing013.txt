@@ -1,0 +1,19 @@
+use Regexp::Common;
+use CGI;
+
+my $cgi = CGI->new;
+
+print $cgi->header;
+
+my $age = $cgi->param('age');
+
+if($age =~ m/^($RE{num}{int})$/) {
+    $age = $1; 
+    # $age is now no longer tainted because $1 isn't tained
+} else {
+    print "Enter your age, not your shoe size.\n";
+    exit; 
+    # kids these days...
+}
+
+# $age may be safely used here

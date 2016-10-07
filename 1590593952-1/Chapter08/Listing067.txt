@@ -1,0 +1,10 @@
+# Pushing onto an array reference, Perl 5
+
+use autobox;
+use autobox::Core;
+
+$array->push($something);
+
+# Pushing onto an array reference, Perl 6
+
+$array.push($something);

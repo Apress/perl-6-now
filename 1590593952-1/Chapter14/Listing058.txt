@@ -1,0 +1,5 @@
+# Perl 5 - is $dog based on a hash?
+
+if($dog->isa('HASH')) {
+    ...
+}

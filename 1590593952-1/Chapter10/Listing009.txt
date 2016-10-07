@@ -1,0 +1,4 @@
+# Perl 6 - other cases where assignment creates references
+
+my $arrayref = @array;   # same as my $arrayref = \@array;
+my $hashref = %hash;     # same as my $hashref = \%hash;

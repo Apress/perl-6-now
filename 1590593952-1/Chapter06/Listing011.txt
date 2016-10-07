@@ -1,0 +1,2 @@
+my @sorted_stuff = sort &infix:<=>, @unsorted_stuff;    # Perl 6
+my @sorted_stuff = sort { $a <=> $b }, @unsorted_stuff; # Perl 5

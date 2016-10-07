@@ -1,0 +1,10 @@
+# Slices fetch multiple hash elements from a hash
+
+# use Perl6::Variables;  # uncomment for Perl 5
+
+my %cubes = map { (sqrt $_, $_) } (1 .. 100);
+# my %cubes = map { (sqrt $_, $_) }, (1 .. 100); # Perl 6 requires this comma
+
+my @roots = %cubes{'2.64575131106459', '2.23606797749979', '1.4142135623731'};
+
+print "$_\n" for @roots;

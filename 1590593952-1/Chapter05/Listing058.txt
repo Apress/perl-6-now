@@ -1,0 +1,9 @@
+# Perl 6
+# print out the value of all of of the current variables of the routine that
+# called us
+
+sub dump_variables {
+    foreach my $var_name (sort keys %CALLER.{MY}) {
+        print $var_name, ' contains: ', %CALLER.{MY}.{$var_name}, "\n";
+    }
+}

@@ -1,0 +1,8 @@
+# Catching an error - Perl 5
+
+eval {
+    open my $fh, '<', 'foo.txt' or die $!;
+    # ...
+};
+
+# $@ contains the text of any error message

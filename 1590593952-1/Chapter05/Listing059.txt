@@ -1,0 +1,7 @@
+# Perl 6 - hypothetical exporting of symbols
+
+{
+    use Some::Module;
+    print $foo, "\n";    # Some::Module exports $foo
+}
+print $foo, "\n";        # error - $foo doesn't exist in this lexical scope

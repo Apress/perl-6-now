@@ -1,0 +1,6 @@
+given($num) {
+    when [0, 1, 2]  { $fan->speed('low') }
+    when [3, 4]     { $fan->speed('medium') }
+    when [5, 6, 7]  { $fan->speed('high') }
+    else            { $fan->emit('smoke') }
+}

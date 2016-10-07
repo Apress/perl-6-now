@@ -1,0 +1,8 @@
+use Config;
+
+use constant {
+    BIT    => 1,
+    NIBBLE => 4,
+    BYTE   => 8,
+    WORD   => $Config{intsize} * 8,  # 32 on my system
+};

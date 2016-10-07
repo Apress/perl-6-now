@@ -1,0 +1,8 @@
+# Switching on a hash references
+
+my $hashref = { foo => 'bar', baz => 'qux' };
+
+given($hashref) {
+    when 'baz'       { }   # if exists $hashref->{'baz'}
+    when($scalar)    { }   # if exists $hashref->{$scalar}
+}

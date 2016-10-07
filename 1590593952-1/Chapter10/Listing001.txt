@@ -1,0 +1,17 @@
+# A few blocks - Perl 5
+
+sub foo {
+    print "This runs when called by name - foo()\n";
+}
+
+my $coderef = sub {
+    print "This runs when requested to do so later on.\n";
+};
+
+do {
+    print "This runs now.\n";
+};
+
+if(rand > 0.5) {
+    print "This runs when it wants to.\n";
+}

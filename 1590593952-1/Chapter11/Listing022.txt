@@ -1,0 +1,5 @@
+# Perl 5 - list context and multiple return values allows easy
+# gluing together of functions
+
+use POSIX;
+print strftime "%Y-%m-%d %H:%M\n", localtime;

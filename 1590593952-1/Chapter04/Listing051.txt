@@ -1,0 +1,1 @@
+use constant WIDE => 64;

@@ -1,0 +1,28 @@
+# Perl 5 - a class to register event listeners and invoke a method on
+# them
+
+package EventGenerator;
+
+use Attribute::Property;
+use autobox;
+use autobox::Core;
+
+sub events :Property;
+
+sub new :New {
+   my $_ = shift;
+   $_->events = { };
+}
+
+sub add_event_listener { 
+    my $_ = shift;
+    my $callback = shift;
+    $_->events->push($callback); 
+}
+   
+sub invoke_event_listeners { 
+    $_->events->foreach(sub { $_[0]->receive_event() });
+    for($_->events->flatten) {
+        $_->receive_event();
+    }
+}

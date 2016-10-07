@@ -1,0 +1,1 @@
+  $image->range($locations, $iconsize, 'truncate') .= $icon;

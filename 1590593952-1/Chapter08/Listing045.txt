@@ -1,0 +1,8 @@
+# Initialize a list of variables from an array, the long way
+
+# use Perl6::Variables; # for Perl 5
+
+$foo = @array[0];
+$bar = @array[1];
+$baz = @array[2];
+$quux = @array[3];

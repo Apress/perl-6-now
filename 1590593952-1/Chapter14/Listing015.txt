@@ -1,0 +1,3 @@
+use IO::Handle;
+open my $file, '<', 'file.txt' or die $!;
+$file->read(my $data, -s $file);

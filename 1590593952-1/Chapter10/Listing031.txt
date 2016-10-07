@@ -1,0 +1,6 @@
+# Perl 5 - example usage of next keyword
+
+for my $thing (@things) {
+    next unless $thing->processable();
+    $thing->process();
+}

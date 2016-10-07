@@ -1,0 +1,5 @@
+# Perl 6 - for statements and blocks - these lines are equivalent
+
+for @things { print $_, "\n"; };                    # compatibility block
+for @things sub ($thing) { print $thing, "\n"; };   # compatibility block
+for @things -> $thing { print $thing, "\n"; };      # pointy block

@@ -1,0 +1,3 @@
+# Exchange keys and values on a hash where values are references - Perl 5
+
+tie my %ref_to_name, 'Tie::RefHash', reverse %name_to_ref;

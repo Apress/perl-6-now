@@ -1,0 +1,4 @@
+my $data = do {
+    open my $file, '<', 'file.txt' or die $!;
+    read $file, my $buffer, -s $file;
+};

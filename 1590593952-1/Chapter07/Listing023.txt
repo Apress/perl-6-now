@@ -1,0 +1,8 @@
+# Compute the playing time of a mod file and multiply that by the sample rate to
+# decide how much memory is required to hold the audio data.
+
+my $wav_length =  int(scalar(@positions) * (64 / (60/10)) * $sample_rate) + 1;
+
+# Create four tracks of byte resolution data large enough to hold the entire wav file.
+
+my $audio = PDL->zeroes(4, $wave_length)->byte();

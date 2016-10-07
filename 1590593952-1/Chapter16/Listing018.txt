@@ -1,0 +1,2 @@
+argument number 1 type mismatch: must be type 'Washable', instead we got a(n)
+Pet  in package main, file dog.pl, line 97

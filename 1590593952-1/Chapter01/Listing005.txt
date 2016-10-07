@@ -1,0 +1,2 @@
+# XXX corrected from book
+./Configure -de -Dprefix=/usr && make && make install

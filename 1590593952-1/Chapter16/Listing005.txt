@@ -1,0 +1,53 @@
+# Pet, Washable, Dog, Shampoo, and Water classes, Perl 5
+
+package Water;
+
+sub new { bless {}, $_[0]; }
+
+package Shampoo;
+
+sub new { bless {}, $_[0]; }
+
+package Pet;
+
+sub new { bless {}, $_[0]; }
+
+package Washable;
+
+use autobox;
+use autobox::Core;
+
+sub new      { bless { 'fur' => [] }, $_[0]; }
+sub rinse    { my $self = shift; $self->{fur}->undef }
+sub is_dirty { my $self = shift; $self->{fur}->size }
+
+sub apply    { 
+   my $self = shift; 
+   my $stuff = shift;
+   $self->{fur}->push($stuff);
+}
+
+sub lather   { 
+    my $self = shift; 
+    $self->{fur} = $self->{fur}->grep(sub { ! $_[0]->isa('Dirt') }); 
+}
+
+package Dog;
+
+use base 'Pet';
+use base 'Washable'; 
+
+sub new { Washable::->new }
+
+sub chase_tail {
+    my $dog = shift;
+    # tail chasing stuff here
+}
+
+package Cat;
+
+use base 'Pet';
+
+package SmallChild;
+
+use base 'Washable';

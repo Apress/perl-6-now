@@ -1,0 +1,5 @@
+# Perl 5 or Perl 6 - interpolation uses current values for variables
+
+for my $color (qw(red green blue)) {
+    print "The sky is a lovely shade of $color.\n";
+}

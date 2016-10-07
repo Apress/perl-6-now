@@ -1,0 +1,1 @@
+ my $result = process_stuff(1);

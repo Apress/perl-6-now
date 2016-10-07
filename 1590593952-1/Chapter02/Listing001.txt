@@ -1,0 +1,2 @@
+perl6 file.p6
+parrot file.pbc

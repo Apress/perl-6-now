@@ -1,0 +1,5 @@
+# Quoting lists - Fictitious Perl 6
+
+use ops <<:default ftsize entereval sort>>;
+use POSIX <<:errno_h :fcntl_h>>;
+for my $color <<red green blue>> { print chr @pixel{$color} }

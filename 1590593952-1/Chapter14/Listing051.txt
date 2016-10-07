@@ -1,0 +1,20 @@
+# Superclasses must use the public interface to get instance data
+# from child classes - Perl 6
+
+class Dog {
+    has $.tail;
+    has $.name;
+    has $.breed = 'generic dog';
+    method describe_dog {
+        if(is Mix) {
+            return sprintf "A mix between a %s and a %s", 
+                .mothers_breed(), .fathers_breed();
+        }
+        return $.breed;
+    }
+}
+
+class Mix is Dog {
+    has $.mothers_breed;
+    has $.fathers_breed;
+}

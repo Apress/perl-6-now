@@ -1,0 +1,13 @@
+# Passing two arrays - Perl 5, with prototypes
+# function definition must come before call to it
+
+use autobox;
+use autobox::Core;
+
+sub do_something (\@\@) {
+  my @array1 = shift->flatten;
+  my @array2 = shift->flatten;
+  # ...
+}
+
+do_something(@array1, @array2);

@@ -1,0 +1,31 @@
+# Perl 5 - lvalue methods may be assigned to
+
+package Dog;
+
+use Attribute::Property;
+use Want;
+
+sub new      :New;
+sub laziness :Property;
+
+sub age :lvalue {
+    my $_ = shift;
+    if (want qw<LVALUE ASSIGN>) {
+        (my $arg) = want('ASSIGN');
+        $_->laziness += $arg;
+        lnoreturn;
+    } else {
+        $_->laziness += shift;
+        rreturn $_->laziness;
+    }
+    return;
+}
+
+package main;
+
+my $dog = Dog->new;
+# these two lines are equivalent:
+$dog->age = 12;
+$dog->age(12);
+
+print $dog->age, "\n";

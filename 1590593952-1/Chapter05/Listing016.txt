@@ -1,0 +1,5 @@
+# use Perl6::Variables;  # uncomment for Perl 5
+
+%makes_maximum_use_of_24_hour_computer_lab{'john', 'scott'} = (1, 1);
+
+print join ", ", keys %makes_maximum_use_of_24_hour_computer_lab; print "\n";

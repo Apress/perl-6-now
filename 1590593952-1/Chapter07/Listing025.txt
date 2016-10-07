@@ -1,0 +1,27 @@
+sub scale_sample {
+
+    my $note = shift;
+    my $samples = shift;
+
+    my $period = $note->{period};  # speed to play at
+    my $waveform = $samples->[ $note->{sample} ]->{waveform}; # audio data
+
+    my $sample_khz = $amiga_constant / ( $period * 2 );
+    my $stretch_factor = $sample_rate / $sample_khz;
+    my $inverted_stretch = 1 / $stretch_factor;
+ 
+    my $sample_index = 0;  # current subsample position
+    my @sample_indices;    # compiled list of subsample positions
+    
+    while($sample_index < $samples_requested) {
+        push @sample_indices, $sample_index;
+        $sample_index += $inverted_stretch;
+    }
+
+    my $zero_to_a_lot = PDL->sequence($waveform->dim(0));
+
+    (my $stretched_wav, my $err) =
+        PDL->float(\@sample_indices)->interpolate($zero_to_a_lot, $waveform);
+
+    return $stretched_wav;
+}    

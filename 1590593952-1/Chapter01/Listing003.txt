@@ -1,0 +1,3 @@
+tar -xzvf perl-5.8.5.tar.gz
+cd perl-5.8.5
+./Configure -de && make && make install

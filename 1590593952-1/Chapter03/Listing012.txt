@@ -1,0 +1,3 @@
+perl -t tainted_program.pl  # okey
+./tained_program.pl         # okey
+perl tained_program.pl      # error!

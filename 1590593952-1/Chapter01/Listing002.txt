@@ -1,0 +1,2 @@
+-rw-rw-r--   1 ftp     ftp     11930764 Jul 19 21:57 perl-5.8.5.tar.gz
+-rw-rw-r--   1 ftp     ftp     11995887 Mar 16  2004 perl-5.9.1.tar.gz

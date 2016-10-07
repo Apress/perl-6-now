@@ -1,0 +1,9 @@
+# Basic hash and array usage, for contrast
+
+# use Perl6::Variables # uncomment for Perl 5
+
+my %hash_var;
+my @array_var;
+
+%hash_var{'ten'} = 10;    # %hash_var is a hash
+@array_var[10] = 10;      # @array_var is an array

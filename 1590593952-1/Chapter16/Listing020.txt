@@ -1,0 +1,10 @@
+# Arrays are typed when used only with typed variables
+
+use Perl6::Variables;
+
+my @array;
+
+@array[0] = Washable->new;
+@array[1] = Dog->new;
+
+Sink->new(@array[int rand @array], Shampoo->new);

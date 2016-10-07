@@ -1,0 +1,8 @@
+# Catching an error - Perl 6
+
+try  {
+    my $fh = open '<', 'foo.txt' or die $!;
+    # ...
+};
+
+# The $! object contains the text of any error message if used as a string

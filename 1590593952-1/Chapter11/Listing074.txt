@@ -1,0 +1,6 @@
+# Map example updated to include placeholders example
+
+map { $_.some_function() }, @things;                  # comparability block
+map sub ($thing) { $thing.some_function() }, @things; # normal block
+map -> $thing { $thing.some_function() }, @things;    # pointy block
+map { $^thing.some_function() }, @things;             # placeholder

@@ -1,0 +1,9 @@
+# Perl 5 and Perl 6
+
+# Print HTTP headers as soon as possible, before something blows up, 
+# to avoid the "Premature end of HTTP headers" webserver confusion 
+# when errors are output before headers
+
+BEGIN {
+    print qq{Content-type: text/html\n\n};
+};

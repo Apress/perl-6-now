@@ -1,0 +1,9 @@
+# Sorting numeric data
+
+@sorted_data = sort { $a <=> $b } @data_to_sort;       # Perl 5
+@sorted_data = sort { $^a <=> $^b }, @data_to_sort;    # Perl 6
+
+# Sorting alphanumeric data lexically
+
+@sorted_data = sort { $a cmp $b } @data_to_sort;       # Perl 5
+@sorted_data = sort { $^a cmp $^b }, @data_to_sort;    # Perl 6

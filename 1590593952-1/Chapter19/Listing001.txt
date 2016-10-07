@@ -1,0 +1,12 @@
+# Perl 6 - named subroutines may be closures
+
+sub create_counter {
+    my $counter;
+    my sub counter_logic {
+        $counter++;
+    }
+    return &counter_logic;
+}
+
+my $foo_counter = create_counter();
+print $foo_counter.(), "\n" for 1 .. 10;

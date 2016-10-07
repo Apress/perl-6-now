@@ -1,0 +1,4 @@
+# Pick random starting location, or, in general, pick a random hash key
+# Perl 5
+
+my $location = (keys %ref_to_name)[rand keys %ref_to_name];

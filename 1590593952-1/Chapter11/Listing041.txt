@@ -1,0 +1,7 @@
+# 3 basic possible context scenarios - Perl 5
+
+sub return_garbage {
+    return unless defined wantarray;
+    return 1 if ! wantarray;
+    return (1, 2, 3) if wantarray;   # or just return (1, 2, 3) 
+}

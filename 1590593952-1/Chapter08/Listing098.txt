@@ -1,0 +1,4 @@
+# Something like this is fine a few times, but avoid littering too many
+# around your program - Perl 5
+
+my $kings_location = %pieces{'K'}{'location'};

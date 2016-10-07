@@ -1,0 +1,23 @@
+# Fake named parameters - Perl 5
+
+use Perl6::Variables;
+
+sub do_something {
+    my %args = @_;     # hash is initialized from the argument list
+    my $name  = %args{name};
+    my $color = %args{color};
+    # ... 
+}
+
+do_something(name => 'Fred', color => 'red');
+
+# True named parameters - Perl 6 or Perl 5 with Perl6::Parameters:
+
+sub do_something ($name, $color, ?$shape) {
+    # ... 
+}
+
+# Call to a routine that uses either faked or true named parameters
+# Perl 5 or Perl 6
+
+do_something(name => 'Fred', color => 'red'); 

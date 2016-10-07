@@ -1,0 +1,7 @@
+# Use a hash instead
+
+# use Perl6::Variables; # uncomment for Perl 5
+
+my %hash;
+my $key = 'color';
+%hash{$key} = 'magenta';    # same as: %hash{'color'} = 'magenta';

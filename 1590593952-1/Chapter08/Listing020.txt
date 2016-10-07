@@ -1,0 +1,22 @@
+# Finding the index of the last element of an array and the number of elements
+# in an array
+
+use Perl6::Contexts;
+use autobox;
+use autobox::Core;
+
+# Index of the last element in an array:
+
+@array->last;     # Perl 5, using autobox and company
+@array.last;      # Perl 6 tentative method name
+
+# Number of elements in an array:
+
+scalar @array;    # Perl 5 
+int    @array;    # Perl 6
+
+0 + @array;       # Perl 5 with Perl6::Contexts
+  + @array;       # Perl 6
+
+@array->elems;    # Perl 5 using autobox and company
+@array.elems;     # Perl 6 tentative method name

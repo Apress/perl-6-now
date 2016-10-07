@@ -1,0 +1,2 @@
+  $pbm->range([$i], [$audio_length]) .= 
+      (($audio > $range_start) & ($audio < $range_stop));

@@ -1,0 +1,9 @@
+sub do_more_for_less ($);         # <-- forward declaration - Perl 5
+
+sub do_more_for_less ($) { ... }; # <-- forward declaration - Perl 6
+
+do_more_for_less(15.95);          # <-- subroutine call
+
+sub do_more_for_less ($) {        # <-- actual subroutine definition
+    print "You always get mojo for $_[0]!\n";
+}

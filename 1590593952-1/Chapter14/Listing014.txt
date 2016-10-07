@@ -1,0 +1,6 @@
+# Calling methods on numbers and strings, these three lines are equivalent
+# Perl 6
+
+print sqrt 4;
+print 4.sqrt;
+4.sqrt.print;

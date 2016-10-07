@@ -1,0 +1,6 @@
+# Perl 6 - $_ is the current object and . defaults to it
+
+method foo {
+    .bar;
+    .baz;
+}

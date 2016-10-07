@@ -1,0 +1,7 @@
+# saving data structures to disc with Storable, Perl 5:
+
+use Storable 'freeze', 'thaw';
+
+my $binary_data = freeze(\%pieces);
+
+my $pieces = thaw($binary_data);

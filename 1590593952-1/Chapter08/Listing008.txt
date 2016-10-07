@@ -1,0 +1,13 @@
+my %hash = ( foo => 10, bar => 20 );
+
+# Perl 5 and Perl 6 - common idiom
+
+for my $key (keys %hash) {
+    print $key, ' => ', %hash{$key}, "\n";
+}
+
+# Perl 6 - suggested idiom
+
+for %hash.kv -> $key, $value {
+    print $key, ' => ', %hash{$key}, "\n";
+}

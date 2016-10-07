@@ -1,0 +1,10 @@
+# Perl 5 - alias two scalars to a two array elements using the slice syntax
+
+use Data::Alias;
+use Perl6::Variables;
+
+alias my ($foo, $bar) = @arr[0, 1];
+
+# Perl 6 - alias two scalars to a two array elements using the slice syntax
+
+my ($foo, $bar) := @arr[0, 1];

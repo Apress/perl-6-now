@@ -1,0 +1,9 @@
+# Scalars are used as strings or numbers depending on the operator used. 
+# Any value in the variable is automatically converted (or at least an attempt
+# is made).
+# Perl 5 or Perl 6
+
+my $string = '4-x';
+if($string != 0) {
+    print "Perl is weird.\n";
+}

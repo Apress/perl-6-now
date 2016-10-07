@@ -1,0 +1,8 @@
+# Un-typed variables in Perl may take on different types as the program 
+# executes, Perl 5
+
+my $x = 0;
+$x = "Hi there\n";
+$x = CGI->new;
+$x = [CGI->new, 0, "Hi there\n"];
+$x = { object => CGI->new, number => 0, string => "Hi there\n" };

@@ -1,0 +1,13 @@
+ # Obtaining multiple elements from an array - these three are equivalent
+
+ # use Perl6::Variables; # uncomment for Perl 5
+
+ @square_roots[1, 2, 3, 4, 5, 6];
+
+ map { @square_roots[$_] } 1, 2, 3, 4, 5;
+
+ my @results;
+ for(1, 2, 3, 4, 5) {
+     push @results, @square_roots[$_];
+ }
+ @results;

@@ -1,0 +1,7 @@
+# Storing logic to execute later using eval - Perl 5
+# Don't do this if it's possible to avoid it
+
+my $answer = 10;
+my $code = qq{ print "The answer is $answer.\n"; };
+# later in the program...
+eval $code;

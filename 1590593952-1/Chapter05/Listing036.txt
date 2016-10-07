@@ -1,0 +1,11 @@
+# Perl 5 - binding one variable to another
+
+use Data::Alias;
+
+my $foo = 10;
+alias my $bar = $foo;
+print "foo: $foo bar: $bar\n";
+$bar++;
+print "foo: $foo bar: $bar\n";
+$foo++;
+print "foo: $foo bar: $bar\n";

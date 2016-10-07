@@ -1,0 +1,4 @@
+# These two lines are equivalent, Perl 6
+
+-> $foo, $bar, $baz { ... }; 
+sub ($foo, $bar, $baz) { ... };

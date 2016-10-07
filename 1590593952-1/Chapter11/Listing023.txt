@@ -1,0 +1,7 @@
+# Warning about void context - Perl 5
+
+use strict;
+use warnings;
+
+my $arbitrary_variable;
+$arbitrary_variable;

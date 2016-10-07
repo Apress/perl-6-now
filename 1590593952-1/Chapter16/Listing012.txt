@@ -1,0 +1,6 @@
+# chase_tail() doesn't exist in Pet and typesafety only knows that $pet is 
+# a Pet, Perl 5
+
+my Pet $pet = Dog->new;
+$pet->chase_tail;
+typesafety::check;

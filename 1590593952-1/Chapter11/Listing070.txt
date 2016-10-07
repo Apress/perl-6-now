@@ -1,0 +1,6 @@
+# Define a code block with arguments and then immediately invoke 
+
+-> $foo, $bar, $baz { ... }.($arg1, $arg2, $arg3)      # Perl 6 pointy
+sub ($foo, $bar, $baz) { ... }.($arg1, $arg2, $arg3);  # Perl 6 regular
+
+sub { my($foo, $bar, $baz) = @_; ...; }->($arg1, $arg2, $arg3); # Perl 5

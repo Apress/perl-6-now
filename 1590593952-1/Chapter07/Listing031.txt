@@ -1,0 +1,4 @@
+# Modification to the "Loop over the mod datastructure" example to accommodate
+# a single, scaled track
+
+$audio->range( [$offset], [$scaled_sample_length] ) += $scaled_sample;

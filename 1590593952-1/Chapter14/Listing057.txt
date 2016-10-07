@@ -1,0 +1,23 @@
+# Breaking encapsulation - Perl 5
+
+package Dog;
+
+use Attribute::Property;
+use autobox;
+use autobox::Core;
+
+sub new :New;
+
+sub breed :Property;
+sub name :Property;
+
+package main;
+
+my $dog = Dog->new(name => 'fido', breed => 'mutt');
+
+print 'name is ', $dog->{name}, "\n";   # also known as $dog->name
+print 'breed is ', $dog->{breed}, "\n"; # also known as $dog->breed
+
+for my $key ($dog->keys()) {
+    print $key, ' is ', $dog->{$key}, "\n";
+}

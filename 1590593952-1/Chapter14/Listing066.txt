@@ -1,0 +1,9 @@
+# Different object instances have different instance data and different
+# numeric values - Perl 5
+
+use CGI;
+
+my $cgi_one = CGI->new;
+my $cgi_two = CGI->new;
+
+die if $cgi_one == $cgi_two;

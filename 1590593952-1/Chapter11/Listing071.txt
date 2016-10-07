@@ -1,0 +1,6 @@
+# Map statements and blocks, Perl 6
+# these lines are equivalent
+
+map { $_.some_function() }, @things;                  # compatibility block
+map sub ($thing) { $thing.some_function() }, @things; # normal block
+map -> $thing { $thing.some_function() }, @things;    # pointy block

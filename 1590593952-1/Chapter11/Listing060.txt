@@ -1,0 +1,10 @@
+# Example prototypes for for(), Perl 6:
+
+multi sub for (@arr, &code) { ... };
+multi sub for (&code, @arr) { ... };
+
+# example usage of for(), Perl 6:
+
+foo @things { .depackage() and .play_with() and .shelve(); };
+for -> $thing, $receipt { $receipt.lose(); $thing.break(); }, 
+    zip @things, @receipts;

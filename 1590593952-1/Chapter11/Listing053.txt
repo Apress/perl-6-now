@@ -1,0 +1,7 @@
+# foo() only binds to one argument, Perl 5:
+
+sub plus_one ($) { $_[0] + 1; }
+print join ", ", 10, 20, 30, plus_one 40, 50;
+print "\n";
+
+# prints: 10, 20, 30, 41, 50

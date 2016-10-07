@@ -1,0 +1,8 @@
+# all() in a comparison - Perl 5
+
+use Quantum::Superpositions;
+
+# These two lines are equivalent:
+
+die unless all(1, 2, 5) < 10;
+foreach (1, 2, 5) { die unless $_ < 10 };

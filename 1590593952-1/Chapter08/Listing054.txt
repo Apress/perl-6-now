@@ -1,0 +1,14 @@
+# Perl 5 and Perl 6 - store an array in an array
+
+# use Perl6::Contexts;  # uncomment for Perl 5
+# use Perl6::Variables; # uncomment for Perl 5
+use Data::Dumper;
+
+my @laundry;
+my @shirts = ('the green retro t-shirt', 'red button up one with patterns');
+my @socks = ('black nylon one', 'black cotton one', 'white jogging sock');
+
+@laundry[0] = @shirts;
+@laundry[1] = @socks;
+
+print Dumper @laundry;

@@ -1,0 +1,1 @@
+my @sums = @column_a >>+<< @column_b;

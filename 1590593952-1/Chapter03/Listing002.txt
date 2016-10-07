@@ -1,0 +1,5 @@
+# Declaring variables - Perl 5 and Perl 6
+
+my $color;
+
+my ($name, $password) = split;

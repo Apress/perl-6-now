@@ -1,0 +1,12 @@
+# Perl 5 - this approximates scalar interpolate:
+
+use PadWalker 'peek_my';
+
+my $foo = localtime;
+my $string = 'The time is $foo.'; 
+
+# Added these lines to make this example work:
+my $pad = peek_my(0);
+$string =~ s/(\$\w+)/${$pad->{$1}}/ge;
+    
+print $string, "\n";

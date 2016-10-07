@@ -1,0 +1,6 @@
+# Perl 5 - example usage of last keyword
+
+for my $thing (@things) {
+    $thing->process();
+    last if $quitting_time;
+}

@@ -1,0 +1,16 @@
+# Yield from within a loop in a continuation with arguments - Perl 5
+
+use Coro::Cont;
+
+sub producer :Cont {
+    my @numbers = @_;
+    yield;
+    for my $i (@numbers) {
+        yield $i;
+    }
+}
+
+producer(5 .. 10);
+print producer(), "\n";
+print producer(), "\n";
+print producer(), "\n";

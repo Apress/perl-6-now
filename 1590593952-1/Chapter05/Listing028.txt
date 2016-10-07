@@ -1,0 +1,5 @@
+# Attach attributes to a value and copy it back to a container 
+# Perl 6
+
+$foo = $foo but true;
+$bar = $bar but false;

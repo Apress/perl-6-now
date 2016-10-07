@@ -1,0 +1,12 @@
+class Sink;
+
+method bathe returns Washable (Washable $pet, Shampoo $soap) {
+   loop {
+        $pet.apply(Water->new);
+        $pet.apply($soap);
+        $pet.lather;
+        $pet.rinse;
+        last unless $pet.is_dirty;
+   }
+    $pet;
+}

@@ -1,0 +1,7 @@
+# Autolevel a single track of audio data
+
+use Math::BigInt;
+my $max_int = 0x7fffffff;   # 31 bits
+my $max_level = $audio->max();
+my $scale_factor = int($max_int / $max_level) - 1;
+$audio = $audio * $scale_factor;    

@@ -1,0 +1,9 @@
+# Interpolating and subscripting hash references
+
+"Hi, $person->{name}\n"; # Perl 5
+"Hi, $person{'name'}\n"; # Perl 6
+
+# Interpolating and subscripting array references
+
+"It's $days->[1] today\n"; # Perl 5
+"It's $days[1] today\n";   # Perl 6

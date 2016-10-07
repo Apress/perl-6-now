@@ -1,0 +1,23 @@
+# Perl 5 - simple queue built on top of an array
+
+use threads;
+use Thread::Queue;
+
+my $queue = Thread::Queue->new;
+
+my $producer = threads->create(sub {
+    while(1) {
+        $queue->enqueue(int rand 100); 
+        threads->yield;
+    }
+});
+
+my $consumer = threads->create(sub {
+    while(1) {
+        print $queue->dequeue, "\n";
+        threads->yield;
+    }
+});
+
+$producer->join;
+$consumer->join;

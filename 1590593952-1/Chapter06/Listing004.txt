@@ -1,0 +1,5 @@
+# Using hyper operators in larger expressions - Perl 6
+
+for my $running_balance (@credits >>-<< @debits) {
+    # ...
+}

@@ -1,0 +1,10 @@
+# Perl 5 - sorting using a comparator prototyped to take two arguments
+
+sub numeric_sort ($$) { 
+    my $left = shift;
+    my $right = shift;
+    return $left <=> $right;
+}
+
+my @rand_numbers = map int rand 100, 1 .. 100;
+@rand_numbers = sort \&numeric_sort, @rand_numbers;

@@ -1,0 +1,12 @@
+# Switching on an array reference
+
+my $arrayref = [1, 2, 5];
+
+given($arrayref) {
+    when 3           { }   # defined $arrayref->[3] assuming element exists
+    when [3]         { }   # if grep { $_ == 3 } @$arrayref is true
+    when [1, 2, 3]   { }   # any element from one array exists in the other
+    when($other_aref){ }   # any element from one array exists in the other
+    when qr/foo/     { }   # if grep { /foo/ } @$arrayref is true
+    when($regexpref) { }   # if grep { /$regexpref/ } @$arrayref is true
+}

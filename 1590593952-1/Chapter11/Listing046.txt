@@ -1,0 +1,9 @@
+# Subroutine prototypes provide context to arguments in function calls
+# removing the requirement of puting "scalar" before things that generate
+# lists - Perl 5
+
+sub foo ($) {
+    print $_[0], "\n";
+}
+
+foo(localtime);

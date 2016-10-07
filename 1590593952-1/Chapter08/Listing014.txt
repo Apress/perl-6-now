@@ -1,0 +1,75 @@
+# counter example - adapted from the amba.pl example included with Prima
+# apologies to Prima
+# Perl 5
+
+my %locations = (
+    K =>  [0, 0],
+    B1 => [0, 1],
+    B2 => [0, 2],
+    Q  => [0, 3],
+    T1 => [0, 4],
+    # and so on...
+);
+
+my %images = (
+    K  => $images[1],
+    B1 => $images[0],
+    B2 => $images[0],
+    Q  => $images[3],
+    T1 => $images[4],
+    # and so on...
+);
+
+# these two hashes merged - Perl 5:
+
+use Perl6::Variables;
+
+my %pieces = (
+  K => { 
+      position => [0, 0],  
+      image    => @images[1],
+  },
+  B1 => {
+      position => [0, 1],
+      image    => @images[0],
+  },
+  B2 => {
+      position => [0, 2],
+      image    => @images[0],
+  },
+  Q => {
+      position => [0, 3],
+      image    => @images[3],
+  },
+  T1 => {
+      position => [0, 4],
+      image    => @images[4],
+  },
+  # and so on...
+);
+
+# those two hashes merged - Perl 6:
+
+my %pieces = {
+  K => { 
+      position => [0, 0],  
+      image    => @images[1],
+  },
+  B1 => {
+      position => [0, 1],
+      image    => @images[0],
+  },
+  B2 => {
+      position => [0, 2],
+      image    => @images[0],
+  },
+  Q => {
+      position => [0, 3],
+      image    => @images[3],
+  },
+  T1 => {
+      position => [0, 4],
+      image    => @images[4],
+  },
+  # and so on...
+};

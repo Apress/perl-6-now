@@ -1,0 +1,33 @@
+# Dispatch to object methods - Perl 5
+
+package SiteCom::HTML::Color;
+
+sub new {
+    my $package = shift;
+    bless { }, $package;
+}
+
+package SiteCom::HTML::Color::Red;
+use base 'SiteCom::HTML::Color';
+
+sub print_tag { print qq{<font color="red">} };
+sub get_hex   { '0xff0000'; };
+
+package SiteCom::HTML::Color::Green;
+use base 'SiteCom::HTML::Color';
+
+sub print_tag { print qq{<font color="green">} };
+sub get_hex   { '0x00ff00'; };
+
+package SiteCom::HTML::Color::Blue;
+use base 'SiteCom::HTML::Color';
+
+sub print_tag { print qq{<font color="blue">} };
+sub get_hex   { '0x0000ff'; };
+
+package main;
+
+my $color = shift;
+
+my $colorob = SiteCom::HTML::Color::Red->new();
+$colorob->print_tag();

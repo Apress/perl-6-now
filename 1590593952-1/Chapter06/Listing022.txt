@@ -1,0 +1,2 @@
+"@arr" x 80; # stringify an array and repeat, Perl 5
+@arr x 80;   # stringify an array and repeat, Perl 6

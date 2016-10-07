@@ -1,0 +1,3 @@
+# Doesn't do what it might look like in Perl 5 nor probably Perl 6
+
+my @arr = 'foo', 'bar', 'baz'; 

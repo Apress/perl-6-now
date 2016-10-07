@@ -1,0 +1,19 @@
+# switching on a scalar - Perl 5
+
+use Switch 'Perl6';
+
+given($val) {
+
+    when 1          { }  # $val == 1
+    when "a"        { }  # $val eq 'a'
+    when ($other)   { }  # $val eq $other
+    when [1,2,3]    { }  # grep { $_ == $val or $_ eq $val } (1, 2, 3)
+    when (@array)   { }  # grep { $_ == $val or $_ eq $val } @array
+    when /\w+/      { }  # $val =~ /\w+/
+    when qr/\w+/    { }  # $val =~ /\w+/
+    when (%hash)    { }  # exists $hash{$val}
+    when (\%hash)   { }  # exists $hash->{$val}
+    when (\&sub)    { }  # sub($val) returns true - takes any code reference
+    print "default\n";   # default case
+
+}

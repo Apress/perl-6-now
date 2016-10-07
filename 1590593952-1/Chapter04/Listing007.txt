@@ -1,0 +1,7 @@
+# Converting input from a string containing hexadecimal notation
+# into a number - Perl 5 or Perl 6
+
+print "Enter a hexadecimal number:\n";
+my $string = <STDIN>;
+my $number = hex $string;
+print "You entered the decimal number 55\n" if $number == 0x37;

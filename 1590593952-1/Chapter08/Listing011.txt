@@ -1,0 +1,5 @@
+# Perl 5 and Perl 6 - common idiom with sorting
+
+for my $key (sort keys %hash) {
+    print $key, ' => ', %hash{$key}, "\n";
+}

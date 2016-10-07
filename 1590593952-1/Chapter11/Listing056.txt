@@ -1,0 +1,3 @@
+sub dosomething (@foo, $bar, %baz) {
+   print @foo, $bar.get(%baz), "\n";
+}

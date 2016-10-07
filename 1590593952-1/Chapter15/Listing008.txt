@@ -1,0 +1,15 @@
+# Throwing and then catching an error using Error.pm - Perl 5
+
+use Error ':try';
+
+try {
+    -f $file or throw Error::MissingFile -text => "$file missing";
+    open my $fh, '<', $file or throw Error::UnreadableFile -text => "file: $!";
+    # ...
+} 
+catch Error::MissingFile with {
+    # ...
+} 
+catch Error::UnreadableFile with {
+    # ...
+} 

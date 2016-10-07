@@ -1,0 +1,8 @@
+# Perl 6 - a class to register event listeners (the first method)
+# invoke a method to the registered listeners (the second method)
+
+class EventGenerator {
+    my @.events;
+    method add_event_listener { push @.events, $^event }
+    method invoke_event_listeners { @.events>>.receive_event }
+}

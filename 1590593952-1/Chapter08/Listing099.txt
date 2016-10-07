@@ -1,0 +1,3 @@
+# The above could be written instead as this - Perl 5
+
+my $kings_location = $pieces->piece('K')->location;

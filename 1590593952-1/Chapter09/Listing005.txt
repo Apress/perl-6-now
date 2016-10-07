@@ -1,0 +1,7 @@
+# Perl 5 - explicit type case analysis - counter example (don't do this)
+
+for($color) {
+    print_blue_tag()  if $_ eq 'blue';
+    print_green_tag() if $_ eq 'green';
+    print_red_tag()   if $_ eq 'red';
+}

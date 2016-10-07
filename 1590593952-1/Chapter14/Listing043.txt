@@ -1,0 +1,7 @@
+package SomeClass;
+
+{
+
+    sub some_method { }
+
+}

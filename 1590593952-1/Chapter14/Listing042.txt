@@ -1,0 +1,11 @@
+# class used with a block - Perl 6 
+
+class SomeClass {
+    method some_method { ... }
+}
+
+# class statement used with file scope - Perl 6
+
+class SomeClass;
+
+method some_method { ... }

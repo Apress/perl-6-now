@@ -1,0 +1,5 @@
+tar -xzvf autobox-0.12.tar.gz
+tar -xzvf perl-5.8.5.tar.gz
+cd perl-5.8.5
+patch < ../autobox-0.12/patch/perl-5.8.5.diff
+./Configure -de && make && make install

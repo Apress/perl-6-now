@@ -1,0 +1,8 @@
+# Simple case/switch workaround using for() as a topicalizer - Perl 5
+
+for(scalar readline STDIN) {
+    /yes/   and do { remove_all_files(); last; };
+    /no/    and exit; 
+    /maybe/ and rand(10) < 5 and remove_all_files(), last;
+    die "invalid input '$_'";
+}

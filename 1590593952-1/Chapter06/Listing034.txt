@@ -1,0 +1,2 @@
+@values = sort { $a cmp $b } @values;     # Perl 5 - sort lexigraphically
+@values = sort { $^a cmp $^b }, @values;  # Perl 6 - sort lexigraphically

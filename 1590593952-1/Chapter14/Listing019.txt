@@ -1,0 +1,4 @@
+@cgi_vars->map(sub { CGI::param($_[0]) })  # turn CGI arg names into values
+         ->join("\n")                      # join with newlines
+         ->concat("\n")                    # give it a trailing newline
+         ->print;                          # print them all out

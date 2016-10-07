@@ -1,0 +1,12 @@
+# Passing two arrays - Perl 5, naive case
+
+use autobox;
+use autobox::Core;
+
+do_something(\@array1, \@array2);
+
+sub do_something {
+    my @array1 = shift->flatten;
+    my @array2 = shift->flatten;
+    # ...
+}

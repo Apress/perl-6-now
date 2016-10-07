@@ -1,0 +1,4 @@
+# These two are the same - Perl 5
+
+my $foo = $bar{shift};
+my $foo = $bar{'shift'};

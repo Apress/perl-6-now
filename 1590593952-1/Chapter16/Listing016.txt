@@ -1,0 +1,5 @@
+# Somewhere in package Sink is a bathe method - Perl 5
+
+sub bathe (Washable; Washable, Shampoo) {
+    ...
+}

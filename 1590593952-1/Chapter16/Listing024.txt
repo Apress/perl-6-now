@@ -1,0 +1,2 @@
+$ perl -e 'undef->foo;'
+Can't call method "foo" on an undefined value at -e line 1

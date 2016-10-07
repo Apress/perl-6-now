@@ -1,0 +1,3 @@
+perl -MO=Deparse,-p -e 'open my $f, "<", "tmp.txt" || die $!;'
+
+# outputs: open(my $f, '<', 'tmp.txt');

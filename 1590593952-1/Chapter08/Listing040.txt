@@ -1,0 +1,7 @@
+# Building hashes from lists in Perl 6 - these lines are equivalent
+
+my %numbers = { one => 1, two => 2, three => 3; };     # normal case
+my %numbers = { pair 'one', 1, 'two', 2, 'three', 3; };
+my %numbers = { pair qw/one 1 two 2 three 3/ };
+my %numbers = { pair <<one 1 two 2 three 3>> };
+my %numbers = hash { pair <<one 1 two 2 three 3>> };

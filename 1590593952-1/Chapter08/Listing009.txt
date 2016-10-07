@@ -1,0 +1,5 @@
+# Perl 5 - iterating over a hash with each()
+
+for((my $key, my $value) = each %hash) {
+    print $key, ' => ', %hash{$key}, "\n";
+}  

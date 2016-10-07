@@ -1,0 +1,4 @@
+# Perl 5, accidental use of indirect object syntax due to missing comma
+
+my $message = "Hello, world.";
+print $message "\n"; # whoops, forgot the comma after $message

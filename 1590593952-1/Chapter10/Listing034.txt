@@ -1,0 +1,7 @@
+# Redo - Perl 5
+
+my $num = 3; 
+
+{ 
+    print "hi\n"; $num--; redo if $num; 
+};

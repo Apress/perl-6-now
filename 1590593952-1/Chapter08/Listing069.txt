@@ -1,0 +1,11 @@
+# [ ] and { } simplify creation of array and hash references
+
+# These two accomplish are the same thing:
+
+\my @arr;
+[ ];
+
+# These two are the same:
+
+\my %hash;
+hash { };

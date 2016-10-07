@@ -1,0 +1,4 @@
+# Conditionally modifying a variable
+
+($acute_angle ? $right_fielder : $left_fielder) += $ball;    # Perl 5
+($acute_angle ?? $right_fielder :: $left_fielder) += $ball;  # Perl 6

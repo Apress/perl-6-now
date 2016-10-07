@@ -1,0 +1,7 @@
+# Explicit type case analysis - usually bad - Perl 5
+
+for($objectref) {
+    if   ($_->isa('AI::FuzzyLogic')) { $_->classify(BotSnack->new) }
+    elsif($_->isa('AI::NeuralNet'))  { $_->recognize(BotSnack->new) }
+    elsif($_->isa('AI::Sentient'))   { $_->pat_nicely() && back_away() } 
+}

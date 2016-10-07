@@ -1,0 +1,15 @@
+# Here documents, terminated by a blank line, Perl 5:
+
+print << ;
+        Stuff to print here
+        More stuff to be printed here
+
+# the first blank line terminates the quoting
+
+# Here documents, terminated by a blank line, Perl 6:
+
+print << '';
+        Stuff to print here
+        More stuff to be printed here
+
+# the first blank line terminates the quoting

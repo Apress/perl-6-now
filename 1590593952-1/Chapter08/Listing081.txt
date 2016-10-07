@@ -1,0 +1,4 @@
+# Sort our %addresses hash, factored out dereference, inline block, numidifed
+# Perl 6
+
+for sort { + %addresses{$^a}[0] }, keys %addresses -> $name { ... }

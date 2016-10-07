@@ -1,0 +1,6 @@
+# Add a random element to a random array in an array of arrays - Perl 5
+
+use autobox;
+use autobox::Core;
+
+@datastructure[int rand @$datastructure]->push(int rand 10);

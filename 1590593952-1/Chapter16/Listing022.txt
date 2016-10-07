@@ -1,0 +1,9 @@
+# Accessors for our typed hash entries in $self, Perl 5
+
+sub get_sink (Sink; undef) { my $self = shift; $self->{sink}; }
+sub set_sink (Sink; Sink)  { my $self = shift; $self->{sink} = shift; }
+
+sub get_shampoo (Shampoo; undef) { my $self = shift; $self->{shampoo}; }
+sub set_shampoo (Shampoo; Shampoo) { 
+    my $self = shift; $self->{shampoo} = shift; 
+}

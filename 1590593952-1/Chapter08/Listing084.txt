@@ -1,0 +1,6 @@
+# Sorting case insensitive, lexically
+
+sort { $^a } is insensitive, @data_to_sort; # Perl 6
+sort { lc $^a }, @data_to_sort;             # Perl 6
+sort { lc $^a cmp lc $^b }, @data_to_sort;  # Perl 6
+sort { lc $a cmp lc $a } @data_to_sort;     # Perl 5  

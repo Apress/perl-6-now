@@ -1,0 +1,9 @@
+# Perl 6
+
+# BEGIN blocks run only once at startup and can pre-compute expressions
+
+# These two lines are equivalent:
+
+my $seconds_in_a_day = BEGIN { 60 * 60 * 24 };
+
+my $seconds_in_a_day = 86400; 

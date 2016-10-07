@@ -1,0 +1,3 @@
+# Silly - Perl 5, Perl 6:
+
+(my @arr = 'foo'), 'bar', 'baz'; 

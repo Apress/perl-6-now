@@ -1,0 +1,8 @@
+# PDL coordinates are numbered inside out respective what is printed
+# to the screen
+
+use PDL;
+my $pdl = PDL->zeroes(3, 3, 3);
+$pdl->set(0, 1, 2, 100);
+$pdl->set(0, 1, 2, 100);
+print $pdl;

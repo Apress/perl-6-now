@@ -1,0 +1,5 @@
+# Arguments to functions may be computed using another function.
+# Each item returned from map is a separate argument to somefunc.
+
+somefunc(map { CGI::param($_) } qw/name address city state cc zip/);    # P5
+somefunc(* map { CGI::param($_) }, <<name address city state cc zip>>); # P6

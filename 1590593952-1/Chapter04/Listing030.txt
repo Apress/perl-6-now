@@ -1,0 +1,9 @@
+# Interpolated expressions may contain quotes - Perl 5
+
+print "The following people have just been sacked: 
+       $E{join ', ', sort 'Mike', 'Thomas', 'Adrian', 'Alex'}\n";
+
+# Interpolated expressions may contain quotes - Perl 6
+
+print "The following people have just been sacked: 
+       {join ', ', sort 'Mike', 'Thomas', 'Adrian', 'Alex'}\n";

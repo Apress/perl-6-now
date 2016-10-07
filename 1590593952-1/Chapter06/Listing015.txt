@@ -1,0 +1,8 @@
+# Auto-number rows of data, output HTML
+# Perl 6
+
+print '<tr>';
+print join '</tr><tr>'  <==
+      map "<tr>$_</td>" <==
+      zip 1 .. + @data, @data;
+print '</tr>';

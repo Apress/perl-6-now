@@ -1,0 +1,7 @@
+# Perl 5 or Perl 6 - interpolation uses current values for variables
+
+sub who_called_us_when {
+    my $foo = localtime;
+    my $bar = caller;
+    print "At $foo, $bar called us\n";
+}

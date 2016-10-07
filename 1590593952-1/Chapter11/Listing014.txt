@@ -1,0 +1,5 @@
+print(reverse(sort(keys(%hash))));          # Perl 5 - pathologically parenthetic
+print reverse sort keys %hash;              # Perl 5 - no unneeded parentheses
+
+print(reverse(sort(%hash.keys))));          # Perl 6 - pathological
+print reverse sort %hash.keys;              # Perl 6 - no unneeded parentheses

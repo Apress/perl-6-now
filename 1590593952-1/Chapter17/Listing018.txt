@@ -1,0 +1,19 @@
+# Perl 5 - joining all threads
+
+use threads;
+
+threads->create(sub {
+    sleep 2;
+    print "thinking...\n";
+    sleep 2;
+    print "done...\n";
+});
+
+threads->create(sub {
+    sleep 2;
+    print "working...\n";
+    sleep 2;
+    print "done...\n";
+});
+
+(threads->list)[0]->join while threads->list;

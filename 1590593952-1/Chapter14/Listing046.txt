@@ -1,0 +1,5 @@
+# inheritance, another syntax, Perl 6
+
+class Mutt {
+    is Dog;
+}

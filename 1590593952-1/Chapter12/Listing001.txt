@@ -1,0 +1,3 @@
+# Compiling the CGI module at the shell:
+
+perl -MO=Bytecode,-H /usr/local/lib/perl5/5.9.2/CGI.pm >CGI.pmc

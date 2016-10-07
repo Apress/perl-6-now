@@ -1,0 +1,25 @@
+# Loop over the mod file datastructures, splicing each note encountered into
+# the wav data
+
+use PDL;
+use Perl6::Variables;
+
+my $offset = 0;                       # Output wav data offset
+my $offset_step = $sample_rate / 10;  # 10 times a second notes may change
+
+for my $position (@positions) {
+    for my $frame ( 0 .. 63 ) {
+        for my $channel ( 0 .. 3 ) {
+            my $note = @patterns[$position][$frame][$channel];
+            if($note->{sample}) {
+                # the note for this channel changed 
+                my $scaled_sample = scale_sample($note, \@samples);
+                my $scaled_sample_length = $scaled_sample->dim(0);
+                $audio->range( 
+                    [$channel, $offset], [0, $scaled_sample_length] 
+                ) .= $scaled_sample;
+            }
+        }
+        $offset += $offset_step;
+    }
+}

@@ -1,0 +1,7 @@
+# dualvar - separate int and string values - Perl 5
+
+use Scalar::Util 'dualvar';
+
+my $foo = dualvar 15, "Hi boys and girls! ";
+print $foo + 5, "\n";
+print $foo . "Do you know what time it is? ", "\n";

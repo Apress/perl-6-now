@@ -1,0 +1,23 @@
+# Perl 5 - slurping up named parameters beyond what's explicitly named
+
+package Foo;
+
+use Perl6::Variables;
+use Attribute::Property;
+# use NEXT;
+
+sub new :New;
+sub bar :Property;
+
+sub foo {
+    my $_ = shift;
+    my %args = @_;
+    $_->bar = delete %args{bar};
+    print "baz: %args{baz}\n";
+    # $_->NEXT::foo(%args);
+}
+
+package main; 
+
+my $foo = Foo->new;
+$foo->foo(foo => 10, bar => 20, baz => 25);

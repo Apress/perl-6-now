@@ -1,0 +1,9 @@
+# Mutating operators as in previous example - Perl 6
+
+$i += 5;
+$output ~= "\n" ~ "-" xx 79 ~ "\n";
+
+# A few of the new Perl 6 mutating operators 
+
+$obj.=bar();  # call a method in $obj and assign the result back into $obj
+$foo \=;      # take a reference to ourself (proposed syntax)

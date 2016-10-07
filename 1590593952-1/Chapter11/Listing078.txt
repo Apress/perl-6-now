@@ -1,0 +1,17 @@
+# Simple currying example - Perl 5
+
+use autobox;
+use autobox::Core;
+use Perl6::Parameters;
+
+sub moon ($phase, $color) {
+    print "The $color moon is $phase.\n";
+}
+
+my $moon = \&moon;        # take a reference to our moon routine
+
+my $waxing_moon = $moon->curry('waxing crescent');
+$waxing_moon->('golden'); # "The golden moon is waxing crescent"
+
+my $blue_waxing_moon = $waxing_moon->curry('blue');
+$blue_waxing_moon->();    # "The blue moon is waxing crescent"  

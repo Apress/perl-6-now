@@ -1,0 +1,30 @@
+# dumping the chess puzzle example, Perl 5:
+
+use XML::Simple;
+
+print XMLout(\%pieces);
+
+# outputs:
+
+<opt>
+  <T1 image="8196828737276">
+    <position>0</position>
+    <position>4</position>
+  </T1>
+  <Q image="9276728297743">
+    <position>0</position>
+    <position>3</position>
+  </Q>
+  <B1 image="4828929672927">
+    <position>0</position>
+    <position>1</position>
+  </B1>
+  <K image="3828472821749">
+    <position>0</position>
+    <position>0</position>
+  </K>
+  <B2 image="4828929672927">
+    <position>0</position>
+    <position>2</position>
+  </B2>
+</opt>

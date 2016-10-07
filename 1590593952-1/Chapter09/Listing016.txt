@@ -1,0 +1,9 @@
+# Test $creature to see if its derived from Octaparrot or a subclass
+# of Octaparrot - Perl 5
+
+warn "Poly shouldn't be" if $creature->isa('Octaparrot');
+
+# Test object to see if its derived from Octaparrot a subclass - Perl 6
+
+warn "Poly shouldn't be" if $creature is Octaparrot; # or..
+warn "Poly shouldn't be" if $feature ~~ Octaparrot;

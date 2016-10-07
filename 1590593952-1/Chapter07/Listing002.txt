@@ -1,0 +1,9 @@
+# These two are equivalent for creating a single dimensional array
+
+my int $array is Dim(1000);                  # Perl 6
+my $array = PDL->zeroes(1000)->long;         # Perl 5 with use PDL
+
+# These two are equivalent for creating a two dimensional array:
+
+my int $array is Dim(1000, 1000);            # Perl 6
+my $array = PDL->zeroes(1000, 1000)->long;   # Perl 5 with use PDL

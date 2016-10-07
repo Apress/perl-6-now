@@ -1,0 +1,9 @@
+# Perl 5 - read the current object reference and redispatch to it
+
+use Attribute::Property;
+
+sub foo {
+    my $_ = shift;
+    $_->bar;
+    $_->baz;
+}

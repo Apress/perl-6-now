@@ -1,0 +1,8 @@
+# Interpolated expression - Perl 5
+
+use Interpolation E => 'eval';
+print "$E{7+8} = 15... Adding up numbers!\n";
+
+# Interpolated expression - Perl 6
+
+print "{7+8} = 15... Adding up numbers is very uplifting.\n";  # Perl 6

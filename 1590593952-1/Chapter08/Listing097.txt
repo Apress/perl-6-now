@@ -1,0 +1,15 @@
+# Circular references reprimanded by weakening the offending circular 
+# references, Perl 5
+
+use Scalar::Util 'weaken';
+
+while(1) {
+    do {
+        my $thing_one = [];
+        my $thing_two = [];
+        $thing_one->[0] = $thing_two; weaken $thing_one->[0];
+        $thing_two->[0] = $thing_one; weaken $thing_two->[1];
+    };
+    # $thing_one and $thing_two have no non-weak references and they've
+    # gone out of scope, so perl reclaims them
+}

@@ -1,0 +1,9 @@
+# Arrays of types - Perl 6 only:
+
+sub dosomething (@foo is Array of Gronkulator) {
+}
+
+# or, alternatively:
+
+sub dosomething (Array of Gronkulator @foo) {
+}

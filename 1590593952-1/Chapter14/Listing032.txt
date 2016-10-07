@@ -1,0 +1,35 @@
+# Initializing instance data, Perl 5 with Attribute::Property
+
+package Dog;
+
+use Attribute::Property;
+
+sub fleas    :Property;
+sub tail     :Property;
+sub location :Property;
+
+sub new :New {
+    my $_ = shift;
+    $_->tail = Dog::Tail->new;
+    $_->fleas = 0;
+    $_->location = 'couch';
+    return $_;
+}
+
+sub chase_bunnies { 
+    my $_ = shift;
+    $_->tail->chase_bunnies; 
+}
+
+package Dog::Tail;
+
+use Attribute::Property;
+
+has cockleburs :Property;
+
+sub wag {  }
+sub clear_coffee_table {  }
+sub chase_bunnies { 
+    my $_ = shift;
+    $_->cockleburs += int rand 40;
+}

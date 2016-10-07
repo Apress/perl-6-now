@@ -1,0 +1,23 @@
+# Not passing in a reference to have it defined
+# example of the need for the ability to export
+# Perl 5
+
+package Some::Module;
+
+use PadWalker 'peek_my';
+
+sub import {
+    ${peek_my(1)->{'$add_logic'}} = sub {
+        return $_[0] + $_[1];
+    };
+}
+
+package main;
+
+sub test {
+    my $add_logic;
+    Some::Module::import();  # no explicitly passed references
+    print $add_logic->(5, 6), "\n";
+}
+
+test();

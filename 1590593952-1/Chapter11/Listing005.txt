@@ -1,0 +1,23 @@
+# Perl 6 nomenclature:
+
+my $foo
+    is constant  # <-- trait
+;
+
+return 1
+    but false    # <-- property
+;
+
+class Foo::Bar {
+    has $.quux;  # <-- attribute
+}
+
+# Note that attribute/property is exactly the other way around in Perl 5
+# documentation:
+
+my $foo
+    : shared     # <-- attribute
+;
+$foo->
+    bar          # <-- property
+;

@@ -1,0 +1,6 @@
+# Compute intersection between sets - Perl 5
+
+use Quantum::Superpositions;
+
+print join ', ', eigenstates(any(1, 2, 3) == any(3, 5, 7));
+print "\n";

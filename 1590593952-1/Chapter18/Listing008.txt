@@ -1,0 +1,18 @@
+# Difference between two sets - adapted from the Perl Cookbook - Perl 5
+
+my @set1 = (1, 2, 3, 4);
+my @set2 = (4, 5, 6, 7);
+
+my %seen = ();
+my @aonly = ();
+
+foreach my $item (@set2) { $seen{$item} = 1 }
+foreach my $item (@set1) {
+    unless ($seen{$item}) {
+        # it's not in %seen, so add to @aonly
+        push(@set1only, $item);
+    }
+}
+
+print join ', ', @set1only;
+print "\n";

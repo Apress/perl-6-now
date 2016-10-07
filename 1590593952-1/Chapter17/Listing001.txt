@@ -1,0 +1,3 @@
+# Test for availability of threads in Perl 5 at the shell
+
+$ perl -e 'use threads;'

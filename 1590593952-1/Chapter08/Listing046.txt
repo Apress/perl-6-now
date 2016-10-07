@@ -1,0 +1,5 @@
+# Using a single variable in a list as a way of providing list context 
+# and picking out the first return value - Perl 5
+
+(my $first_match) = $str =~ m/(\w+)/g;
+my $first_match = ($str =~ m/(\w+)/g)[0];

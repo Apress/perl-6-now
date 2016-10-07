@@ -1,0 +1,8 @@
+# Force process_something() into list context - Perl 5 and Perl 6
+
+my @array = process_something();
+
+# Force process_something() into list context but flatten it too - Perl 6
+
+my @array = * process_something();
+my @array >>=<< process_something();

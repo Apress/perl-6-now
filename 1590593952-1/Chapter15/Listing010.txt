@@ -1,0 +1,4 @@
+# Perl 5 - $@ does not remember $!'s errno value when set from $!
+
+eval { open my $f, '<', 'foo.txt' or die $!; }; 
+print $@ + 0, "\n";

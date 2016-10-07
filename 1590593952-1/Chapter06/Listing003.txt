@@ -1,0 +1,3 @@
+# Hyper on both sides - Perl 6
+
+@income_and_expenditures = @credits >>-<< @debits;

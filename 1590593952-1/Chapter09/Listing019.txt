@@ -1,0 +1,18 @@
+# Attaining fall-through - Perl 5 
+
+for($file) {
+    if(-f) { print "$_ is a file\n" }
+    if(-r) { print "$_ is readable by you\n" }
+    if(-f) { print "$_ is plain file\n" }
+    if(-T) { print "$_ appears to contain text\n" }
+    if(-B) { print "$_ appears to contain binary\n" }
+    if(-z) { print "$_ is empty\n" }
+}
+
+# Attaining fall-through - Perl 6
+
+given $file {
+    if -f { print "$_ is a file\n" }
+    if -r { print "$_ is readable by you\n" }
+    # ...
+}

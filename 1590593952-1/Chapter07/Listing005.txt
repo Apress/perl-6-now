@@ -1,0 +1,4 @@
+# sequence() creates easily recognizable data to test with
+
+my $zero_to_ninety_nine = PDL->sequence(10, 10);
+print $zero_to_ninety_nine;

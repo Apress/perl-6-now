@@ -1,0 +1,12 @@
+# Perl 6 - named parameters - baz => 10 provides 10 to $baz
+
+class Foo {
+    method bar ($baz, $quux) {
+        ...
+    }
+}
+
+class main;
+
+my $foo = Foo->new;
+$foo->(baz => 10, quux => 20);

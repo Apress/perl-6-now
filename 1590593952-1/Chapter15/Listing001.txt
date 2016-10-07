@@ -1,0 +1,3 @@
+# Promoting failed return codes to exceptions - Perl 5 and Perl 6
+
+my $something = some_function() err die;

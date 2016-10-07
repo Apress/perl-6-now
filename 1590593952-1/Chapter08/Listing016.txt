@@ -1,0 +1,12 @@
+# does an array element exist?
+
+# use Perl6::Variables; # uncomment for Perl 5
+
+my @arr; 
+
+@arr[0] = undef;
+# no value for @arr[1] is specified
+@arr[2] = 1; 
+
+print '@arr[0] ', exists @arr[0] ? 'exists' : 'does not exist', "\n";
+print '@arr[1] ', exists @arr[1] ? 'exists' : 'does not exist', "\n";

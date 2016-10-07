@@ -1,0 +1,4 @@
+# Perl 5 or Perl 6 - simple interpolation:
+
+my $message = "Hello, World!";
+print "$message\n";

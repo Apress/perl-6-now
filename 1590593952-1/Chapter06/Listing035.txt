@@ -1,0 +1,2 @@
+($acute_angle ? $right_fielder : $left_fielder)->dive();   # Perl 5
+($acute_angle ?? $right_fielder :: $left_fielder).dive();  # Perl 6

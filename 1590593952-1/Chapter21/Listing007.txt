@@ -1,0 +1,12 @@
+# Passing time with Coro and Coro::Event - Perl 5
+
+use Coro;
+use Coro::Event;
+async {
+    my $timer = Coro::Event->timer(interval => 10);
+    while(1) {
+        $timer->next();
+        print "ding\n";
+    }
+};
+Event::loop;

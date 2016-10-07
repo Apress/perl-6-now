@@ -1,0 +1,11 @@
+# Default argument with manual argument processing, Perl 5 or Perl 6,
+# Perl 5 style
+
+sub draw_cards_from_deck {
+    my $cards_to_draw = shift() // 3; # draw 3 unless specified otherwise
+    my @result;
+    while($cards_to_draw--) {
+        push @result, shift @top_of_deck;
+    }
+    return @result;
+}

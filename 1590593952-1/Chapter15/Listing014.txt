@@ -1,0 +1,2 @@
+my $dire_predirection is undo { $dire_prediction = "Told ya so!" } =
+    "Something bad is going to happen!";

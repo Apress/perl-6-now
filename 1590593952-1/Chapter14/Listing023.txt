@@ -1,0 +1,7 @@
+sub new :New {
+    my $_ = shift;
+    $_->order_pizza();
+    $_->eat_bon_bons();
+    $_->walk_around_in_bunny_slippers();
+    return $_;
+}

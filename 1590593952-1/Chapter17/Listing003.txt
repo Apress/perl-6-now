@@ -1,0 +1,6 @@
+# Perl 5 - thread creation syntax
+
+use threads;
+
+threads->create(sub { ... }, @arguments); # creates a thread
+async { ... };                            # also creates a thread

@@ -1,0 +1,7 @@
+# Perl 5 - simulating named parameters using a hash slice
+
+sub foo {
+    my %args = @_;
+    my($bar, $baz, $quux) = %args{qw(bar baz quux)};
+    # do stuff with $bar, $baz, $quux here
+}

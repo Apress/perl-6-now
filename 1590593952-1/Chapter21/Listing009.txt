@@ -1,0 +1,8 @@
+# Converting an existing filehandle into a Coro::Handle object
+
+use Coro;
+use Coro::Handle;
+
+open my $fh, '<', '/tmp/sock.0' or die $!;
+$fh = Coro::Handle->unblock($fh);  
+$fh->read(my $buffer, 1024);

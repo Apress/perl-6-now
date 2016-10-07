@@ -1,0 +1,19 @@
+# Subclass methods override parent class methods, Perl 6
+
+class Dog {
+    has $.tail;
+    has $.name;
+    has $.breed = 'generic dog';
+    method describe_dog {
+        return $.breed;
+    }
+}
+
+class Mix is Dog {
+    has $.mothers_breed;
+    has $.fathers_breed;
+    method describe_dog {
+        return sprintf "A mix between a %s and a %s", 
+            $.mothers_breed, $.fathers_breed;
+    }
+}

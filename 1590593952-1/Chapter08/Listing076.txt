@@ -1,0 +1,22 @@
+# Process a hash in numeric order of a field in a referenced array 
+# Perl 5
+
+use Perl6::Variables;
+
+my %addresses = (
+    Heather => [1234,  "Robin Lane"],
+    Scott   => [692,   "Mill Ave"],
+    Sherry  => [16231, "Timbucktoo Court"], 
+);
+
+for my $name (
+    sort { %addresses{$a}[0] <=> %addresses{$b}[0] } keys %addresses
+) {
+    print %addresses{$name}[0], ' ', %addresses{$name}[1], ' ', $name, "\n";
+}
+
+# outputs:
+
+692 Mill Ave Scott
+1234 Robin Lane Heather
+16231 Timbucktoo Court Sherry

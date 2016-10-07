@@ -1,0 +1,31 @@
+# Arizona highway navigation, Phoenix metro area
+# a graph example for Perl 5, version 1
+
+use Perl6::Variables;
+use autobox;
+use autobox::Core;
+
+my %ref_to_name; 
+
+my $i101n = [];  %ref_to_name{$i101n} = 'Interstate 101 North';
+my $i101s = [];  %ref_to_name{$i101s} = 'Interstate 101 South';
+my $i10   = [];  %ref_to_name{$i10}   = 'Interstate 10';
+my $i202  = [];  %ref_to_name{$i202}  = 'Interstate 202';
+my $us60  = [];  %ref_to_name{$us60}  = 'U.S. Route 60';
+my $sr51  = [];  %ref_to_name{$sr51}  = 'State Route 51';
+
+$i101n->push( $sr51, $i202, $i101s );
+$i101s->push( $sr51, $i202, $i10, $i101n, $us60 );
+$i202->push( $sr51, $i101s, $i101n );
+$us60->push( $sr51, $i101s );
+$sr51->push( $i101s, $i101n, $i10, $us60 );
+$i10->push( $sr51, $i101s, $i202 );
+
+my $location = $i10;
+my $destination = $i101n;
+
+while($location ne $destination) {
+    $location = $location->[int rand $location->elems];
+    print "Take the ", %ref_to_name{$location}, " exit.\n";
+}
+print "And you're there!\n";

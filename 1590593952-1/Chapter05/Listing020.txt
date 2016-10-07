@@ -1,0 +1,6 @@
+# Decompiling Perl source at the shell to see that 0x37 and 55 really
+# are the same thing to perl - Perl 5
+
+$ perl -MO=Deparse -e 'print 0x37, "\n";'
+print 55, "\n";
+-e syntax OK

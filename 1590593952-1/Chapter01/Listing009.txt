@@ -1,0 +1,2 @@
+cd bleedperl
+./Configure -de -Dusedevel && make && make install

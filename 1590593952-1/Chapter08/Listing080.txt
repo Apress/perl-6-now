@@ -1,0 +1,3 @@
+# sort our %addresses hash, factored out dereference, inline block, Perl 6
+
+for sort { %addresses{$^a}[0] }, keys %addresses -> $name { ... }

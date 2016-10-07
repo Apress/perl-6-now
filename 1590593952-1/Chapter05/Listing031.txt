@@ -1,0 +1,8 @@
+SV = PVNV(0x81e8350) at 0x814c218
+  REFCNT = 1
+  FLAGS = (PADMY,IOK,POK,pIOK,pPOK)
+  IV = 15
+  NV = 0
+  PV = 0x814d368 "Hi boys and girls!"\0
+  CUR = 19
+  LEN = 20

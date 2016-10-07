@@ -1,0 +1,15 @@
+# Perl 5 - customer data is stored spread across parallel arrays 
+
+use Data::Alias;
+use Perl6::Variables;
+
+my @customer_names = ('Fred', 'Mike');
+my @customer_addresses = ('1234 Robin Lane', '314 Pie Court');
+my @customer_phones = ('515-4132', '515-7382');
+while(my $i < @customer_names) {
+    alias my $name = @customer_names[$i];        # changed from above
+    alias my $address = @customer_addresses[$i]; # changed from above
+    alias my $phone = @customer_phones[$i];      # changed from above
+    # lots of logic here using $name, $address, and $phone
+    $i += 1;                                  # changed from above
+}

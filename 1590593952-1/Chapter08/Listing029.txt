@@ -1,0 +1,3 @@
+# Function calls expect lists
+
+some_function 'foo', 'bar', 'baz';

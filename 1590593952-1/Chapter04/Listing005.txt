@@ -1,0 +1,3 @@
+# Printing numbers in various bases - Perl 5 and Perl 6 
+
+printf "%x\n", 37; # convert to hexadecimal

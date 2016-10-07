@@ -1,0 +1,9 @@
+# Perl 5 - object method that copies data out of the object reference
+
+use Perl6::Variables;
+
+sub paint {
+    my $self = shift;
+    my ($what, $color) = %self{'what', 'color'};
+    # do stuff with $what, $color
+}

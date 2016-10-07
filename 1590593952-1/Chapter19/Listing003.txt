@@ -1,0 +1,14 @@
+# anonymous subroutines and variable scoping - pseudo-Perl
+
+$foo = 10;
+
+sub print_foo {
+    print $foo, "\n";
+}
+
+$bar = sub {
+    local $foo = 20;
+    print_foo();
+};
+
+$bar->();

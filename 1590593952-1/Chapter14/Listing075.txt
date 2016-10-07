@@ -1,0 +1,42 @@
+# Perl 5 - simple roles example
+
+# Implementation of the role:
+
+package CrossRoads;
+use Class::Role;      # with no argument, we are a role
+use Attribute::Property;
+
+sub currently_crossing_road :Property;
+
+sub abort_road_crossing { 
+    my $_ = shift; 
+    $_->current_crossing_road = 0; 
+}
+
+sub cross_road {
+    my $_ = shift; 
+    $_->current_crossing_road = 1; 
+}
+
+# Some critters using the Cross Roads role:
+
+package Armadillo;
+use Class::Role 'CrossRoads';
+
+package Chicken;
+use Class::Role 'CrossRoads';
+
+# Some other class that gets a critter as an argument
+
+package main;
+
+sub swerve_to_avoid {
+    my $_ = shift;
+    my $critter = shift;
+
+    if($critter->isa('CrossRoads')) {
+        $critter->abort_road_crossing;
+    } else {
+        $_->get_back_on_the_road;
+    }
+}

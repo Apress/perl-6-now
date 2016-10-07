@@ -1,0 +1,8 @@
+# err checks for undef
+
+undef err die;                           # always dies, Perl 5 or Perl 6
+
+open my $fh, '<', 'file.txt' err die $!; # dies conditionally, Perl 5
+
+my $value = <STDIN> err                  # dies conditionally, Perl 5
+    die "Controlling terminal went for a hike! $!";

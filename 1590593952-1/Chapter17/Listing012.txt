@@ -1,0 +1,14 @@
+Hatfield wants the kitchen
+Hatfield has the kitchen
+Hatfield wants the bathroom
+Hatfield wants the livingroom
+Hatfield has the livingroom
+McCoy wants the kitchen
+McCoy wants the bathroom
+McCoy wants the livingroom
+(pause)
+Hatfield4 has the bathroom
+McCoy has the kitchen
+McCoy has the bathroom
+McCoy has the livingroom
+(pause)

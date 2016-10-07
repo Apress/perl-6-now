@@ -1,0 +1,5 @@
+# Try to call a method that doesn't exist for a class, Perl 5
+
+my Pet $pet = Pet->new;
+$pet->chase_tail;
+typesafety::check;

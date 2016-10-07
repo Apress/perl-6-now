@@ -1,0 +1,6 @@
+# Elements of one set that are less than all elements in a second set
+# Perl 5
+
+use Quantum::Superpositions;
+print join ', ', eigenstates(any(1, 2, 3, 4) < all(4, 5, 6, 7));
+print "\n";

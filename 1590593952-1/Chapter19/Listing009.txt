@@ -1,0 +1,6 @@
+# Storing logic to execute later using a closure - Perl 5:
+
+my $answer = 10;
+my $code = sub { print "The answer is $answer.\n"; };
+# later in the program...
+$code->();

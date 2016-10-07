@@ -1,0 +1,8 @@
+# -> $day, $sunshine { ... } is the same thing as 
+# sub ($day, $sunshine) { ... }
+# Perl 6
+
+for zip @day, @sunshine -> $day, $sunshine {
+    die "day without sunshine" unless $sunshine;
+    print $day, " is a nice day.\n";
+}

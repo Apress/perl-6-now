@@ -1,0 +1,8 @@
+# Schwartzian Transform to efficiently sort files by date, given a
+# list of file names. Perl 5. 
+
+my @sorted_file_names = 
+    map  { $_->[0] }
+    sort { $a->[1] <=> $b->[1] }
+    map  { [$_, -m $_] } 
+    glob '*';

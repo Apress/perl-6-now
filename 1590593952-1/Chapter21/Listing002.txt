@@ -1,0 +1,6 @@
+# Lexical binding to variables by a coroutine async { } block - Perl 5
+
+my @arguments = qw/one two three/;
+async {
+    # do something with @arguments here
+};

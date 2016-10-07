@@ -1,0 +1,2 @@
+$ perl -MO=Bytecode,-H /usr/local/lib/perl5/5.9.2/CGI.pm >CGI.pmc
+$ perl -e 'use lib "."; use CGI; print CGI->header;'

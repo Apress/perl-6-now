@@ -1,0 +1,6 @@
+# Perl 5 - automatically thrown exceptions:
+
+use Fatal 'open';
+
+open my $fh, '<', 'doesnt_exist.txt';
+# die $! unless $fh; # not needed thanks to Fatal.pm

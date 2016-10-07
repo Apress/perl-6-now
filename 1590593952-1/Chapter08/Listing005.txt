@@ -1,0 +1,12 @@
+use Perl6::Variables;
+use Hash::Util 'lock_keys';
+
+%person{'name'} = 'Fred';
+%person{'age'}  = 42;
+%person{'transportation'} = 'Harley';
+
+lock_keys(%person);
+
+if(%person{'anme'} eq 'Fred') {
+    %person{'age'}++;
+}

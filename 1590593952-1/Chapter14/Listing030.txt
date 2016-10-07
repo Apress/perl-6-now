@@ -1,0 +1,21 @@
+# Initializing instance data, Perl 6
+
+class Dog {
+    has $.fleas;
+    has $.tail;
+    has $.location;
+    method tail { $.tail }
+    submethod BUILD {
+        $.location = 'couch';
+        $.fleas = 0;
+        $.tail = Dog::Tail->new;
+    }
+    method chase_bunnies { $.tail.chase_bunnies }
+}
+
+class Dog::Tail {
+    has $.cockleburs;
+    method wag { ... }
+    method clear_coffee_table { ... }
+    method chase_bunnies { $.cockleburs += int rand 40 }
+}

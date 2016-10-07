@@ -1,0 +1,3 @@
+# Attach optional type information to a container - Perl 5
+
+my Int $age;

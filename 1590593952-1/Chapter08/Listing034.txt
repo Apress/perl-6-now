@@ -1,0 +1,4 @@
+# Lists initialize hashes and arrays in Perl 5
+
+my %numbers = ( one => 1, two => 2, three => 3 );
+my @numbers = ( 0, 1, 2, 3, 4, 5, 6 );

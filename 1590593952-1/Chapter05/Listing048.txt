@@ -1,0 +1,6 @@
+# Type information can be specified with traits
+# these two lines are different - Perl 6
+
+my Int @ages;             # an array of things that are Ints
+my @ages is Int;          # @ages itself is an Int - error
+my @ages is Array of Int; # that's better - same as first

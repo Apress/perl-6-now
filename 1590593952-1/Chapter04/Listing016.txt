@@ -1,0 +1,2 @@
+print 'Hello World\n';              # bad - this won't do what you probably want
+print '/\/\/\/\/\/\/\/', "\n";      # good - print an ASCII wavy line

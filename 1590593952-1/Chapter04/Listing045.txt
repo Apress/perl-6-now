@@ -1,0 +1,11 @@
+# Here documents in an expression with the semicolon placed after
+# the terminating string - Perl 5
+
+# This message will be printed entirely in upper case:
+
+print uc <<SPAM
+  100% free visit us now http://freestuff4u.ru no closing cost improve your 
+  love life you can't lose!!!!!! act now! save! half off! 
+  free free free!!!!111!!111
+SPAM
+;

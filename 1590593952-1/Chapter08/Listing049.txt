@@ -1,0 +1,11 @@
+# Read a pbm/ppm/pnm file - Perl 5
+
+# the first 3 lines look something like this:
+# P3
+# 492 402
+# 255
+# the rest is image data, which may be binary or ASCII formatted
+
+open my $ppm, '<', 'foo.ppm' or die $!;
+(my $version, my $dimensions, my $color_depth, my @image_data) = <$ppm>;
+close $ppm;

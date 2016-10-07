@@ -1,0 +1,3 @@
+if( length($bitstring) * 8 <= WIDE)  # which is the same as:
+if( length($bitstring) <= WIDE / 8)  # which is the same as:
+if( length($bitstring) <= 8)         # optimized version: 64/8 = 8

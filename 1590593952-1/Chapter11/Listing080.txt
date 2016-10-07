@@ -1,0 +1,10 @@
+# DBI's prepare() and execute() statements kind of curry - Perl 5
+
+use DBI;
+
+my $dbh = DBI->connect('...'); # depends on your database
+my $sth = $dbh->prepare('select * from foo where foo.id = ?');
+$sth->execute(5);   # 5 is substituted in for the ?
+while(my $row = $sth->fetchrow_hashref) {
+    # process results
+} 

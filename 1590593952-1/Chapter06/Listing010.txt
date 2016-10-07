@@ -1,0 +1,2 @@
+my $subref = \&a_routine_that_does_something; # Perl 5
+my $subref = &a_routine_that_does_something;  # Perl 6

@@ -1,0 +1,17 @@
+my $audio_length = $audio->dim(0);
+my $pbm = PDL->zeroes(255, $audio_length)->long;
+my $steps = 254;
+my $chunk = 0x7fffffff / $steps;
+
+for my $i (reverse 0 .. $steps) {
+   my $range_start = 
+      PDL->long(($chunk * $i) x ($audio_length - 1));
+   my $range_stop  = 
+      PDL->long(($chunk * $i + $chunk) x ($audio_length - 1));
+   $pbm->range([$i], [$audio_length]) .= 
+       (($audio > $range_start) & ($audio < $range_stop));
+}
+
+$pbm = $pbm->xchg(0, 1);
+
+$pbm->wpic("piddle.pbm");

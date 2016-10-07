@@ -1,0 +1,1 @@
+read $fh, my $buffer, -s $fh err die $!;

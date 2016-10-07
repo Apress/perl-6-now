@@ -1,0 +1,10 @@
+# Perl 5 - hashes and arrays may be bound to references
+
+use Data::Alias;
+use Perl6::Variables;
+
+%self{'colors'} = [];
+alias my @colors = @{ %self{'colors'} };
+push @colors, 'red'; # same as %self{'colors'}->push('red');
+
+print %self{'colors'}[0], "\n";

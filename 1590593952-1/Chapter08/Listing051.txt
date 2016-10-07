@@ -1,0 +1,4 @@
+# Reference and numeric context - Perl 6
+
+$foo = @array;     # Perl 6 - $foo becomes a reference to @array
+$foo = + @array;   # Perl 6 - $foo gets the number of elements in @array

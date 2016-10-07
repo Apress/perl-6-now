@@ -1,0 +1,11 @@
+# Passing foo() to bar()
+
+# Perl 5
+
+sub foo { ... };
+bar(\&foo);
+
+# Perl 6
+
+sub foo { ... }
+bar(&foo);     

@@ -1,0 +1,15 @@
+# Default boolification, numification, and stringification, Perl 5
+
+use CGI;
+
+# Default boolification
+
+my $cgi = CGI->new or die "failed to create CGI object";
+
+# Default numification
+
+printf "%x\n", $cgi + 0; 
+
+# Default stringification
+
+print $cgi, "\n";

@@ -1,0 +1,5 @@
+# Automatic precompilation on demand:
+
+use ShouldNotBeCompiled;
+use ByteCache;
+use ShouldBeCompiled;

@@ -1,0 +1,19 @@
+# Yield from within a loop in a continuation with initial and
+# incremental arguments - Perl 5
+
+use Coro::Cont;
+use Perl6::Variables;
+
+sub producer :Cont {
+    my @numbers = @_;
+    yield;
+    for (my $i = 0; $i < @numbers; $i++) {
+        yield @numbers[$i];
+        $i += shift if @_;
+    }
+}
+
+producer(5 .. 25);        # create a sequence
+print producer(1), "\n";  # skip one number
+print producer(3), "\n";  # skip 3 numbers
+print producer(10), "\n"; # skip 10 numbers

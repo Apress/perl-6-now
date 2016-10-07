@@ -1,0 +1,11 @@
+# Receiving two arrays and passing two arrays - Perl 5
+
+use Perl6::Contexts;
+
+sub do_something {
+  my $array1_ref = shift;
+  my $array2_ref = shift;
+  # ...
+}
+
+do_something(@array1, @array2);

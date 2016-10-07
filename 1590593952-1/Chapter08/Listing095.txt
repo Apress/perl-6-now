@@ -1,0 +1,11 @@
+# Non-circular references are reaped, Perl 5
+
+while(1) {
+    do {
+        my $thing_one = [rand 10];
+        my $thing_two = [rand 10];
+    };
+    # $thing_one and $thing_two are no longer in scope at this point
+    # and nothing has references to either, so perl takes the memory back 
+    # from them
+}

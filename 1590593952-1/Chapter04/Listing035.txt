@@ -1,0 +1,7 @@
+# printf instead of interpolation and escape sequences - Perl 5 and Perl 6
+
+printf "OHAYO %s %s!\n", uc $surname, ucfirst $name;
+
+# Interpolating a code block - Perl 6
+
+print "OHAYO { uc $surname } { ucfirst $name }!\n";

@@ -1,0 +1,4 @@
+use Perl6::Contexts;  
+
+$foo = @array;     # Perl 5 - $foo gets a reference to @array 
+$foo = 0 + @array; # Perl 5 - $foo gets the number of elements in @array

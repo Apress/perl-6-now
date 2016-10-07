@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+
+# Compute prime numbers, but only only as many as actually needed
+# Perl 5
+
+use strict;
+use warnings;
+use Want;
+
+sub prime_numbers {
+    my $i = 0;
+    my @results;
+    if(want('Infinity')) {
+        die "Infinite list of primes requested - almost certainly an error";
+    }
+    while(want(scalar @results)) {
+        # print "debug: i: $i\n";
+        # print "debug: results: ", scalar @results, "\n";
+        my $divisible_by = $i - 1;
+        while($divisible_by > 1) {
+            if($i % $divisible_by == 0) {
+                # print "debug: $i is divisible by $divisible_by\n";
+                last;
+            }
+            $divisible_by--;
+        }
+        push @results, $i if $divisible_by == 1;
+        $i++;
+    }
+    @results;
+}
+
+# A test case and example usage of our function:
+
+my ($first_prime, $second_prime, $third_prime) = prime_numbers();
+print join ", ", $first_prime, $second_prime, $third_prime; print "\n";
+
+# Another test case and example usage of our function:
+
+my @primes; 
+($primes[0], $primes[1], $primes[2], $primes[3], $primes[4]) = 
+    prime_numbers();
+print join ", ", @primes; print "\n";

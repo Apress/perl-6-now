@@ -1,0 +1,11 @@
+# Perl 5 - representing the same data in an array and hash of the
+# same base name
+
+use Perl6::Variables;
+
+my @people = qw<fred john mike paul mary mike alex bill dave john>;
+my %people;
+foreach my $person (@people) {
+    %people{$person}++;
+}
+print qq{There are %people{'mike'} people named "Mike".\n};

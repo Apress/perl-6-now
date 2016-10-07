@@ -1,0 +1,10 @@
+# Using a slice from above example - Perl 5
+
+my($bar, $baz, $quux) = %args{qw(bar baz quux)};
+
+# Same thing without a slice - Perl 5:
+
+use Perl6::Variables;
+my $bar = %args{bar};
+my $baz = %args{baz};
+my $quux = %args{quux};

@@ -1,0 +1,4 @@
+# Simplest possible subroutine - Perl 5 or Perl 6
+
+sub your_name_here {
+}

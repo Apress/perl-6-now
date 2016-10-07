@@ -1,0 +1,7 @@
+# Hashes store related bits of information
+
+# use Perl6::Variables; # uncomment for Perl 5
+
+%person{'name'} = 'Fred';
+%person{'age'}  = 42;
+%person{'transportation'} = 'Harley';

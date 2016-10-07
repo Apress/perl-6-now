@@ -1,0 +1,15 @@
+# Zero but true - Perl 6
+
+if 0 but true {
+    print "This will always run\n";
+}
+
+# Zero but false - Perl 6
+
+if 6 but false {
+    print "This won't ever run\n";
+}
+
+if "Yes" but false {
+    print "This won't run either\n";
+}

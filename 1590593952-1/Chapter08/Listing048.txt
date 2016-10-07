@@ -1,0 +1,4 @@
+# Perl 5 - these two lines are equivalent
+
+my($bar, $baz, $quux) = @_;
+(my $bar, my $baz, my $quux) = @_;

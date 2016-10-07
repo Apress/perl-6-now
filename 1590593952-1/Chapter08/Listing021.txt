@@ -1,0 +1,31 @@
+# Successively better idioms for iterating over array elements: 
+
+use Perl6::Variables;
+use Perl6::Contexts;
+use autobox;
+use autobox::Core;
+
+my @array = ( 1 .. 10 );
+
+# Error prone and verbose, but familiar to C programmers.
+# Provides the current index which is sometimes needed.
+# Perl 5:
+
+for(my $index; $index < @array; $index++ ) { print @array[$index], "\n"; }
+
+# Error prone and verbose but familiar to C programmers - Perl 6:
+
+loop(my $index; $index < @array; $index++ ) { print @array[$index], "\n"; }
+
+# Useful for when both the index, $index, and the element, @array[$index],
+# are needed - Perl 5 and Perl 6:
+
+for my $index (0 .. @array->last) { print @array[$index], "\n"; }
+
+# Idiomatic - using the autobox idiom:
+
+@array->foreach(sub { my $element = shift; print $element, "\n"; });
+
+# Best - requires none of the above modules:
+
+for my $element (@array) { print $element, "\n"; } 

@@ -1,0 +1,5 @@
+$ perl -MO=Deparse,-p -e 'print reverse sort keys %hash;'
+
+# outputs:
+
+# print(reverse(sort(keys(%hash))));

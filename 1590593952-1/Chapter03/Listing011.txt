@@ -1,0 +1,5 @@
+# Perl 5, avoiding the uninitialized warning
+
+my $num = 0;
+my $str = '';
+print "$num people are going to $str.\n";

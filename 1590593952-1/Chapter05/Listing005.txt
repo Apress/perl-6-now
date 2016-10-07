@@ -1,0 +1,13 @@
+# Arrays represent many data items with just one name - Perl 5 and Perl 6
+
+# use Perl6::Variables;   # Perl 5 requires this for these examples
+
+my @arr;
+
+@arr[0] = rand;
+@arr[1] = time;
+@arr[2] = -s $0;
+
+print @arr[0], "\n";
+print @arr[1], "\n";
+print @arr[2], "\n";

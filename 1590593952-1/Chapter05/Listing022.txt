@@ -1,0 +1,10 @@
+# Infamous zero-but-true hack - Perl 5
+
+my $a = "0e1";
+
+print "true\n" if $a;
+print "zero\n" if $a == 0;
+
+# outputs: 
+# true
+# zero

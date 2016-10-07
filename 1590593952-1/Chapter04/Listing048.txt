@@ -1,0 +1,5 @@
+# Quoting lists - Perl 5
+
+use ops qw<:default ftsize entereval sort>;
+use POSIX qw<:errno_h :fcntl_h>;   # adapted from the POSIX manual page
+foreach my $color (qw<red green blue>) { print chr $pixel{$color} }

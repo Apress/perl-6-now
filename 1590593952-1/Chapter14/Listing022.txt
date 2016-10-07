@@ -1,0 +1,12 @@
+package Some::Class;
+
+use Attribute::Property;
+
+sub new :New;
+
+sub foo :Property;
+sub bar :Property;
+
+package main;
+
+my $some_object = Some::Class->new(foo => 10, bar => 20);

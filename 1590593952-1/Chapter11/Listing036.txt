@@ -1,0 +1,4 @@
+# Forcing scalar context example with reverse - Perl 5
+
+print scalar reverse "Hi there kids";
+print "\n";

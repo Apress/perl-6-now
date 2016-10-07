@@ -1,0 +1,4 @@
+# sample declaration with prototype - Perl 5:
+
+sub do_more_for_less ($) {
+}

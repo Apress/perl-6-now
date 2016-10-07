@@ -1,0 +1,5 @@
+# An all() set with one thing in it can equal other things - Perl 5
+
+use Quantum::Superpositions;
+
+die "1 == " if 1 == all(1, 1, 1);  # true

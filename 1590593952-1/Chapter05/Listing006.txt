@@ -1,0 +1,14 @@
+# Arrays start at zero - Perl 5
+
+use Perl6::Variables;
+use Perl6::Contexts;
+use autobox;
+use autobox::Core;
+
+my @array;
+
+print 'last element: ', @array->last, ' number of elements: ', @array->elems, "\n";
+
+@array[0] = int rand 100;
+
+print 'last element: ', @array->last, ' number of elements: ', @array->elems, "\n";

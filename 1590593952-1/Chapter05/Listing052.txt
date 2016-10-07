@@ -1,0 +1,21 @@
+# Exporting subroutine definitions to whomever uses us - Perl 5:
+
+package My::List::Utils;
+
+use Perl6::Export;
+
+sub sum is export(:DEFAULT) {
+    my $ret = 0;
+    $ret += $_ foreach @_;
+    return $ret;
+}
+
+sub zip(\@\@) is export {
+    my $arr1 = shift;
+    my $arr2 = shift;
+    my @ret;
+    while(@$arr1 or @$arr2) {
+        push @ret, shift(@$arr1), shift(@$arr2);
+    }
+    return @ret;
+}

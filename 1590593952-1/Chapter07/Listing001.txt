@@ -1,0 +1,13 @@
+# Light-weight storage, Perl 6
+
+# simple values:
+
+my int $scalar;
+
+# Arrays
+
+my int @array is Dim(1000, 1000);
+
+# or:
+
+my @array of int is Dim(1000, 1000);

@@ -1,0 +1,12 @@
+# Perl 5 - result values from threads:
+
+use threads;
+
+my $thread = threads->create(sub {
+    rand for 1 .. 1000;
+    rand;
+});
+
+# do something else with the CPU here...
+
+print "Random number: ", $thread->join, "\n";

@@ -1,0 +1,20 @@
+# Sorting a data structure on multiple fields - Perl 5
+
+use Perl6::Variables;
+
+my %addresses = (
+    Heather => [1234,  "Robin Lane"],
+    Scott   => [692,   "Mill Ave"],
+    Sherry  => [16231, "Timbucktoo Court"], 
+    Fred    => [1234,  "Infinity Drive"],
+);
+
+for my $name (
+    sort { 
+        %addresses{$a}[0] <=> %addresses{$b}[0] 
+        ||
+        %addresses{$a}[1] cmp %addresses{$b}[1] 
+    } keys %addresses
+) {
+    print %addresses{$name}[0], ' ', %addresses{$name}[1], ' ', $name, "\n";
+}

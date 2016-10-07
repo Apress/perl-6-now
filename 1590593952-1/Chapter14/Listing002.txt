@@ -1,0 +1,9 @@
+# Perl 6 objects automatically initialize themselves
+
+class foo {
+    has $.bar;
+    method print_bar { print $.bar, "\n"; };
+}
+
+my $foo = foo.new(bar => 30);
+$foo.print_bar();  # prints 30

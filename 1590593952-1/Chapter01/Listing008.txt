@@ -1,0 +1,2 @@
+mkdir bleedperl
+rsync -avz rsync://ftp.linux.activestate.com/perl-current/ bleedperl/

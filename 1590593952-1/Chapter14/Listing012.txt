@@ -1,0 +1,3 @@
+# Perl 6 - autoboxing associates classes with primitives types:
+
+print 4.sqrt, "\n";

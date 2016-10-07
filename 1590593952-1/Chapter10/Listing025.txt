@@ -1,0 +1,18 @@
+# Perl 5 - build one list from another list
+
+my @processed_values;
+for my $value (@values) {
+    # process $value
+    push @processed_values, $value;
+}
+
+# Perl 5 with Perl6::Gather - build one list from another
+
+use Perl6::Gather;
+
+my @processed_values = gather {
+    for my $value (@values) {
+        # process $value
+        take $value;
+    }
+};

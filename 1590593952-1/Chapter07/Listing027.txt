@@ -1,0 +1,3 @@
+# Average together four parallel tracks into one track and dump it as bytes
+
+$wav->write( $audio->xchg(0, 1)->average()->list() );

@@ -1,0 +1,35 @@
+# Dispatch to object methods - Perl 5 with Attribute::Property and
+# instance data
+
+package SiteCom::HTML::Color;
+
+use Perl6::Variables;
+use Attribute::Property;
+
+sub tag :Property; # instead of Perl 6's "has $.tag;"
+sub hex :Property;
+
+sub new :New;
+
+sub print_tag { my $_ = shift; print $_->tag; } 
+sub get_hex   { my $_ = shift; $_->hex; }
+
+# colors.pl:
+
+package main;
+use SiteCom::HTML::Color;
+
+my $red = SiteCom::HTML::Color->new(
+    tag => '<font color="red">',
+    hex => '0xff0000',
+);
+my $green = SiteCom::HTML::Color->new(
+    tag => '<font color="green">',
+    hex => '0x00ff00',
+);
+my $blue = SiteCom::HTML::Color->new(
+    tag => '<font color="blue">',
+    hex => '0x0000ff',
+);
+
+$red->print_tag();

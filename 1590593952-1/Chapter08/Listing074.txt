@@ -1,0 +1,16 @@
+# Process a hash in numeric order of a field in a referenced array 
+# Perl 5
+
+use Perl6::Variables;
+
+my %addresses = (
+    Heather => [1234,  "Robin Lane"],
+    Scott   => [692,   "Mill Ave"],
+    Sherry  => [16231, "Timbucktoo Court"], 
+);
+
+for my $address_record (
+    sort { $a->[0] <=> $b->[0] } values %addresses
+) {
+    print $address_record->[0], ' ', $address_record->[1], "\n";
+}

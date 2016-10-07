@@ -1,0 +1,2 @@
+qw< :default ftsize entereval sort >;   # Perl 5 and 6
+<< :default ftsize entereval sort >>;   # Perl 6 only

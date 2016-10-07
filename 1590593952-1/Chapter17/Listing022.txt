@@ -1,0 +1,5 @@
+# Perl 6 - sharing data structures
+
+my $x :shared;
+$x = [1, 2, 3];       # okay - shared
+$x = [\@foo, \@bar];  # not okay - @foo and @bar are not shared

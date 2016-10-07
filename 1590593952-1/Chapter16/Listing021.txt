@@ -1,0 +1,21 @@
+# A class that packages together a Sink and Shampoo and offers a wash() 
+# method. $self->{sink} and $self->{shampoo} are individually and 
+# automatically typed.
+# Perl 5
+
+package Washer;
+
+sub new {
+    my $type = shift;
+    bless {  
+        sink    => Sink->new,
+        shampoo => Shampoo->new,
+    }, $type;
+}
+
+sub wash (Washable; Washable) {
+    my $self = shift;
+    my $washable = shift;
+    $self->{sink}->bathe($washable, $self->{shampoo});
+    $washable;
+}

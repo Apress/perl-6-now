@@ -1,0 +1,15 @@
+# Build more complex logic incrementally from simpler logic by closing on
+# closures and currying - Perl 5
+
+use autobox;
+use autobox::Core;
+
+my $add = sub { $_[0] + $_[1] };
+my $gt  = sub { $_[0] > $_[1] };
+
+my $add_two  = $add->curry(2);
+my $add_five = $add->curry(5);
+
+my $two_gt_five = sub { $gt->($add_two->(7), $add_five->(1)) };
+
+print "2 + 7 is greater than 5 + 1\n" if $two_gt_five->();

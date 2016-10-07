@@ -1,0 +1,33 @@
+# servicing multiple network connections - Perl 5:
+
+use threads;
+use IO::Socket::INET;
+
+my $server = IO::Socket::INET->new(
+    Listen => 10,
+    LocalAddr => '0.0.0.0',
+    LocalPort => 5000,
+) or die $!;
+
+while(1) {
+    my $conn = $server->accept;
+    threads->new(\&service_connection, $conn);
+}
+
+my $printing :shared;
+
+use ops ':default', 'entereval';
+
+sub service_connection {
+    my $conn = shift;
+    $conn->autoflush(1);
+    while(my $line = <$conn>) {
+        do {
+            lock $printing;
+            *STDOUT = $conn;
+            eval $line;
+            $conn->print($@, "\n> "); 
+         };
+         threads->yield;
+     }
+}

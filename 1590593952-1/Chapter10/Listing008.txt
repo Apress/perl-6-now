@@ -1,0 +1,7 @@
+# Perl 6 - using a bare block as a code reference
+
+my $coderef = {
+    foo('bar', $baz, $^quux);
+}
+
+$coderef.(10); # calls foo('bar', $baz, 10)

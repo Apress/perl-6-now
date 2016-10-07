@@ -1,0 +1,8 @@
+# Hash interpolation - Perl 6
+
+my %things_that_go_bump = {
+    goblins         => hungry,
+    boogie_monsters => creepy,
+}.pairsep(' ').separator(', ');
+
+print "%things_that_go_bump are under my bed!{}\n"; 

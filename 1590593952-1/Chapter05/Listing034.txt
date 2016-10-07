@@ -1,0 +1,9 @@
+# Perl 6 - binding one variable to another  
+
+my $foo = 10;
+my $bar := $foo;
+print "foo: $foo bar: $bar\n";
+$bar++;
+print "foo: $foo bar: $bar\n";
+$foo++;
+print "foo: $foo bar: $bar\n";

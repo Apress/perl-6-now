@@ -1,0 +1,20 @@
+# Cleanup regardless of whether we left by error, return, or fall-through
+# Perl 6
+
+sub perform_transaction {
+
+     my $f = open '>', 'transaction.log' or die $!;
+
+     while(<STDIN>) {
+         die unless $_;
+         $f->print $_;
+     }
+
+     POST { 
+         print $f "---------------------------\n";
+         print $f "end of log ", scalar localtime, "\n";
+         print $f "---------------------------\n";
+         close $f;
+     }
+
+}

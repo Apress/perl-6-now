@@ -1,0 +1,46 @@
+# Custom numification and comparison, Perl 5
+
+package Dice;
+
+use strict;
+use warnings;
+
+use Attribute::Property;
+
+sub new :New;
+
+sub number :Property;
+
+my $get_number = sub {
+    my $_ = shift;
+    return $_->number;
+};
+
+use overload '0+' => sub { $get_number->(@_) };
+use overload '""' => sub { $get_number->(@_) };
+
+use overload '<=>' => sub {
+    my $_ = shift;
+    my $other = shift;
+    my $self_number = $_->number;
+    my $other_number = ref $other ? $other->number : $other;
+    ($self_number, $other_number) = ($other_number, $self_number) if shift;
+    return $self_number <=> $other_number;
+};
+
+sub roll {
+    my $_ = shift;
+    $_->number = 1 + int rand 6;
+}
+
+package main;
+
+my $die1 = Dice->new;
+my $die2 = Dice->new;
+
+$die1->roll;
+$die2->roll;
+
+print "Rolled: $die1 $die2\n";
+print "At least it isn't snake eyes\n" unless $die1 == $die2 and $die1 == 1;
+printf "Sorted: %s\n", join ' ', sort { $a <=> $b } $die1, $die2; 

@@ -1,0 +1,7 @@
+# dumping the chess puzzle example, Perl 5:
+
+use XML::Simple;
+use IO::Handle;
+
+open my $fh, '>', 'pieces.xml' or die $!;
+$fh->print(XMLout(\%pieces));

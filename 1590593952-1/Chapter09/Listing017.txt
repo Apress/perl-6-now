@@ -1,0 +1,8 @@
+# Perl 6 - testing an object to see if it has been derived from one
+# of a few classes
+
+given $objectref {
+    when AI::FuzzyLogic   { .classify(new BotSnack) }
+    when AI::NeuralNet    { .recognize(new BotSnack) }
+    when AI::Sentient     { .pat_nicely() && back_away() } 
+}

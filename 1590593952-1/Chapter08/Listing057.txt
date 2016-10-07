@@ -1,0 +1,4 @@
+# Using hyper assignment to force list context on both side and store return 
+# values in a list - Perl 6
+
+my string @strs >>=<< get_a_bunch_of_strings();

@@ -1,0 +1,10 @@
+# Perl 6 - a method that works on objects that may or may not have
+# the CrossRoads role
+
+method swerve_to_avoid (Object $critter) {
+    if($critter does CrossRoads) {
+        $critter.abort_road_crossing;
+    } else {
+        # what are we doing off road?
+    }
+}

@@ -1,0 +1,13 @@
+# Perl 5 - throw objects as exceptions
+
+eval {
+    -f $file or die Error::MissingFile->new(-text => "$file missing");
+    open my $fh, '<', $file or 
+        die Error::UnreadableFile->new(-text => "$file: $!");
+    # ...
+};
+
+if($@) {
+    if($@->isa('Error::MissingFile')) { ... } 
+    if($@->isa('Error::UnreadableFile')) { ... } 
+}

@@ -1,0 +1,15 @@
+# Engineer new parameters on the fly - Perl 6
+
+sub html_tag ($name, *%params) {
+   print qq{<$name};
+   for %params {
+       my $name = $_.key;
+       my $value = $_.value;
+       print qq{ $name="$value"};
+   }
+   print qq{>};
+}
+
+html_tag(name => 'body', bgcolor => 'chartreuse');
+
+# outputs: <body bgcolor="chartreuse">

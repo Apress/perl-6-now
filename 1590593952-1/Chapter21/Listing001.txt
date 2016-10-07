@@ -1,0 +1,6 @@
+# Coroutine creation conversions versus threads
+# Perl 5
+
+use Coro;                           use threads;
+async { stuff(); };                 async { stuff(); };
+my $c = async { stuff(@args); };    my $t = threads->create(sub { }, @args);

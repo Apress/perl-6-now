@@ -1,0 +1,8 @@
+# next may not be used in a block that is expected to result in a value
+
+perl -e 'do { next; };'
+Can't "next" outside a loop block at -e line 1.
+
+# bare blocks in void context in Perl 5 are not expected to produce a value
+
+perl -e '{ next; };'

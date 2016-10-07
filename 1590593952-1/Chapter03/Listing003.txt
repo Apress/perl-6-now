@@ -1,0 +1,10 @@
+# set $color to 'red'
+# don't do this - computed variable name in Perl 5
+
+$key = 'color';
+${$key} = 'red';
+
+# don't do this either, but it is the same thing in Perl 5
+
+$key = 'color';
+${__PACKAGE__.'::'.$key} = 'red';

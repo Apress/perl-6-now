@@ -1,0 +1,3 @@
+# Strings are automatically parsed as numbers on demand - Perl 5 or Perl 6
+
+print "5" * 2, "\n";  # same as: print 5 * 2, "\n" 

@@ -1,0 +1,5 @@
+# Type information can be specified with traits
+# these two lines are equivalent - Perl 6
+
+my Int $age;
+my $age is Int;

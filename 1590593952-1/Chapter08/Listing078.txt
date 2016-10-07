@@ -1,0 +1,10 @@
+# Sort our %addresses hash, factored out dereference, Perl 5
+
+use Sub::Lexical;
+use Perl6::Variables;
+
+sub criteria { %addresses{$_[0]}[0] };
+
+for my $name ( 
+    sort { criteria($a) <=> criteria($b) } keys %addresses
+) { ... }

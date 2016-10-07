@@ -1,0 +1,2 @@
+print PDL->sequence(10, 10)->slice('1:1,:'); # needs to be flattened
+print PDL->sequence(10, 10)->slice('1:1,:')->flat(); # that's better

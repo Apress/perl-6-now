@@ -1,0 +1,11 @@
+# Examples of assignment in list context
+
+# Typical boring list context assignment - this copies one array to another
+@one_array = @another_array;
+
+# Initializing an array from a list built of scalars
+@array = ($foo, $bar, $baz, $quux);
+
+# Initializing a list of variables from an array
+($foo, $bar, $baz, $quux) = @array;     # Perl 5
+($foo, $bar, $baz, $quux) = * @array;   # Perl 6

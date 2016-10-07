@@ -1,0 +1,7 @@
+# Perl 5 - a somewhat complex expression
+
+print join("\n", map { CGI::param($_) } @cgi_vars), "\n";
+
+# Perl 5 - again, using autobox:
+
+@cgi_vars->map(sub { CGI::param($_[0]) })->join("\n")->concat("\n")->print;

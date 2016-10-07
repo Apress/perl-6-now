@@ -1,0 +1,8 @@
+# Perl 6 class definitions, and public and private instance variable 
+# definitions
+
+class foo {
+    has $.bar; # public instance variable
+    has $:baz; # private instance variable
+    method quux { ... }
+}

@@ -1,0 +1,9 @@
+# Perl 5 - print numbers, randomly skipping some, but always printing a 
+# message between them - demonstrates next and continue { }
+
+for my $num (1 .. 10) {
+    next if rand 1 > 0.5;
+    print $num, "\n";
+} continue {
+    print "continuing\n";
+}

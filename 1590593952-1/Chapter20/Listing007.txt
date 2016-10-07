@@ -1,0 +1,11 @@
+# Continuation version - read Gnutella packet streams - Perl 5
+
+sub read_packet :Cont {
+    my $connection = shift;
+    while(1) {
+        read $connection, my $header, 23;
+        my ($msgid, $cmd, $ttl, $hops, $length) = unpack 'a16CCCV', $header;
+        read $connection, my $trailer, $length;
+        yield $msgid, $cmd, $ttl, $hops, $length, $trailer;
+    }
+}

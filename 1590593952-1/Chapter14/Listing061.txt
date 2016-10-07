@@ -1,0 +1,4 @@
+# >>. calls a method on each element of a list or array, Perl 6:
+
+method invoke_event_listeners { @.events>>.receive_event }
+method invoke_event_listeners { .receive_event for @.events }

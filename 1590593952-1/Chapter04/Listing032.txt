@@ -1,0 +1,8 @@
+# Interpolated method call - Perl 5
+
+use Interpolation E => 'eval';
+print "It is going to rain $E{ $noaa->radar } this evening.\n";
+
+# Interpolated method call - Perl 6
+
+print "It is going to rain $noaa.radar() this evening.\n";

@@ -1,0 +1,19 @@
+# Dog is dependent on logic calling its constructor to provide a tail, and
+# the lack of a tail is tested for - Perl 5:
+
+package Dog;
+
+use Attribute::Property;
+use Carp 'confess';
+
+sub tail :Property;
+sub new  :New {
+    my $_ = shift;
+    print "debug: @_\n";
+    confess "tail is required" unless defined $_->tail;
+    $_;
+};
+sub chase_bunnies {
+    my $_ = shift;
+    $_->tail->chase_bunnies;
+}

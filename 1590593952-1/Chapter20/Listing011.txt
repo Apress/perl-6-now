@@ -1,0 +1,23 @@
+# Find Perl installations that scripts depend on
+# Demonstrates continuations - Perl 5
+
+use Coro;
+use Coro::Cont;
+
+use File::Find;
+use Perl6::Variables;
+
+sub get_next_perl :Cont {
+    find(sub {
+        return unless m/\.pl$/;
+        open my $pl, '<', $_ or return;
+        (my $shebang) = <$pl> =~ m/^#!(\S+)/ or return;
+        yield $shebang;
+    }, '/');
+    return undef;
+}
+
+while(my $_ = get_next_perl()) {
+    last unless defined $_;
+    print $_, "\n";
+}

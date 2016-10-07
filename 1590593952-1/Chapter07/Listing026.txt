@@ -1,0 +1,22 @@
+# Interpolation smooths out data when the sampling rate is changed
+
+use PDL;
+
+# Subsample positions: output sample will have this number samples (6)
+# from these places in the input sample (0.3, 0.6, 1.1, 1.5, 1.9, 2.0):
+
+my @sample_indices = (0.3, 0.6, 1.1, 1.5, 1.9, 2.0);
+
+# Common case is the input data represents a series of evenly spaced
+# samples starting at 0 counting up to the number of samples in the
+# input data.
+
+my $waveform = PDL->pdl( [ map { int rand 10 } 1 .. 3 ] );
+my $zero_to_a_lot = PDL->sequence($waveform->dim(0));
+print "zero to a lot: ", $zero_to_a_lot, "\n";
+print "waveform: ", $waveform, "\n";
+
+(my $stretched_wav, my $err) =
+    PDL->float(@sample_indices)->interpolate($zero_to_a_lot, $waveform);
+
+print "stretched wav: ", $stretched_wav, "\n";

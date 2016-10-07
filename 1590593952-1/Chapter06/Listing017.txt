@@ -1,0 +1,4 @@
+# Comparison operators cannot be "stacked" in Perl 5
+
+if(5 < $number < 10) { ... }    # between 5 and 10 - syntax error
+if((5 < $number) < 10) { ... }  # between 5 and 10 - logic error

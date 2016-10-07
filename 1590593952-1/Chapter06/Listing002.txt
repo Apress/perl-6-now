@@ -1,0 +1,6 @@
+# Evolution of iterator variables in Perl, Perl 5, assuming Perl6::Variables:
+
+for(my $i; $i < @things; $i++) { $count += @things[$i] } # uninspired
+for my $thing (@things) { $count += $thing }             # better
+for (@things) { $count += $_ }                           # better yet
+$count =+<< @things;                                     # amazing

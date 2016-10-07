@@ -1,0 +1,16 @@
+# Possible states of a value stored in a hash by a key - Perl 5
+
+use Perl6::Variables;
+
+my $key; my %hash;
+
+# Uncomment one of these to trigger the corresponding test
+# $key = 'test'; %hash{'something_else'} = 'hi there'; # doesn't exist case
+# $key = 'test'; %hash{$key} = undef;                  # undef value case
+# $key = 'test'; %hash{$key} = 0;                      # false value case
+# $key = 'test'; %hash{$key} = 'hi there';             # true value case
+
+exists  %hash{$key} or print "$key doesn't exist\n";
+defined %hash{$key} or print "$key indexes an undef value\n";
+%hash{$key}         or print "%hash{$key} is a false value\n";
+%hash{$key}         and print "%hash{$key} is a true value\n"; 

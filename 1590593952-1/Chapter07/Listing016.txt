@@ -1,0 +1,4 @@
+# Meaning of slice fields in our simple example
+# This is not valid PDL
+
+slice('dimension 1 start:dimension 1 end,dimension 2 start:dimension 2 end');

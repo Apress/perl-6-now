@@ -1,0 +1,9 @@
+# Almost interchangeable - Perl 5
+
+use ops qw<:default ftsize entereval sort>;
+use ops split /\s+/, ':default ftsize entereval sort';
+
+# Almost interchangeable - Perl 6
+
+use ops <<:default ftsize entereval sort>>;
+use ops ':default ftsize entereval sort'.split /\s+/;

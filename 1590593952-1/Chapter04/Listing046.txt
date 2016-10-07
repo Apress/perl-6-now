@@ -1,0 +1,3 @@
+# Simple constant list, Perl 5 or Perl 6
+
+print 'Numbers: ', qw<one two three>, "\n";

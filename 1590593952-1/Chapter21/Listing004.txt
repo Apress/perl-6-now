@@ -1,0 +1,5 @@
+     schedule
+         Calls the scheduler. Please note that the current pro-
+         cess will not be put into the ready queue, so calling
+         this function usually means you will never be called
+         again.

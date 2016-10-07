@@ -1,0 +1,6 @@
+# Sometimes several array elements need to be passed as separate arguments
+
+somefunc(@array[0], @array[1], @array[2], @array[3]); # yuck!
+
+somefunc(@array);                                     # Perl 5 - much better!
+somefunc(*@array);                                    # Perl 6 - much better!

@@ -1,0 +1,12 @@
+# Simple demonstration of vectorized logic operators in PDL
+
+my $garbage = PDL->long(map { int rand 10 } (1 .. 20));
+
+my $range_start = PDL->long((3) x 20);
+my $range_stop  = PDL->long((7) x 20);
+
+print 'garbage contains:    ', $garbage, "\n";
+print 'garbage above start: ', $garbage > $range_start, "\n";
+print 'garbage below stop:  ', $garbage < $range_stop, "\n";
+print 'intersection:        ', 
+    ($garbage > $range_start) & ($garbage < $range_stop), "\n";

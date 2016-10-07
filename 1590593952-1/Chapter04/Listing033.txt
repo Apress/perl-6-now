@@ -1,0 +1,3 @@
+# Interpolated function call - Perl 6
+
+print "It is going to rain &radar() this evening.\n"; 

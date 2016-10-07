@@ -1,0 +1,5 @@
+# Read the headers of a pbm/ppm/pnm file - Perl 6
+
+my $ppm = open '<', 'foo.ppm' or die $!;
+(my $version, my $dimensions, my $color_depth, * my @image_data) = <$ppm>;
+close $ppm;

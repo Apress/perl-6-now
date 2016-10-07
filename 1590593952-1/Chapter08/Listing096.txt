@@ -1,0 +1,13 @@
+# Circular references aren't reaped, Perl 5
+# Danger! Do not run on a production server!
+
+while(1) {
+    do {
+        my $thing_one = [];
+        my $thing_two = [];
+        $thing_one->[0] = $thing_two;
+        $thing_two->[0] = $thing_one;
+    };
+    # $thing_one and $thing_two from the last loop both still have references 
+    # to them so they aren't reclaimed
+}

@@ -1,0 +1,6 @@
+# Numeric constant prefixes - Perl 6
+
+print 37;        # decimal - prints 37 - same as P5
+print 0c037;     # octal - prints 31 - was 037 in P5
+print 0x37;      # hexadecimal - prints 55 - same as P5
+print 0b0100101; # binary - prints 37 - same as P5

@@ -1,0 +1,7 @@
+# Sort our %addresses hash, replicated dereference, Perl 5
+
+use Perl6::Variables;
+
+for my $name (
+    sort { %addresses{$a}[0] <=> %addresses{$b}[0] } keys %addresses
+) { ... }

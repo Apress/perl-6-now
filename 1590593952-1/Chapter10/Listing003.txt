@@ -1,0 +1,14 @@
+# Perl 6 must have a semicolon on the end of blocks even with built-in statements
+# unless the block ends alone on a line
+
+foo { code(); };
+
+foo {
+    code();
+}
+
+foo({
+    code();
+}); 
+
+if rand > 0.5 { print "This runs when it wants to.\n"; };

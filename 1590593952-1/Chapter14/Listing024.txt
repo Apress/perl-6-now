@@ -1,0 +1,14 @@
+# Manually initializing instance variables from a custom method signature,
+# Perl 6
+
+class MyType {
+    has $.foo;
+    has $.bar;
+    has $.baz;
+    method new (MyType $_; Foo $foo, Bar $bar, Baz $baz) {
+        $.foo = $foo;
+        $.bar = $bar;
+        $.baz = $baz;
+        .bless();
+    }
+}

@@ -1,0 +1,15 @@
+# Attribute::Property attributes are readable and writable 
+# even outside of the class - Perl 5
+
+package Foo;
+
+use Attribute::Property;
+
+sub new :New;
+sub foo :Property;
+
+package main;
+
+my $foo = Foo->new(foo => 10);
+$foo->foo = 20; 
+print $foo->foo, "\n";

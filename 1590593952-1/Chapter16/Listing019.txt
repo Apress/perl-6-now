@@ -1,0 +1,4 @@
+# Anything that returns typed information may be used as something of that 
+# type, Perl 5
+
+Sink->new->bathe(Dog->new, Shampoo->new);

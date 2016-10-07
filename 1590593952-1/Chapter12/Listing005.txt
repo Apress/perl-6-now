@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+# Perl 5 - automatically installs Event and Coro as needed
+use strict;
+use warnings;
+use Acme::Intraweb;
+use Event;
+use Coro;
+async { ... }; # do something with Coro

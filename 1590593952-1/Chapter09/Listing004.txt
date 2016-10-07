@@ -1,0 +1,24 @@
+# Dispatch to object methods - Perl 6
+
+class SiteCom::HTML::Color {
+}
+
+class SiteCom::HTML::Color::Red is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="red">} };
+    method get_hex   { 0xff0000 };
+}
+
+class SiteCom::HTML::Color::Green is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="green">} };
+    method get_hex   { 0x00ff00 };
+}
+
+class SiteCom::HTML::Color::Blue is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="blue">} };
+    method get_hex   { 0x0000ff };
+}
+
+class main;
+
+my $colorob = SiteCom::HTML::Color::Red.new();
+$colorob.print_tag();

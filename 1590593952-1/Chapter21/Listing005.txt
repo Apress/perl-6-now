@@ -1,0 +1,22 @@
+# Some file operations that work correctly with Coro - Perl 5
+
+use Coro;
+use Coro::Socket;
+use Socket;
+
+my $socket = Coro::Socket->new(
+    PeerAddr => 'localhost', 
+    PeerPort => 79,
+) or die $!;
+my $line = readline $socket; # or: my $line = <$socket>;
+$socket->read(my $ten_bytes, 10) or die $!;
+$socket->print("OK\n") or warn $!;
+
+my $listen = Coro::Socket->new(
+    LocalPort => 79,
+    Listen    => SOMAXCONN,
+) or die $!;
+$listen->listen();
+while(my $client = $listen->accept()) {
+    # ...
+}

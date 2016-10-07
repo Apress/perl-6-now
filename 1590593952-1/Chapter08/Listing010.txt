@@ -1,0 +1,14 @@
+# Perl 5 - iterating as a method on hashes
+
+use Perl6::Variables;
+use Perl6::Contexts;
+use autobox;
+use autobox::Core;
+
+my %hash = ( foo => 10, bar => 20 );
+
+%hash->each(sub {
+    my $key = shift;
+    my $value = shift;
+    print $key, ' => ', $value, "\n";
+});

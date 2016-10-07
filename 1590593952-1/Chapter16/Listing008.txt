@@ -1,0 +1,5 @@
+unsafe assignment :  type mismatch: expected:  scalar variable named, $dog, 
+type Dog, containing the literal value "Pet", defined in package main, file 
+dog.pl, line 92 ; got:  constructor, new, type Pet, containing the literal 
+value "Pet", defined in package Pet, file dog.pl, line 92  in package main, 
+file dog.pl, line 92

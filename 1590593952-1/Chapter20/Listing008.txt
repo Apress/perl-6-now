@@ -1,0 +1,18 @@
+# Continuations version - process Gnutella packet - Perl 5
+
+sub process_packet :Cont {
+    my $ping_counter;
+    while(1) {
+        my @packet = @_;
+        my $cmd = @packet[1];
+        if($cmd == 0x00) {
+            'Packet::Ping'->process(@packet);
+             $ping_counter++;
+        }
+        Packet::Pong->process(@packet)     if $cmd == 0x01;
+        # ...
+        Packet::Query->process(@packet)    if $cmd == 0x80;
+        Packet::QueryHit->process(@packet) if $cmd == 0x81;
+        yield;
+    }
+}

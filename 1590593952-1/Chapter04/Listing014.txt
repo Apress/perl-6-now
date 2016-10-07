@@ -1,0 +1,8 @@
+# Quoting strings with user-selected quoting characters - Perl 5 and Perl 6
+
+print qq<Hola, World!\n>;
+print qq[Hallo, World!\n];
+print qq(Saluton, World!\n);
+print qq#OHAYO, World!\n#;
+
+print qq]Hello, World!\n[;    # Perl 6 only

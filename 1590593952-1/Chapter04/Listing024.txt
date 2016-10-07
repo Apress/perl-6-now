@@ -1,0 +1,5 @@
+# Perl 5 or Perl 6 - this INCORRECTLY tries to interpolate and fails:
+
+my $foo = localtime;
+my $string = 'The time is $foo.';
+print $string, "\n";

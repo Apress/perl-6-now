@@ -1,0 +1,17 @@
+# Non-continuation version - dispatch (partially) decoded packets - Perl 5
+
+use Perl6::Variables;
+
+sub process_packet {
+    while(1) {
+        my @packet = read_packet();
+        my $cmd = @packet[1];
+        Packet::Ping->process(@packet)     if $cmd == 0x00;
+        Packet::Pong->process(@packet)     if $cmd == 0x01;
+        Packet::Bye->process(@packet)      if $cmd == 0x02;
+        Packet::Keywords->process(@packet) if $cmd == 0x20;
+        Packet::Push->process(@packet)     if $cmd == 0x40;
+        Packet::Query->process(@packet)    if $cmd == 0x80;
+        Packet::QueryHit->process(@packet) if $cmd == 0x81;
+    }
+}

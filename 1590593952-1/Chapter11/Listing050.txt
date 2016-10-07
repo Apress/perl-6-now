@@ -1,0 +1,5 @@
+# cr() binds to no argument, Perl 5
+
+sub cr () { "\n"; }
+print 'We have no use for your kind', cr, 'He monotoned', cr; # good
+print 'We have no use for your kind', cr 'He monotoned', cr;  # syntax error

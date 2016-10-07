@@ -1,0 +1,4 @@
+10 || 0;     # evaluates to 10
+5 && 15;     # evaluates to 15
+undef // 20; # evaluates to 20
+10 !! 0;     # evaluates to 10

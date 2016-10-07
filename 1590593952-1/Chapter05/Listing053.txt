@@ -1,0 +1,11 @@
+package main;
+
+use My::List::Utils ':ALL';
+
+print sum 1, 5, 9;
+print "\n";
+
+my @one = ( 1 .. 10 );
+my @two = ( 20 .. 30 );
+print join ', ', zip @one, @two;
+print "\n";

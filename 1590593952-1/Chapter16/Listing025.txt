@@ -1,0 +1,25 @@
+# Trapping method calls on uninitialized object references - Perl 5
+
+package Foo; 
+
+use typesafety;
+
+sub new { bless { }, $_[0] }
+sub bing { print "bing!\n"; }
+
+# main
+
+package main;
+
+use typesafety;
+
+use Class::BlackHole;
+use autobox UNDEF => 'Class::BlackHole';
+
+undef->bing; # fails - silently
+
+my Foo $foo = Foo->new;
+$foo->bing;  # no problem
+
+my Foo $bar;
+$bar->bing;  # fails - also silently

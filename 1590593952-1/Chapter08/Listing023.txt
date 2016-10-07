@@ -1,0 +1,8 @@
+# Build a circular doubly-linked list - Perl 6
+
+my @row = map hash {}, 1 .. 10;
+
+for my $i (0 .. @row.size) {
+    @row[$i - 1]{'right'} = @row[$i];
+    @row[$i]{'left'} = @row[@i - 1];
+}

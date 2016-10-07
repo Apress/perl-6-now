@@ -1,0 +1,51 @@
+# Dispatch to object methods - Perl 5 with Perl6::Classes and subclasses
+# overriding methods
+
+# in file SiteCom/HTML/Color.pm:
+
+use Perl6::Classes;
+
+class SiteCom::HTML::Color {
+
+    submethod BUILD { } # not required
+    # people shouldn't use the base class directly so these are
+    # place holders:
+    method print_tag { die "subclass responsibility" } 
+    method get_hex   { die "subclass responsibility" }
+
+}
+
+# SiteCom/HTML/Color/Red.pm:
+
+class SiteCom::HTML::Color::Red is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="red">}; }
+    method get_hex   { '0xff0000'; }
+}
+
+# SiteCom/HTML/Color/Green.pm:
+
+class SiteCom::HTML::Color::Green is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="green">}; }
+    method get_hex   { '0x00ff00'; }
+}
+
+# SiteCom/HTML/Color/Blue.pm:
+
+class SiteCom::HTML::Color::Blue is SiteCom::HTML::Color {
+    method print_tag { print qq{<font color="blue">}; }
+    method get_hex   { '0x0000ff'; }
+}
+
+# colors.pl:
+
+package main;
+
+use SiteCom::HTML::Color;
+use SiteCom::HTML::Color::Red;
+use SiteCom::HTML::Color::Green;
+use SiteCom::HTML::Color::Blue;
+
+my $red = SiteCom::HTML::Color::Red->new();
+my $green = SiteCom::HTML::Color::Green->new();
+my $blue = SiteCom::HTML::Color::Blue->new();
+$red->print_tag();

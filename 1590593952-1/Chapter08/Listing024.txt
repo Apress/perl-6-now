@@ -1,0 +1,4 @@
+# Examples of lists:
+
+somefunction 1, 2, 3;   # list of arguments
+(1, 2, 3);              # parentheses signal a list is being built

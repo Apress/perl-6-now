@@ -1,0 +1,5 @@
+{ 
+    try_to_start_engine();
+    last if $temp > 200;
+    redo if $temp < 30;
+}

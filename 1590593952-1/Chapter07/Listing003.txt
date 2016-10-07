@@ -1,0 +1,6 @@
+# Building a PDL array from an existing data structure
+
+use PDL;
+
+my $array = PDL->pdl( [ [ 0 .. 2 ], [ 3 .. 5 ], [ 6 .. 9 ] ] );
+my $array = PDL->pdl( $perl_array_reference );

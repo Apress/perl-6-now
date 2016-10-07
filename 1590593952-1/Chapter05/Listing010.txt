@@ -1,0 +1,9 @@
+# Sort hash keys when iterating on them to provide a non-arbitrary ordering
+
+# use Perl6::Variables; # uncomment for Perl 5
+
+my %hash = ( alex => "march", mike => "april", fred => "september" );
+
+for my $name (sort keys %hash) {
+    print $name, ' ', %hash{$name}, "\n";
+}

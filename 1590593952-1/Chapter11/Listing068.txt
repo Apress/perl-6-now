@@ -1,0 +1,12 @@
+# Lexically scoped subroutines - Perl 5
+
+use Sub::Lexical;
+
+my $factorial = do {
+    my sub fac {
+        my $num = shift;
+        return 1 if $num == 1;
+        return $num * fac($num - 1); 
+    }
+    fac(7);
+};

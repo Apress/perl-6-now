@@ -1,0 +1,8 @@
+# Permutations example using PDL - Perl 5
+
+use PDL;
+my $row = pdl([1, 2, 3, 4]);
+print "Row:\n", $row, "\n\n";
+my $col = pdl([4, 5, 6, 7])->dummy(0, 1);
+print "Column:", $col, "\n";
+print "Result:", $row * $col, "\n";

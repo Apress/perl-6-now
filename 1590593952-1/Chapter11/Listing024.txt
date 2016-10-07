@@ -1,0 +1,4 @@
+# These two lines both force process_something() into list context - Perl 5
+
+( process_something() );
+some_function( process_something() );

@@ -1,0 +1,4 @@
+%hash.keys ==> sort ==> reverse ==> print;  # Perl 6 - pipeline operator
+
+%hash.keys.sort.reverse.print;              # Perl 6 - autobox
+%hash->keys->sort->reverse->print;          # Perl 5 - autobox

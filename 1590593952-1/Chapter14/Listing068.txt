@@ -1,0 +1,14 @@
+class Pet is String is Num is Bool {
+    has $.species;
+    has $.age;
+    has $.dead = 0;
+    method prefix:~ () { 
+        # string context
+        return 'Fido' if $.species eq 'dog';
+        return 'Miss Priss' if $.species eq 'cat';
+        return 'Poly' if $.species eq 'bird';
+        return 'Bill'; # default
+    }
+    method prefix:? () { return not $.dead; }   # boolean context
+    method prefix:+ () { return $.age; }        # numeric context
+}

@@ -1,0 +1,22 @@
+use Class::Multimethods;
+
+multimethod toy_for => ('CODE', 'ARRAY')
+                    => sub { 
+    my $code = shift;
+    my $arr = shift;
+    my @arr = @$arr;
+    $code->($_) for @arr;
+};
+
+multimethod toy_for => ('ARRAY', 'CODE')
+                    => sub {
+    my $arr = shift;
+    my $code = shift;
+    my @arr = @$arr;
+    $code->($_) for @arr;
+};
+
+my $numbers = [ 1 .. 20 ];
+
+toy_for(sub { print "$_\n" }, $numbers);
+toy_for($numbers, sub { print "$_\n" });

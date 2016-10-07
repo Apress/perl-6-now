@@ -1,0 +1,1 @@
+$foo = \@array;       # Perl 5 and Perl 6 - take a reference to @array

@@ -1,0 +1,1 @@
+$coro_handle_object->fh->truncate(0);

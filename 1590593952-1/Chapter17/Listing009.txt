@@ -1,0 +1,53 @@
+# Perl 5 - contention over resources by two threads
+
+use threads;
+use threads::shared;
+
+my $kitchen    :shared;
+my $bathroom   :shared;
+my $livingroom :shared;
+
+my $hatfield = threads->create(sub {
+    do {
+        print "Hatfield wants the kitchen\n";
+        lock $kitchen;
+        print "Hatfield has the kitchen\n";
+        sleep 10;
+    };
+    do {
+        print "Hatfield wants the bathroom\n";
+        lock $bathroom;
+        print "Hatfield has the bathroom\n";
+        sleep 10;
+    };
+    do {
+        print "Hatfield wants the livingroom\n";
+        lock $livingroom;
+        print "Hatfield has the livingroom\n";
+        sleep 10;
+    };
+});
+
+my $mccoy = threads->create(sub {
+    do { 
+        print "McCoy wants the kitchen\n";
+        lock $kitchen; 
+        print "McCoy has the kitchen\n";
+        sleep 10;
+    };
+    do {
+        print "McCoy wants the bathroom\n";
+        lock $bathroom;
+        print "McCoy has the bathroom\n";
+        sleep 10;
+    };
+    do {
+        print "McCoy wants the livingroom\n";
+        lock $livingroom;
+        print "McCoy has the livingroom\n";
+        sleep 10;
+    };
+});
+
+$hatfield->join;
+$mccoy->join;

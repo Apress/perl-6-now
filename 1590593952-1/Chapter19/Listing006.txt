@@ -1,0 +1,22 @@
+# Find Perl installations that scripts depend on 
+# Demonstrates call-back - Perl 5
+
+use File::Find;
+use Perl6::Variables;
+
+my %perls;
+
+find(sub {
+    return unless m/\.pl$/;
+    open my $pl, '<', $_ or return;
+    (my $shebang) = <$pl> =~ m/^#!(\S+)/ or return;
+    %perls{$shebang}++;
+}, '/');
+
+for my $perl (
+    sort { $b->[1] <=> $a->[1] }
+    map [ $_, %perls{$_} ],
+    keys %perls
+) {
+    print $perl->[1], ' ', $perl->[0], "\n";
+} 

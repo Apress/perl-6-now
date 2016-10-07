@@ -1,0 +1,5 @@
+# Array interpolation separators - Perl 6
+
+@a = (1 .. 10);
+@a.sep = ' <> ';
+print "@a()";

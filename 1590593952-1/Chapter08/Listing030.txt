@@ -1,0 +1,4 @@
+# These two lists are the same - Perl 5 and Perl 6
+
+(1, (2, 3, (4), (5, 6), (7, 8, 9)))
+(1, 2, 3, 4, 5, 6, 7, 8, 9)

@@ -1,0 +1,14 @@
+# each closure has its own data - Perl 5 and Perl 6
+
+# use Perl6::Variables; # uncomment for Perl 5
+
+my @counters;
+
+for ( 1 .. 10 ) {
+   my $counter_value = 0;
+   push @counters, sub { 
+       ++ $counter_value;
+   };
+}; 
+
+print @counters[rand @counters]->(), "\n" for 1 .. 10;

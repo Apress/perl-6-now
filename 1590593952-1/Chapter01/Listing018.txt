@@ -1,0 +1,5 @@
+# Lexical variables - Perl 5 and Perl 6
+
+my $foo;   # declares a scalar - references are scalars
+my @foo;   # declares an array
+my %foo;   # declares a hash

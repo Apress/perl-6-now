@@ -1,0 +1,5 @@
+# Collapse all dimensions into one and return it as a plain Perl list
+
+my $array = PDL->sequence(10, 10);
+my @array = $array->list();
+print "@array\n";

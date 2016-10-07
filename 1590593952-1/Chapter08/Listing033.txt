@@ -1,0 +1,10 @@
+# Countdown is "1, 2, 3, 4, 5" except for King Arthur, in which case it is
+# "1, 2, 5". 
+
+# Perl 5:
+
+my @countdown = (1, 2, $name eq 'Arthur' ? () : (3, 4), 5);
+
+# Perl 6:
+
+my @countdown = (1, 2, $name eq 'Arthur' ?? () :: (3, 4), 5);

@@ -1,0 +1,3 @@
+# Numbers appear as themselves without quotes, Perl 5 or Perl 6
+
+print 3, "\n";

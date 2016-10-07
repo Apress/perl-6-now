@@ -1,0 +1,10 @@
+package Tail;
+
+use Attribute::Property;
+
+sub new :New;
+
+package main;
+
+my $tail = Tail->new;
+my $dog = Dog->new(tail => $tail);

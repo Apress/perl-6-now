@@ -1,0 +1,15 @@
+# Receiving two arrays and passing two arrays - Perl 5
+
+use Perl6::Contexts;
+
+sub do_something {
+    my $array1_ref = shift;
+    my $array2_ref = shift;
+    print $array1_ref->[0], "\n";
+    print $array2_ref->[0], "\n";
+}
+
+my @array1 = map int rand 100, 1 .. 10;
+my @array2 = map int rand 100, 1 .. 10;
+
+do_something(@array1, @array2);

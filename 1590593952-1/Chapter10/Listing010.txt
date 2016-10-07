@@ -1,0 +1,5 @@
+# Perl 6 - avoiding generation of anonymous subroutines
+
+my $coderef = do {
+    foo('bar', $baz, $^quux);
+}

@@ -1,0 +1,23 @@
+# These two examples are the same - Perl 5
+
+my $color = join ' ', 
+    rand > 0.5 ? 'light' : 'dark', 
+    rand > 0.5 ? 'reddish' : 'bluish',
+    rand > 0.5 ? 'green' : 'orange';
+
+my $color = join ' ', 
+    do { rand > 0.5 ? 'light' : 'dark' }, 
+    do { rand > 0.5 ? 'reddish' : 'bluish' },
+    do { rand > 0.5 ? 'green' : 'orange' };
+
+# These two examples are the same - Perl 6
+
+my $color = join ' ', 
+    rand > 0.5 ?? 'light' :: 'dark', 
+    rand > 0.5 ?? 'reddish' :: 'bluish',
+    rand > 0.5 ?? 'green' :: 'orange';
+
+my $color = join ' ', 
+    { rand > 0.5 ?? 'light' :: 'dark' }, 
+    { rand > 0.5 ?? 'reddish' :: 'bluish' },
+    { rand > 0.5 ?? 'green' :: 'orange' };

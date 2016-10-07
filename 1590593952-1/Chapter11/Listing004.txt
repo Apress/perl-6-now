@@ -1,0 +1,9 @@
+# Perl 5 nomenclature:
+
+sub foo
+   ($foo, $bar, $baz)  # <-- parameters
+{ ... }
+
+foo(
+    1, 2, 3            # <-- arguments
+);

@@ -1,0 +1,11 @@
+# Array variables may be used as a number in numeric operations
+# and evaluate to the count of elements in the array - Perl 5 and Perl 6
+
+# Uncomment for Perl 5:
+# use Perl6::Contexts;
+# use Perl6::Variables;
+
+my @arr = ( 1 .. 100 );
+for my $element ( 0 .. @arr - 1) {
+    print "The value at position $element is @arr[$element]\n";
+}

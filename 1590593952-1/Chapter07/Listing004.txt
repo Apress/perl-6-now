@@ -1,0 +1,3 @@
+$array = $array->short(); # make into an array of shorts
+
+my $new_PDL array = PDL->short( [1, 200, 1000, 15000] );  # new a PDL array of shorts

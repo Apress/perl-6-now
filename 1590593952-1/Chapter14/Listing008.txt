@@ -1,0 +1,8 @@
+# Perl 5 - fetch a document using LWP:
+
+use LWP::UserAgent;
+
+my $user_agent = LWP::UserAgent->new();
+my $response = $user_agent->get('http://perl6now.com/');
+my $html = $response->content;
+print $html;

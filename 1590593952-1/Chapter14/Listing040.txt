@@ -1,0 +1,10 @@
+# Perl 5 - object method that aliases lexicals to data in the object reference
+
+use Data::Alias;
+use Perl6::Variables;
+
+sub paint {
+    my $self = shift;
+    alias my ($what, $color) = %self{'what', 'color'};
+    # do stuff with $what, $color
+}

@@ -1,0 +1,4 @@
+# Perl 6 - unthrown proto exceptions:
+
+my $fh = open '<', 'doesnt_exist.txt';
+die $! unless $fh;

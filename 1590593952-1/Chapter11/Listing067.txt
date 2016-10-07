@@ -1,0 +1,9 @@
+# Lexically scoped subroutines - Perl 6
+
+my $factorial = do {
+    my sub fac ($num) { 
+        return 1 if $num == 1;
+        return $num * fac($num - 1);
+    }
+    fac(7);
+}

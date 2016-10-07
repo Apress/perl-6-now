@@ -1,0 +1,9 @@
+# Bit-wise operation versus boolean operation, Perl 5:
+
+print "Yup\n"    if 1 & 2;
+print "Uh huh\n" if 1 and 2;
+
+# Bit-wise operation versus boolean operation, Perl 6:
+
+print "Yup\n"    if 1 +& 2;
+print "Uh huh\n" if 1 and 2;

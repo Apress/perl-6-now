@@ -1,0 +1,10 @@
+# A useless subroutine that reads arguments and returns something
+# Perl 5
+
+sub your_name_here {
+    my $output;
+    for(@_) {
+       $output .= "Why did you pass me '$_'?\n";
+    }
+    return $output;
+}

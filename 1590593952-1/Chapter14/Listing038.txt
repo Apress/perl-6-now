@@ -1,0 +1,16 @@
+# Perl 5 - fake named parameters - baz => provides to 10 to %opts{baz}
+
+package Foo;
+
+use Perl6::Variables;
+
+sub baz {
+    my $self = shift;
+    my %opts = @_;
+    # ...
+}
+
+package main;
+
+my $foo = Foo->new;
+$foo->(baz => 10, quux => 20);

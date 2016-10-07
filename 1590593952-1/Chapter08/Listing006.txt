@@ -1,0 +1,4 @@
+# Number of keys in a hash
+
+keys %hash;      # Perl 5 used in scalar context
+int %hash.keys;  # Perl 6 - int is usually optional as context is implied

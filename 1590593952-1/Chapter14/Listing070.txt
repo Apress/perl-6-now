@@ -1,0 +1,49 @@
+package Pet::Hash;
+
+use strict;
+use warnings;
+
+use Attribute::Property;
+use Digest::MD5;
+
+sub new :New;
+
+sub name :Property;
+sub species :Property;
+sub age :Property;
+sub dead :Property;
+
+sub get_hash {
+    my $_ = shift;
+    return Digest::MD5::md5_hex join '|', $_->name, $_->species;
+}
+
+use overload '0+' => sub { my $_ = shift; return hex $_->get_hash; };
+use overload '""' => sub { my $_ = shift; return $_->get_hash; };
+use overload '<=>' => sub {
+    my $_ = shift;
+    my $other = shift;
+    my $self_number = $_->get_hash;
+    my $other_number = ref $other ? $other->get_hash : $other;
+    ($self_number, $other_number) = ($other_number, $self_number) if shift;
+    return $self_number <=> $other_number;
+};
+
+package main;
+
+use Perl6::Variables;
+
+my @pets = (
+    Pet->new(species => 'dog',  age => 4, name => 'Sherry'),
+    Pet->new(species => 'cat',  age => 3, name => 'Fluffy'),
+    Pet->new(species => 'dog',  age => 4, name => 'Sherry'),
+    Pet->new(species => 'bird', age => 2, name => 'Chirpy'),
+); 
+
+my %pets;
+
+for my $pet (@pets) {
+    %pets{$pet} = $pet;
+}
+
+@pets = values %pets;

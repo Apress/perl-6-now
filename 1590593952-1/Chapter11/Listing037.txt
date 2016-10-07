@@ -1,0 +1,8 @@
+# Subtle bugs with list versus scalar context - Perl 5 
+
+use Socket;
+
+my $sockaddr = sockaddr_in($port, inet_aton($host));          # correct
+connect($sh, $sockaddr) or die $!;
+
+connect($sh, sockaddr_in($port, inet_aton($host))) or die $!; # wrong!

@@ -1,0 +1,11 @@
+# Perl 5 - initializing an array by aliasing to a list of scalar variables
+
+use Data::Alias;
+use Perl6::Variables;
+
+my $john = 5;
+my $mike = 10;
+my $fred = 15;
+alias my @arr = ($john, $mike, $fred);
+$john++;
+print @arr[0], "\n";

@@ -1,0 +1,12 @@
+# How many comparisons does it take to sort a list of 20 things using 
+# Mergesort? Perl 5
+
+my $comparisons;
+my @random_numbers = map { rand 1 } (1 .. 20);
+@random_numbers = sort {  
+    # print "debug: $a vs $b\n"; 
+    $comparisons++;
+    $a <=> $b; 
+} @random_numbers;
+
+print "Comparisons required: $comparisons\n";

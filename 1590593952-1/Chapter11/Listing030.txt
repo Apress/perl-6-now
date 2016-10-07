@@ -1,0 +1,7 @@
+# Passing two arrays - Perl 6
+
+do_something(@array1, @array2);
+
+sub do_something (@array1, @array2) {
+    # ...
+}

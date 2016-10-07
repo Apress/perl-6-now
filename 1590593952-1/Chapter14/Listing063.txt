@@ -1,0 +1,26 @@
+# Method calls work in a context, and this context is propagated to
+# the method being called - Perl 5
+
+package ContextTest;
+
+use Want;
+use Attribute::Property;
+
+sub new :New; 
+
+sub context {
+    my $_ = shift;
+    return if want 'VOID'; 
+    return 0 if want 'SCALAR';
+    return { } if want 'HASH';
+    return [ ] if want 'ARRAY';
+    return $_ if want 'OBJECT';
+}
+
+package main;
+
+my $context_test = ContextTest->new(); 
+
+$context_test->context->{foo};    # provide hash context to context()
+$context_test->context->[0];      # provide array context to context()
+$context_test->context->context;  # provide object context to context()

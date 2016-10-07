@@ -1,0 +1,2 @@
+print q{Hello World\n};             # bad - the \n sequence isn't replaced with a newline
+print q{/\/\/\/\/\/\/\/}, "\n";     # good - print an ASCII wavy line

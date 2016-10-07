@@ -1,0 +1,14 @@
+# Array interpolation separators - Perl 5
+
+do {
+    @a = (1 .. 10);
+    local $" = ' <> ';
+    print "@a";
+};
+
+# Is Equivalent to
+
+do {
+    @a = (1 .. 10);
+    print join ' <> ', @a;
+};

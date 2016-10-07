@@ -1,0 +1,25 @@
+# Perl 5 - display a file while reading user input
+
+use threads;
+use threads::shared;
+
+my $delay :shared = 1;
+
+open my $fh, '<', __FILE__ or die $!;
+
+my $thread1 = threads->create(sub {
+    while(<$fh>) {
+        print $_;
+        sleep $delay;
+    }
+}); 
+
+my $thread2 = threads->create(sub {
+    while(<STDIN>) {
+        chomp;
+        $delay = $1 if /(\d+)/;
+    }
+});
+
+$thread1->join;
+$thread2->join;

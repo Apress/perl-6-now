@@ -1,0 +1,26 @@
+# Pass data between coroutines using a Coro::Channel as a queue - Perl 5
+
+use Coro;
+use Coro::Channel;
+use Coro::Event;
+my $queue = Coro::Channel->new(10);
+
+async {
+    my $event = Coro::Event->io(fd => fileno STDIN, poll => 'r');
+    while(1) {
+        $event->next();
+        my $input = <STDIN>;
+        $queue->put($input);
+        last unless defined $input;
+    }
+};
+
+async {
+   while(1) {
+      my $output = $queue->get;
+      last unless defined $output;
+      print "got: $output\n";
+   }
+};
+
+Event::loop;

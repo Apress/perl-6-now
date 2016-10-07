@@ -1,0 +1,11 @@
+# Perl 5 - initializing an array using a list of scalar variables copies the
+# values from the scalars into the array
+
+use Perl6::Variables;
+
+my $john = 5;
+my $mike = 10;
+my $fred = 15;
+my @arr = ($john, $mike, $fred);
+$john++;
+print @arr[0], "\n";

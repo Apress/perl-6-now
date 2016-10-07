@@ -1,0 +1,4 @@
+# Calling a method on the subroutine object
+
+\&foo->curry(1);      # Perl 5 assuming autobox and autobox::Core
+&foo.curry(1);        # Perl 6

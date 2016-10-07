@@ -1,0 +1,2 @@
+<=>   # 3 way numeric compare 
+cmp   # 3 way lexigraphical compare 

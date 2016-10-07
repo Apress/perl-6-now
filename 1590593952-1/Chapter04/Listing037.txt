@@ -1,0 +1,5 @@
+# Internet standard line-endings
+
+"\015\012"
+"\cM\cJ"
+chr(13) . chr(10);  # Perl 5's . is ~ in Perl 6

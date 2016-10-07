@@ -1,0 +1,9 @@
+# Modify arguments - Perl 5
+
+sub tweak_args {
+    $_[0]++;
+}
+
+my $foo = 0;
+tweak_args($foo);
+print $foo, "\n"; 

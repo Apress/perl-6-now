@@ -1,0 +1,12 @@
+# when the left value doesn't meet expectations, the right value
+# is evaluated, Perl 5 and Perl 6:
+
+0 and 0;        # false
+0 and 1;        # false
+1 and 0;        # false
+1 and 1;        # true
+
+0 or 0;         # false
+0 or 1;         # true
+1 or 0;         # true
+1 or 1;         # true

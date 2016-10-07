@@ -1,0 +1,10 @@
+# Perl 5
+
+use strict;
+
+{
+    no strict 'vars';
+    # temporarily legal use of global variable here
+} 
+
+# strict is back in effect here

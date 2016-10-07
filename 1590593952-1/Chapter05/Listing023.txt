@@ -1,0 +1,24 @@
+# Booleans logic tests - Perl 5
+
+if(keys %hash) {
+}
+
+if(! keys %hash) {
+}
+
+if(not keys %hash) {
+}
+
+unless(keys %hash) {
+}
+
+# Booleans - Perl 6:
+
+if %hash.keys {
+}
+
+unless %hash.keys {
+}
+
+if ! %hash.keys {
+}  
